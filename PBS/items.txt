@@ -6849,8 +6849,8 @@ Description = A sleek device that evenly distributes battle experience to all pa
 [STICKYGLOB]
 Name = Sticky Glob
 NamePlural = Sticky Globs
-Pocket = 1
-Price = 500
-Flags = UsableInBattle
-BattleUse = Direct
+Pocket = 7
+Price = 1000
+BattleUse = OnFoe
+Flags = Consumable
 Description = An item that prevents wild Pokémon from escaping.

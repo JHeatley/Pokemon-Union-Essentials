@@ -313,21 +313,21 @@ class Battle::Battler
     return true
   end
   
-  def wild_flee(fleeMsg = nil)
-    return if !wild?
-    @battle.scene.pbBattlerFlee(self, fleeMsg)
-    @hp = 0
-    pbInitEffects(false)
-    @status = :NONE
-    @statusCount = 0
-    @battle.pbClearChoice(@index)
-    if @battle.pbAbleCount(@index) > 1
-      @battle.pbEndPrimordialWeather
-      @battle.pbRemoveFromParty(@index, @pokemonIndex)
-    else
-      @battle.decision = (self.isRaidBoss?) ? 1 : 3
-    end
+def wild_flee(fleeMsg = nil)
+  return if !wild?
+  @battle.scene.pbBattlerFlee(self, fleeMsg)
+  @hp = 0
+  pbInitEffects(false)
+  @status = :NONE
+  @statusCount = 0
+  @battle.pbClearChoice(@index)
+  if @battle.pbAbleCount(@index) > 1
+    @battle.pbEndPrimordialWeather
+    @battle.pbRemoveFromParty(@index, @pokemonIndex)
+  else
+    @battle.decision = (self.isRaidBoss?) ? 1 : 3
   end
+end
   
   alias dx_pbFaint pbFaint
   def pbFaint(showMessage = true)
