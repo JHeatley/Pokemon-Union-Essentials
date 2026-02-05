@@ -31,8 +31,14 @@ ItemHandlers::UseOnPokemon.copy(:AWAKENING, :CHESTOBERRY, :BLUEFLUTE, :POKEFLUTE
 #===============================================================================
 # Battle Chips
 #===============================================================================
+target_for_capture_item = proc { |battle, battler|
+  next battler if !battler || battler.opposes?
+  next battler.pbDirectOpposing(true)
+}
+
 ItemHandlers::CanUseInBattle.add(:BATTLECHIP, proc { |item, pokemon, battler, move, firstAction, battle, scene, showMessages|
-  next true if battler&.pbHasType?(:VIRUS)
+  target = target_for_capture_item.call(battle, battler)
+  next true if target&.pbHasType?(:VIRUS)
   scene.pbDisplay(_INTL("This chip is useless on this Pokémon!")) if showMessages
   next false
 })
@@ -49,7 +55,8 @@ GameData::Item.each do |item_data|
   next if !item_data.is_poke_ball?
   next if virus_excluded_poke_balls.include?(item_data.id)
   ItemHandlers::CanUseInBattle.add(item_data.id, proc { |item, pokemon, battler, move, firstAction, battle, scene, showMessages|
-    next true if !battler || !battler.pbHasType?(:VIRUS)
+    target = target_for_capture_item.call(battle, battler)
+    next true if !target || !target.pbHasType?(:VIRUS)
     scene.pbDisplay(_INTL("This is useless against a Virus!")) if showMessages
     next false
   })
