@@ -40,6 +40,22 @@ ItemHandlers::CanUseInBattle.add(:BATTLECHIP, proc { |item, pokemon, battler, mo
 ItemHandlers::CanUseInBattle.copy(:BATTLECHIP, :BATTLECHIP2, :BATTLECHIP3, :BATTLECHIPMAX)
 
 #===============================================================================
+# Poké Balls
+#===============================================================================
+# Poké Balls cannot be used on Virus-type Pokémon (excluding Battle Chips).
+#-------------------------------------------------------------------------------
+virus_excluded_poke_balls = [:BATTLECHIP, :BATTLECHIP2, :BATTLECHIP3, :BATTLECHIPMAX]
+GameData::Item.each do |item_data|
+  next if !item_data.is_poke_ball?
+  next if virus_excluded_poke_balls.include?(item_data.id)
+  ItemHandlers::CanUseInBattle.add(item_data.id, proc { |item, pokemon, battler, move, firstAction, battle, scene, showMessages|
+    next true if !battler || !battler.pbHasType?(:VIRUS)
+    scene.pbDisplay(_INTL("This is useless against a Virus!")) if showMessages
+    next false
+  })
+end
+
+#===============================================================================
 # Ice Heal, Aspear Berry
 #===============================================================================
 # Adds Frostbite as a status that may be healed.
