@@ -127,3 +127,8 @@ IsSpecialType = true
 Weaknesses = POISON,STEEL
 Resistances = FIGHTING,BUG,DARK
 Immunities = DRAGON
+#-------------------------------
+[VIRUS]
+Name = Virus
+IconPosition = 19
+IsSpecialType = true
