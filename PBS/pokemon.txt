@@ -26663,7 +26663,7 @@ Pokedex = Legend says that by using its power to see all events from past to fut
 #-------------------------------
 [JELLY]
 Name = Jelly
-Types = VIRUS
+Types = VIRUS, WATER
 BaseStats = 40,40,35,70,50,100
 GenderRatio = Genderless
 GrowthRate = Slow

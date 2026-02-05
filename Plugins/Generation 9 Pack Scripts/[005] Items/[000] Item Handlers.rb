@@ -27,40 +27,108 @@ ItemHandlers::UseOnPokemon.add(:AWAKENING, proc { |item, qty, pkmn, scene|
 
 ItemHandlers::UseOnPokemon.copy(:AWAKENING, :CHESTOBERRY, :BLUEFLUTE, :POKEFLUTE)
 
+#===============================================================================
+# VIRUS capture rules at registration time (pre-consumption, no turn loss)
+#===============================================================================
+module VirusBallRules
+  CHIPS = [:BATTLECHIP, :BATTLECHIP2, :BATTLECHIP3, :BATTLECHIPMAX]
+
+  def self.target_for(battle, idxBattler, idxTarget)
+    battlers = battle&.battlers
+    return nil if !battlers
+
+    # Prefer explicit opposing target
+    if idxTarget.is_a?(Integer) && idxTarget >= 0 && idxTarget < battlers.length
+      t = battlers[idxTarget]
+      return t if t && t.opposes?
+    end
+
+    # Fallback: user's direct opposing
+    user = (idxBattler.is_a?(Integer) && idxBattler >= 0 && idxBattler < battlers.length) ? battlers[idxBattler] : nil
+    t = user&.pbDirectOpposing(true)
+    return t if t && t.opposes?
+
+    # Final fallback: any opposing battler alive
+    return battlers.find { |b| b && b.opposes? && !b.fainted? }
+  end
+
+  # Display helper usable from ItemHandlers (scene is sometimes nil)
+  def self.display_handler_message(battle, scene, msg)
+    if scene && scene.respond_to?(:pbDisplay)
+      scene.pbDisplay(msg)
+      return
+    end
+    if battle && battle.respond_to?(:pbDisplay)
+      battle.pbDisplay(msg)
+      return
+    end
+    pbMessage(msg) rescue nil
+  end
+end
 
 #===============================================================================
-# Battle Chips
+# CanUseInBattle: Messages (Bag UI path + other flows)
 #===============================================================================
 target_for_capture_item = proc { |battle, battler|
   next battler if !battler || battler.opposes?
   next battler.pbDirectOpposing(true)
 }
 
+# --- Battle Chips: only usable on VIRUS targets (KEEP your working behavior) ---
 ItemHandlers::CanUseInBattle.add(:BATTLECHIP, proc { |item, pokemon, battler, move, firstAction, battle, scene, showMessages|
   target = target_for_capture_item.call(battle, battler)
   next true if target&.pbHasType?(:VIRUS)
   scene.pbDisplay(_INTL("This chip is useless on this Pokémon!")) if showMessages
   next false
 })
-
 ItemHandlers::CanUseInBattle.copy(:BATTLECHIP, :BATTLECHIP2, :BATTLECHIP3, :BATTLECHIPMAX)
 
-#===============================================================================
-# Poké Balls
-#===============================================================================
-# Poké Balls cannot be used on Virus-type Pokémon (excluding Battle Chips).
-#-------------------------------------------------------------------------------
-virus_excluded_poke_balls = [:BATTLECHIP, :BATTLECHIP2, :BATTLECHIP3, :BATTLECHIPMAX]
+# --- All other Poké Balls: blocked on VIRUS targets (SHOW even when scene is nil) ---
 GameData::Item.each do |item_data|
   next if !item_data.is_poke_ball?
-  next if virus_excluded_poke_balls.include?(item_data.id)
+  next if VirusBallRules::CHIPS.include?(item_data.id)
   ItemHandlers::CanUseInBattle.add(item_data.id, proc { |item, pokemon, battler, move, firstAction, battle, scene, showMessages|
     target = target_for_capture_item.call(battle, battler)
-    next true if !target || !target.pbHasType?(:VIRUS)
-    scene.pbDisplay(_INTL("This is useless against a Virus!")) if showMessages
-    next false
+    if target&.pbHasType?(:VIRUS)
+      VirusBallRules.display_handler_message(battle, scene, _INTL("This ball is useless against a Virus!"))
+      next false
+    end
+    next true
   })
 end
+
+#===============================================================================
+# Registration-time enforcement (silent; pre-consumption, no turn loss)
+#===============================================================================
+class Battle
+  if instance_methods.include?(:pbRegisterItem)
+    alias __virus_pbRegisterItem pbRegisterItem
+
+    def pbRegisterItem(*args)
+      idxBattler = args[0]
+      item       = args[1]
+      idxTarget  = args[2] rescue -1   # ignore any extra arg(s) safely
+
+      item_data = GameData::Item.try_get(item)
+      item_id   = item_data ? item_data.id : item
+
+      if item_data&.is_poke_ball?
+        target  = VirusBallRules.target_for(self, idxBattler, idxTarget)
+        is_chip = VirusBallRules::CHIPS.include?(item_id)
+        is_virus = target && target.pbHasType?(:VIRUS)
+
+        # Chips only on VIRUS
+        return false if is_chip && !is_virus
+
+        # Non-chips blocked on VIRUS
+        return false if !is_chip && is_virus
+      end
+
+      return __virus_pbRegisterItem(*args)
+    end
+  end
+end
+
 
 #===============================================================================
 # Ice Heal, Aspear Berry
