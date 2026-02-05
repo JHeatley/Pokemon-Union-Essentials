@@ -27,6 +27,18 @@ ItemHandlers::UseOnPokemon.add(:AWAKENING, proc { |item, qty, pkmn, scene|
 
 ItemHandlers::UseOnPokemon.copy(:AWAKENING, :CHESTOBERRY, :BLUEFLUTE, :POKEFLUTE)
 
+
+#===============================================================================
+# Battle Chips
+#===============================================================================
+ItemHandlers::CanUseInBattle.add(:BATTLECHIP, proc { |item, pokemon, battler, move, firstAction, battle, scene, showMessages|
+  next true if battler&.pbHasType?(:VIRUS)
+  scene.pbDisplay(_INTL("This chip is useless on this Pokémon!")) if showMessages
+  next false
+})
+
+ItemHandlers::CanUseInBattle.copy(:BATTLECHIP, :BATTLECHIP2, :BATTLECHIP3, :BATTLECHIPMAX)
+
 #===============================================================================
 # Ice Heal, Aspear Berry
 #===============================================================================
