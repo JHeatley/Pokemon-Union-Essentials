@@ -79,6 +79,14 @@ Battle::PokeBallEffects::ModifyCatchRate.add(:HISUIANPOKEBALL, proc { |ball, cat
   next catchRate * 0.75
 })
 
+Battle::PokeBallEffects::ModifyCatchRate.add(:BATTLECHIP, proc { |ball, catchRate, battle, battler|
+  next catchRate
+})
+
+Battle::PokeBallEffects::ModifyCatchRate.copy(:GREATBALL, :BATTLECHIP2)
+Battle::PokeBallEffects::ModifyCatchRate.copy(:ULTRABALL, :BATTLECHIP3)
+Battle::PokeBallEffects::IsUnconditional.copy(:MASTERBALL, :BATTLECHIPMAX)
+
 Battle::PokeBallEffects::ModifyCatchRate.add(:HISUIANGREATBALL, proc { |ball, catchRate, battle, battler|
   next catchRate * 1.5
 })

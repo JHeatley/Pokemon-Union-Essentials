@@ -3604,6 +3604,46 @@ SellPrice = 50
 BattleUse = OnFoe
 Flags = PokeBall
 Description = A device for catching wild Pokémon. It is thrown like a ball at the target. It is designed as a capsule system.
+
+#-------------------------------
+[BATTLECHIP]
+Name = Battle Chip
+NamePlural = Battle Chips
+Pocket = 3
+Price = 200
+SellPrice = 50
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A capture chip for wild Pokémon. It only works on VIRUS-type Pokémon.
+#-------------------------------
+[BATTLECHIP2]
+Name = Battle Chip v2
+NamePlural = Battle Chip v2s
+Pocket = 3
+Price = 600
+SellPrice = 150
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A high-performance capture chip. It only works on VIRUS-type Pokémon.
+#-------------------------------
+[BATTLECHIP3]
+Name = Battle Chip v3
+NamePlural = Battle Chip v3s
+Pocket = 3
+Price = 800
+SellPrice = 200
+BattleUse = OnFoe
+Flags = PokeBall
+Description = An ultra-performance capture chip. It only works on VIRUS-type Pokémon.
+#-------------------------------
+[BATTLECHIPMAX]
+Name = Battle Chip MAX
+NamePlural = Battle Chip MAXes
+Pocket = 3
+Price = 0
+BattleUse = OnFoe
+Flags = PokeBall
+Description = The best capture chip. It catches any VIRUS-type Pokémon without fail.
 #-------------------------------
 [SAFARIBALL]
 Name = Safari Ball
