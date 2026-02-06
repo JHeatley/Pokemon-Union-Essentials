@@ -3614,7 +3614,7 @@ Price = 200
 SellPrice = 50
 BattleUse = OnFoe
 Flags = PokeBall
-Description = A capture chip for wild Pokémon. It only works on VIRUS-type Pokémon.
+Description = A capture chip for VIRUS-type creatures.
 #-------------------------------
 [BATTLECHIP2]
 Name = Battle Chip v2
@@ -3624,7 +3624,7 @@ Price = 600
 SellPrice = 150
 BattleUse = OnFoe
 Flags = PokeBall
-Description = A high-performance capture chip. It only works on VIRUS-type Pokémon.
+Description = A high-performance capture chip. It only works on VIRUS-type creatures.
 #-------------------------------
 [BATTLECHIP3]
 Name = Battle Chip v3
@@ -3634,7 +3634,7 @@ Price = 800
 SellPrice = 200
 BattleUse = OnFoe
 Flags = PokeBall
-Description = An ultra-performance capture chip. It only works on VIRUS-type Pokémon.
+Description = An ultra-performance capture chip. It only works on VIRUS-type creatures.
 #-------------------------------
 [BATTLECHIPMAX]
 Name = Battle Chip MAX
@@ -3643,7 +3643,7 @@ Pocket = 3
 Price = 0
 BattleUse = OnFoe
 Flags = PokeBall
-Description = The best capture chip. It catches any VIRUS-type Pokémon without fail.
+Description = The best capture chip. It catches any VIRUS-type creature without fail.
 #-------------------------------
 [SAFARIBALL]
 Name = Safari Ball
