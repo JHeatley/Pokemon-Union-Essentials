@@ -68,6 +68,7 @@ Pokemon = GEODUDE,10
 Pokemon = SANDSHREW,11
 #-------------------------------
 [LEADER_Brock,Brock]
+BattleBGM = GymLeader_Brock.mp3
 LoseText = I took you for granted, and so I lost.
 Pokemon = GEODUDE,12
     Moves = TACKLE,DEFENSECURL
