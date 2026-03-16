@@ -61,23 +61,44 @@ module VMS
     end
 
     def update(data)
-      data.each do |key, value|
+      data.each do |key_idx, value|
+        key = VMS::REVERSE_KEYS[key_idx]
+        next if key.nil?
         next if value.nil? && !@can_be_nil.include?(key)
-        if key == "heartbeat"
-          @heartbeat = Time.now
+        if key == :heartbeat
+          @heartbeat = value
           next
         end
-        instance_variable_set("@#{key}", value) if data.key?(key)
+        # Special handling for party data - deserialize from strings to Pokemon objects
+        if key == :party && value.is_a?(Array) && !value.empty?
+          deserialized_party = []
+          value.each do |pkmn_data|
+            next if pkmn_data.nil?
+            # Check if it's a serialized string that needs dehashing
+            if pkmn_data.is_a?(String)
+              deserialized_party.push(VMS.dehash_pokemon(pkmn_data))
+            else
+              # Already a Pokemon object
+              deserialized_party.push(pkmn_data)
+            end
+          end
+          @party = deserialized_party
+        else
+          instance_variable_set("@#{key}", value)
+        end
       end
     end
 
     def to_hash
       hash = {}
       instance_variables.each do |var|
-        next if ["address", "port", "can_be_nil"].include?(var.to_s.delete("@"))
+        sym = var.to_s.delete("@").to_sym
+        next unless VMS::PACKET_KEYS.key?(sym)
+        next if [:address, :port, :can_be_nil].include?(sym)
+        
         value = instance_variable_get(var)
         value = (value * 1000).round / 1000 if value.is_a?(Float)
-        hash[var.to_s.delete("@")] = value
+        hash[VMS::PACKET_KEYS[sym]] = value
       end
       return hash
     end

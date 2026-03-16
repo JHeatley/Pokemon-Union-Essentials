@@ -1,7 +1,24 @@
 module VMS
   # ===========
-  # Debug 
+  # Debug
   # ===========
+
+  # If true, the menu will show "Local Play" and "Online Play" options.
+  # If false, only integrated server (local play) options will be available.
+  USE_EXTERNAL_SERVER = false
+
+  # External server connection settings (used when "Online Play" is selected)
+  EXTERNALHOST = "gamingwithgoose.ddns.net"
+  EXTERNALPORT = 25889
+
+  # Default port for hosting, integrated server is always hosted on 0.0.0.0:PORT.
+  PORT = 25565
+
+  # The current target IP for connecting. Can be changed at runtime.
+  class << self
+    attr_accessor :target_host
+  end
+
   # Whether or not to log messages to the console.
   LOG_TO_CONSOLE = true
   # Whether or not to show yourself from the server's perspective. This is useful for testing.
@@ -10,18 +27,16 @@ module VMS
   # ===========
   # Server
   # ===========
-  # The hostname of the server. This is the IP address or domain name that the server is hosted on.
-  HOST = "gamingwithgoose.ddns.net"
-  # The port that the server is hosted on. This is the port that the server is listening on.
-  PORT = 16815
   # Whether or not to use TCP instead of UDP. TCP is more reliable, but UDP is faster.
   USE_TCP = false
+  # The maximum number of players allowed in the integrated server.
+  MAX_PLAYERS = 4
   
   # ===========
   # Connection
   # ===========
   # How many times per second to send packets. (can't be higher than the server's tick rate) (set to 0 to disable)
-  TICK_RATE = 60
+  TICK_RATE = 30
   # Whether or not to handle more packets. If this is set to false you will only receive the latest packet, being faster but more snappy.
   HANDLE_MORE_PACKETS = true
   # This is the delay where packet recency bias will be offset. Meaning if HANDLE_MORE_PACKETS is false, you will receive the latest packet that was sent within this delay. (in seconds)
@@ -29,6 +44,7 @@ module VMS
   # The timeout in seconds. If the server does not respond within this time, the client will disconnect.
   TIMEOUT_SECONDS = 30
   # Whether or not to sync the seed with the server. This means that all players will have the same random numbers.
+  HEARTBEAT_TIMEOUT = 30
   SEED_SYNC = false
   
   # ===========
@@ -59,7 +75,7 @@ module VMS
   # Whether or not VMS is accessible. (set to 'proc { next true }' to always be accessible) (only used if ACCESSIBLE_FROM_PAUSE_MENU is true)
   ACCESSIBLE_PROC = proc { next true }
   # The name of the VMS option in the pause menu. (only used if ACCESSIBLE_FROM_PAUSE_MENU is true)
-  MENU_NAME = "Online"
+  MENU_NAME = "Link Play"
   # Whether or not to show the cluster ID in the pause menu.
   SHOW_CLUSTER_ID_IN_PAUSE_MENU = true
   
@@ -79,8 +95,29 @@ module VMS
   }
   
   # ===========
+  # Multi Battle
+  # ===========
+  # Maximum seconds to wait in a lobby for all 4 players to join before auto-cancelling.
+  MB_LOBBY_TIMEOUT = 120
+  # Maximum seconds to wait for all players to ready up once 4 slots are filled.
+  MB_READY_TIMEOUT = 60
+  # The name of the Multi Battle option in the pause menu.
+  MB_MENU_NAME = "Multi Battle"
+
+  # ===========
   # Methods
   # ===========
+  # Mapping for integer-keyed serialization to reduce bandwidth
+  PACKET_KEYS = {
+    id: 1, heartbeat: 2, name: 3, map_id: 4, x: 5, y: 6, real_x: 7, real_y: 8,
+    trainer_type: 9, direction: 10, pattern: 11, graphic: 12, party: 13,
+    animation: 14, offset_x: 15, offset_y: 16, opacity: 17, stop_animation: 18,
+    rf_event: 19, jump_offset: 20, jumping_on_spot: 21, surfing: 22, diving: 23,
+    surf_base_coords: 24, state: 25, busy: 26, cluster_id: 27,
+    online_variables: 28, game_name: 29, game_version: 30
+  }
+  REVERSE_KEYS = PACKET_KEYS.invert
+
   # Usage: VMS.log("message", true) (logs a message to the console, with optional warning flag)
   def self.log(message="", warning=false)
     return unless LOG_TO_CONSOLE

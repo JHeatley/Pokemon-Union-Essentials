@@ -90,15 +90,18 @@ module VMS
           $game_temp.vms[:state] = [:idle, nil]
         end
       when :battle
-        if pbConfirmMessage(_INTL(VMS::INTERACTION_BATTLE_MESSAGE, player_name))
-          $game_temp.vms[:state] = [:battle, player.id]
+        battle_type = player.state[2] == :double ? VMS::BATTLE_TYPE_DOUBLE : VMS::BATTLE_TYPE_SINGLE
+        battle_size = player.state[3]
+        battle_seed = player.state[4] # Get seed from initiator
+        if pbConfirmMessage(_INTL(VMS::INTERACTION_BATTLE_MESSAGE, player_name, "#{battle_type} (#{battle_size}v#{battle_size})"))
+          $game_temp.vms[:state] = [:battle, player.id, player.state[2], player.state[3], battle_seed]
           if !VMS.await_player_state(player, :battle, _INTL(VMS::INTERACTION_WAIT_RESPONSE_MESSAGE, player_name))
             if player.state[1] != $player.id
               VMS.message(_INTL(VMS::INTERACTION_CANCEL_MESSAGE, player_name))
               return
             end
           end
-          VMS.start_battle(player)
+          VMS.start_battle(player, player.state[2], player.state[3], battle_seed)
         else
           $game_temp.vms[:state] = [:idle, nil]
         end
@@ -188,27 +191,62 @@ module VMS
         # Check if a battle would be possible
         battle_possible = false
         $player.party.each do |pkmn|
-          battle_possible = true if pkmn.able?
+          battle_possible = true if pkmn && pkmn.able?
         end
         if battle_possible
           battle_possible = false
-          VMS.update_party(player).each do |pkmn|
-            battle_possible = true if pkmn.able?
+          opponent_party = VMS.update_party(player)
+          if opponent_party && opponent_party.is_a?(Array)
+            opponent_party.each do |pkmn|
+              battle_possible = true if pkmn && pkmn.able?
+            end
           end
         end
         if !battle_possible
           VMS.message(_INTL(VMS::INTERACTION_NO_BATTLE_MESSAGE, player_name))
           next
         end
+        # Select battle type
+        battle_type_choice = VMS.message(VMS::SELECT_BATTLE_TYPE_MESSAGE, [VMS::BATTLE_TYPE_SINGLE, VMS::BATTLE_TYPE_DOUBLE, _INTL("Cancel")])
+        case battle_type_choice
+        when 0 then type = :single
+        when 1 then type = :double
+        else next
+        end
+        # Select party size
+        size_choices = (type == :single) ? [VMS::PARTY_SIZE_3, VMS::PARTY_SIZE_6, _INTL("No Limit")] : [VMS::PARTY_SIZE_4, VMS::PARTY_SIZE_6, _INTL("No Limit")]
+        size_choice = VMS.message(VMS::SELECT_PARTY_SIZE_MESSAGE, size_choices + [_INTL("Cancel")])
+        if size_choice == size_choices.length
+          next
+        end
+        if size_choice == 2 # No Limit
+          size = nil
+        else
+          size = (type == :single) ? (size_choice == 0 ? 3 : 6) : (size_choice == 0 ? 4 : 6)
+        end
+        # Validate party size
+        if size
+          if $player.able_pokemon_count < size || VMS.update_party(player).count { |pkmn| pkmn.able? } < size
+            VMS.message(VMS::NOT_ENOUGH_POKEMON_MESSAGE)
+            next
+          end
+        else
+          # For No Limit, just check if they have at least 1 able pokemon
+          if $player.able_pokemon_count < 1 || VMS.update_party(player).count { |pkmn| pkmn.able? } < 1
+            VMS.message(VMS::NOT_ENOUGH_POKEMON_MESSAGE)
+            next
+          end
+        end
         # Set state to battle with player
-        $game_temp.vms[:state] = [:battle, id]
+        battle_seed = rand(1000000...9999999)
+        $game_temp.vms[:state] = [:battle, id, type, size, battle_seed]
         if !VMS.await_player_state(player, :battle, _INTL(VMS::INTERACTION_WAIT_RESPONSE_MESSAGE, player_name))
           if player.state[1] != $player.id
             VMS.message(_INTL(VMS::INTERACTION_CANCEL_MESSAGE, player_name))
             return
           end
         end
-        VMS.start_battle(player)
+        VMS.start_battle(player, type, size, battle_seed)
         break
       when 3 # Cancel
         # Set state to idle
@@ -317,14 +355,11 @@ module VMS
     return false
   end
 
-  # Usage: VMS.update_party(player #<VMS::Player>) (updates the player's party)
+  # Usage: VMS.update_party(player #<VMS::Player>) (returns the player's party)
   def self.update_party(player)
-    new_party = []
-    player.party.each do |pkmn|
-      new_party.push(pkmn.is_a?(::Pokemon) ? pkmn : VMS.dehash_pokemon(pkmn))
-    end
-    player.party = new_party
-    return player.party
+    # Party is automatically deserialized in VMS::Player.update method
+    # This method now just returns the party directly
+    return player.party || []
   end
 
   # Usage: VMS.sync_animations(player #<VMS::Player>) (syncs the player's animations)
