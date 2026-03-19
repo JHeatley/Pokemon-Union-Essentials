@@ -20,7 +20,7 @@ Name = Pallet Town
 Outdoor = true
 ShowArea = true
 Bicycle = true
-HealingSpot = 5,18,8
+HealingSpot = 7,7,5
 MapPosition = 3,8,13
 #-------------------------------
 [006]   # Oak's Lab
@@ -30,7 +30,7 @@ BattleBack = interior
 #-------------------------------
 [007]   # Player's House
 Name = \PN's House
-HealingSpot = 2,8,8
+HealingSpot = 7,7,5
 MapPosition = 0,5,13
 #-------------------------------
 [008]   # Rival's House

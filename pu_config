@@ -1,0 +1,5 @@
+CURRENT_GAME_VERSION=1.4
+VERSION_PASTEBIN=https://pastebin.com/raw/BkxV5Adr
+UPDATER_FILENAME=./poke_updater/poke_updater.exe
+FORCE_VERSION_CHECK=true
+MANUAL_DOWNLOAD_LINK=https://www.dropbox.com/scl/fi/e81h10wra9vncgik7gj4v/Pokemon-Union-v1.4.zip?rlkey=9sigpdrqg5fiwcntefzoa1kac&st=tnfb2x0r&dl=0
