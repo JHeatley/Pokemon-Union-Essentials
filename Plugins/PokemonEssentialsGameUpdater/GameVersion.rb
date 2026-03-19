@@ -26,33 +26,38 @@ module PokeUpdater
 	end
 
 	module_function
-	def fill_updater_config()
-		return if !File.exists?('pu_config')
-		config = {}
-		File.foreach('pu_config'){|line|
-			splitted_line = line.split('=')
-			next if !splitted_line
+def fill_updater_config
+  return unless File.exist?("pu_config")
+  config = {}
 
-			splitted_line[1] = splitted_line[1].strip
-			config[splitted_line[0].strip] = splitted_line[1]
+  File.foreach("pu_config") do |line|
+    line = line.strip
+    next if line.empty? || line.start_with?("#")
+    next unless line.include?("=")
 
-			if Config::TRUE_VALUES.include?(splitted_line[1].downcase) || Config::FALSE_VALUES.include?(splitted_line[1].downcase)
-				config[splitted_line[0].strip] = true ? Config::TRUE_VALUES.include?(splitted_line[1].downcase) : false
-			elsif splitted_line[1].strip.match(/\d+\.\d+/)
-				config[splitted_line[0].strip] = splitted_line[1].strip
-			end
-		}
-		
-		Config.poke_updater_config = config
+    key, value = line.split("=", 2)
+    key   = key.strip
+    value = value ? value.strip : ""
 
-				
-		return if !File.exists?('pu_locales')
-		Config.poke_updater_locales = HTTPLite::JSON.parse(File.read('pu_locales'))
-	end
+    lowered = value.downcase
+    if Config::TRUE_VALUES.include?(lowered)
+      config[key] = true
+    elsif Config::FALSE_VALUES.include?(lowered)
+      config[key] = false
+    else
+      config[key] = value
+    end
+  end
+
+  Config.poke_updater_config = config
+
+  return unless File.exist?("pu_locales")
+  Config.poke_updater_locales = HTTPLite::JSON.parse(File.read("pu_locales"))
+end
 	
 
 	def get_lang()
-		System.user_language[0..1]
+		'en'
 	end
 	
 	def get_poke_updater_text(text_name, variable=nil)
@@ -66,37 +71,39 @@ module PokeUpdater
 			return Config.poke_updater_locales[text_name][lang]
 		end
 		case text_name
-		when 'NEW_VERSION'
-			return "¡Nueva versión #{variable} disponible!"
-		when 'BUTTON_UPDATE'
-			return "Para actualizar utilice el botón disponible en el menú."
-		when 'MANUAL_UPDATE'
-			return "Por favor, actualiza el juego entrando a la red social del creador (Twitter/X: @Sky_fangames)."
-		when 'UPDATE'
-			return "El juego se actualizará y reiniciará automáticamente. Esto puede demorar unos minutos. Tus partidas guardadas NO se verán afectadas durante la actualización."
-		when 'NO_NEW_VERSION'
-			return "No hay nuevas versiones disponibles en este momento."
-		when 'JOIPLAY_UPDATE'
-			return "Estás jugando en joiplay, por favor entra a la red social del creador para descargar la última versión del juego (Twitter/X: @Sky_fangames)."
-		when 'UPDATER_NOT_FOUND'
-			return 'No se ha encontrado el actualizador del juego.'
-		when 'NO_NEW_VERSION_OR_INTERNET'
-			return 'No tienes conexión a internet o no se encontró una nueva versión del juego.'
-		when 'NO_PASTEBIN_URL'
-			return 'No hay una URL al pastebin en el archivo de configuración, repórtalo con el creador del juego.'
-		when 'ASK_FOR_UPDATE'
-			return '¿Deseas actualizar el juego?'
-		when 'FORCE_UPDATE_ON'
-			return 'La actualización del juego es obligatoria, el juego se cerrará.'
-		when 'UPDATER_MISCONFIGURATION'
-			return 'Hay errores en la configuración del updater, repórtalo con el creador del juego.'
-		when 'MANUAL_DOWNLOAD_CONFIRM'
-			return "¿Desea abrir el link de descarga?"
-		when 'ASK_FOR_CHANGELOG'
-			return '¿Deseas ver el changelog de la nueva versión?'
-		when 'CURRENT_VERSION'
-			return "Estás en la versión #{Config.poke_updater_config['CURRENT_GAME_VERSION']}."
-		end
+when 'NEW_VERSION'
+  return "New version #{variable} available!"
+when 'BUTTON_UPDATE'
+  return "Use the button in the menu to update the game."
+when 'MANUAL_UPDATE'
+  return "Please update the game using the creator's download page."
+when 'UPDATE'
+  return "The game will update and restart automatically.
+This may take a few minutes.
+Your save files will NOT be affected during the update."
+when 'NO_NEW_VERSION'
+  return "There are no new versions available right now."
+when 'JOIPLAY_UPDATE'
+  return "You are playing on JoiPlay. Please download the latest version manually."
+when 'UPDATER_NOT_FOUND'
+  return "The game updater could not be found."
+when 'NO_NEW_VERSION_OR_INTERNET'
+  return "There is no internet connection, or no new version was found."
+when 'NO_PASTEBIN_URL'
+  return "There is no Pastebin URL in the config file. Please report this to the game creator."
+when 'ASK_FOR_UPDATE'
+  return "Do you want to update the game?"
+when 'FORCE_UPDATE_ON'
+  return "This update is required. The game will now close."
+when 'UPDATER_MISCONFIGURATION'
+  return "There are errors in the updater configuration. Please report this to the game creator."
+when 'MANUAL_DOWNLOAD_CONFIRM'
+  return "Do you want to open the download link?"
+when 'ASK_FOR_CHANGELOG'
+  return "Do you want to view the changelog for the new version?"
+when 'CURRENT_VERSION'
+  return "You are on version #{Config.poke_updater_config['CURRENT_GAME_VERSION']}."
+end
 	end
 
 
@@ -121,12 +128,11 @@ module PokeUpdater
 	end
 
 	def check_for_updates(from_update_button=false)
-		return if $DEBUG
-		return if !network_available?
-		fill_updater_config() if !Config.poke_updater_config || !Config.poke_updater_config['PASTEBIN_URL']
-		if Config.poke_updater_config && Config.poke_updater_config['PASTEBIN_URL'] && Config.poke_updater_config['PASTEBIN_URL'] != ''
-			validate_game_version(from_update_button)
-		end
+	return if $DEBUG
+	fill_updater_config() if !Config.poke_updater_config || !Config.poke_updater_config['PASTEBIN_URL']
+	if Config.poke_updater_config && Config.poke_updater_config['PASTEBIN_URL'] && Config.poke_updater_config['PASTEBIN_URL'] != ''
+		validate_game_version(from_update_button)
+	  end
 	end
 
 
@@ -252,7 +258,7 @@ module PokeUpdater
 					new_version_text = get_poke_updater_text('NEW_VERSION', new_version)
 
 				pbMessage(new_version_text)
-					if changelog&.length > 0 && pbConfirmMessage(get_poke_updater_text('ASK_FOR_CHANGELOG'))
+					if changelog.to_s.length > 0 && pbConfirmMessage(get_poke_updater_text('ASK_FOR_CHANGELOG'))
 						pbMessage("Changelog:\n#{changelog}")
 					end
 					if $joiplay
@@ -292,18 +298,15 @@ module PokeUpdater
 						return
 					end
 					
-					if force_update || update
-						if !File.exists?(Config.poke_updater_config['UPDATER_FILENAME'])
-							pbMessage("#{get_poke_updater_text('MANUAL_UPDATE', Config.poke_updater_config['MANUAL_DOWNLOAD_LINK'])}")
-							if !Config.poke_updater_config['MANUAL_DOWNLOAD_LINK'].empty? && pbConfirmMessage("#{get_poke_updater_text('MANUAL_DOWNLOAD_CONFIRM')}")
-								System.launch(Config.poke_updater_config['MANUAL_DOWNLOAD_LINK'])
-							end
-							return
-						end
-						pbMessage(get_poke_updater_text('UPDATE'))
-						IO.popen(Config.poke_updater_config['UPDATER_FILENAME'])
-						Kernel.exit!
-					end
+if force_update || update
+  pbMessage(get_poke_updater_text('MANUAL_UPDATE'))
+  if Config.poke_updater_config['MANUAL_DOWNLOAD_LINK'] &&
+     !Config.poke_updater_config['MANUAL_DOWNLOAD_LINK'].empty? &&
+     pbConfirmMessage(get_poke_updater_text('MANUAL_DOWNLOAD_CONFIRM'))
+    System.launch(Config.poke_updater_config['MANUAL_DOWNLOAD_LINK'])
+  end
+  return
+end
 				else
 					if from_update_button
 						pbMessage(get_poke_updater_text('CURRENT_VERSION', Config.poke_updater_config['CURRENT_GAME_VERSION']))
