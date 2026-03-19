@@ -52,7 +52,7 @@ Name = Viridian City
 Outdoor = true
 ShowArea = true
 Bicycle = true
-HealingSpot = 2,8,8
+HealingSpot = 11,7,4
 MapPosition = 0,5,10
 BattleBack = field
 #-------------------------------
@@ -132,6 +132,7 @@ BattleBack = field
 Name = Pewter City
 Outdoor = true
 ShowArea = true
+HealingSpot = 26,7,4
 Bicycle = true
 MapPosition = 0,5,6
 #-------------------------------
@@ -180,6 +181,7 @@ MapSize = 6,111111
 #-------------------------------
 [034]   # Mt. Moon Pokémon Center
 Name = Mt. Moon Pokémon Center
+HealingSpot = 34,7,4
 MapPosition = 0,9,5
 #-------------------------------
 [035]   # Mt. Moon
@@ -211,11 +213,13 @@ Name = Cerulean City
 Outdoor = true
 ShowArea = true
 Bicycle = true
+HealingSpot = 40,7,4
 MapPosition = 0,15,5
 BattleBack = field
 #-------------------------------
 [040]   # Cerulean Pokémon Center
 Name = Cerulean Pokémon Center
+HealingSpot = 40,7,4
 MapPosition = 0,15,5
 #-------------------------------
 [041]   # Cerulean Poké Mart
@@ -342,11 +346,13 @@ Name = Vermilion City
 Outdoor = true
 ShowArea = true
 Bicycle = true
+HealingSpot = 65,7,4
 MapPosition = 0,15,11
 BattleBack = city
 #-------------------------------
 [065]   # Vermilion Pokémon Center
 Name = Vermilion Pokémon Center
+HealingSpot = 65,7,4
 MapPosition = 0,15,11
 #-------------------------------
 [066]   # Vermilion Poké Mart
@@ -463,6 +469,7 @@ Name = Route 10
 Outdoor = true
 ShowArea = true
 Bicycle = true
+HealingSpot = 88,7,4
 MapPosition = 0,19,5
 BattleBack = field
 MapSize = 1,111
@@ -617,6 +624,7 @@ Name = Celadon City
 Outdoor = true
 ShowArea = true
 Bicycle = true
+HealingSpot = 115,7,4
 MapPosition = 0,12,8
 BattleBack = city
 #-------------------------------
@@ -762,7 +770,7 @@ Name = Fuchsia City
 Outdoor = true
 ShowArea = true
 Bicycle = true
-HealingSpot = 144,25,36
+HealingSpot = 145,7,4
 MapPosition = 0,13,14
 BattleBack = city
 #-------------------------------
@@ -888,6 +896,7 @@ Name = Saffron City
 Outdoor = true
 ShowArea = true
 Bicycle = true
+HealingSpot = 169,7,4
 MapPosition = 0,15,8
 BattleBack = city
 #-------------------------------
@@ -1066,6 +1075,7 @@ MapSize = 1,11
 Name = Cinnabar Island
 Outdoor = true
 ShowArea = true
+HealingSpot = 200,7,4
 Bicycle = true
 MapPosition = 0,5,16
 #-------------------------------
@@ -1150,6 +1160,7 @@ Environment = Cave
 Name = Indigo Plateau
 Outdoor = true
 ShowArea = true
+HealingSpot = 215,7,4
 Bicycle = true
 MapPosition = 0,3,5
 BattleBack = field
