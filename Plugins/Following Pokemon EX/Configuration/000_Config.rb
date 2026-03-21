@@ -54,7 +54,7 @@
   ALWAYS_FACE_PLAYER        = false
 
   # Whether other events can walk through Follower or no
-  IMPASSABLE_FOLLOWER       = true
+  IMPASSABLE_FOLLOWER       = false
 
   # Whether Following Pokemon slides into battle instead of being sent
   # in a Pokeball. (This doesn't affect EBDX, read the EBDX documentation to

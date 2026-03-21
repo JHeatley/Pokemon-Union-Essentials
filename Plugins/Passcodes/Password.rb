@@ -31,19 +31,25 @@ class Passwords
     redeem(code)
   end
 
-  def self.StrangeEgg
-    code = "StrangeEgg"
-    if redeemed?(code)
-      pbMessage(_INTL("You have already redeemed this code."))
-      return
-    end
-    pbMessage(_INTL("You received a strange egg!"))
-    pokemon = Pokemon.new(:WYNAUT, 1)
-    pokemon.shiny = true
-    pokemon.steps_to_hatch = GameData::Species.get(:WYNAUT).hatch_steps
-    pbAddPokemonSilent(pokemon)
-    redeem(code)
+def self.StrangeEgg
+  code = "StrangeEgg"
+  if redeemed?(code)
+    pbMessage(_INTL("You have already redeemed this code."))
+    return
   end
+
+  pbMessage(_INTL("You received a strange egg!"))
+
+  # Change species to generate new Egg
+  pbGenerateEgg(:WYNAUT, "Password Gift")
+
+  # The newly generated egg is the last Pokémon in the party
+  egg = $player.party[-1]
+  egg.shiny = true
+  egg.steps_to_hatch = 50
+
+  redeem(code)
+end
 
 
   def self.GreatPack
@@ -81,24 +87,25 @@ class PasswordEntering
     if pbResolveBitmap("Graphics/UI/Pokegear/bg_password")
       sp["base"].setBitmap("Graphics/UI/Pokegear/bg_password")
     end
+
     pbFadeInAndShow(sp)
-    if pbConfirmMessage(_INTL("Would you like to enter a code?"))
-      code = pbMessageFreeText("Enter a passcode.", _INTL(""), false, 20)
-      case code
-      when "ShinyCharm"
-        Passwords.ShinyCharm
-      when "QuickPack"
-        Passwords.QuickPack
-      when "StrangeEgg"
-        Passwords.StrangeEgg
-      when "GreatPack"
-        Passwords.GreatPack
-      when "RarePack"
-        Passwords.RarePack
-      else
-        Passwords.not
-      end
+
+    code = pbMessageFreeText("Enter a passcode.", _INTL(""), false, 20)
+    case code
+    when "ShinyCharm"
+      Passwords.ShinyCharm
+    when "QuickPack"
+      Passwords.QuickPack
+    when "StrangeEgg"
+      Passwords.StrangeEgg
+    when "GreatPack"
+      Passwords.GreatPack
+    when "RarePack"
+      Passwords.RarePack
+    else
+      Passwords.not
     end
+
     pbFadeOutAndHide(sp)
     pbDisposeSpriteHash(sp)
     vp.dispose
@@ -110,8 +117,9 @@ MenuHandlers.add(:pokegear_menu, :Passcodes, {
   "icon_name" => "Passcodes",
   "order"     => 50,
   "effect"    => proc { |menu|
-    pbMessage(_INTL("Would you like to enter a Passcode?"))
-    pbFadeOutIn { PasswordEntering.enterCode }
+    if pbConfirmMessage(_INTL("Would you like to enter a Passcode?"))
+      pbFadeOutIn { PasswordEntering.enterCode }
+    end
     next false
   }
 })

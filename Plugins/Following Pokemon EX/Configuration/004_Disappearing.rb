@@ -19,9 +19,11 @@ EventHandlers.add(:following_pkmn_appear, :map_flag_keep, proc { |pkmn|
 EventHandlers.add(:following_pkmn_appear, :height, proc { |pkmn|
   metadata = $game_map.metadata
   if metadata && metadata.outdoor_map != true && $PokemonEncounters
-    # Don't follow if the Pokemon's height is greater than 3 meters and there are no encounters ie a building or something
-    height =  GameData::Species.get_species_form(pkmn.species, pkmn.form).height
-    next false if (height / 10.0) > 3.0 && !$PokemonEncounters.encounter_possible_here?
+    height = GameData::Species.get_species_form(pkmn.species, pkmn.form).height
+    # Hide very large Pokémon indoors, except Gyarados
+    next false if (height / 10.0) > 3.0 &&
+                  !$PokemonEncounters.encounter_possible_here? &&
+                  pkmn.species != :GYARADOS
   end
 })
 #-------------------------------------------------------------------------------

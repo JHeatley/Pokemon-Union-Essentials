@@ -543,3 +543,20 @@ Name = Pokémon Trainer
 Gender = Female
 BaseMoney = 120
 #-------------------------------
+[OFFICER]
+Name = Officer
+Gender = Male
+BaseMoney = 90
+#-------------------------------
+[LEADER_Janine]
+Name = Gym Leader
+Gender = Female
+BaseMoney = 100
+#-------------------------------
+[LEADER_Blue]
+Name = Gym Leader
+Gender = Male
+BaseMoney = 100
+Flags = AntiConsiderSwitching
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader

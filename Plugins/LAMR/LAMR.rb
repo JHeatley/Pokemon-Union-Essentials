@@ -2,8 +2,8 @@
 # Config	
 # LA Move Relearner base by IndianAnimator script by Kotaro
 module Settings
-  EGGMOVESSWITCH  = 88
-  TMMOVESSWITCH   = 89
+  EGGMOVESSWITCH  = 238
+  TMMOVESSWITCH   = 239
 end  
 EGGMOVES = false
 TMMOVES = false
