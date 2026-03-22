@@ -198,3 +198,17 @@
 214,South,0,209,North,0
 # Pewter House (31) - Pewter House (30)
 31,South,0,30,North,0
+# One Island (377) - Kindle Road (416)
+377,East,0,416,West,0
+# Treasure Beach (419) - One Island (377)
+419,North,2,377,South,0
+# Treasure Beach (419) - Kindle Road (416)
+419,North,29,416,South,0
+# Two Island (382) - Cape Brink (386)
+382,North,0,386,South,0
+# Three Island (387) - Three Island Port (391)
+387,South,0,391,North,0
+# Bond Bridge (392) - Three Island (387)
+392,East,2,387,West,0
+# Bond Bridge (392) - Three Island Port (391)
+392,East,42,391,West,0
