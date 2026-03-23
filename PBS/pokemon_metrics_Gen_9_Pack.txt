@@ -966,8 +966,6 @@ FrontSprite = 0,7
 ShadowX = 0
 ShadowSize = 2
 #-------------------------------
-# PLZA
-#-------------------------------
 [RAICHU,2]
 BackSprite = 2,50
 FrontSprite = 0,18
@@ -1165,12 +1163,6 @@ BackSprite = 0,50
 FrontSprite = -1,5
 ShadowX = 0
 ShadowSize = 1
-#-------------------------------
-[DRAGALGE,1]
-BackSprite = 8,54
-FrontSprite = 0,6
-ShadowX = 0
-ShadowSize = 2
 #-------------------------------
 [HAWLUCHA,1]
 BackSprite = 0,48

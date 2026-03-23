@@ -6239,6 +6239,7 @@ BackSprite = 3,50
 FrontSprite = 1,17
 ShadowX = 0
 ShadowSize = 1
+#-------------------------------
 [PIKACHU_2]
 BackSprite = 2,54
 FrontSprite = 5,28
@@ -6251,3 +6252,14 @@ FrontSprite = 2,31
 ShadowX = 0
 ShadowSize = 1
 #-------------------------------
+[CUBONE_1]
+BackSprite = 0,0
+FrontSprite = 0,0
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[MISSINGNO]
+BackSprite = 0,39
+FrontSprite = 0,25
+ShadowX = 0
+ShadowSize = 0
