@@ -8796,3 +8796,10 @@ FieldUse = TR
 Flags = Fling_130
 Move = OVERHEAT
 Description = An intense attack that also sharply reduces the user's Sp. Atk stat.
+[BIKEVOUCHER]
+Name = Bike Voucher
+NamePlural = Bike Vouchers
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = Take this voucher to the Bike Shop in Cerulean City and exchange it for a bicycle.
