@@ -84,9 +84,14 @@ module VMS
         return
       end
 
+original_owner = Marshal.load(Marshal.dump(trade_pokemon.owner))
+
 pbStartTrade(pokemon_index, trade_pokemon, trade_pokemon_name, trade_pokemon.owner.name)
 
-VMSTradeOwnerFix.restore_player_owner!(trade_pokemon) if VMSTradeOwnerFix.original_owner_matches_player?(trade_pokemon)
+received_pokemon = $player.party[pokemon_index]
+if received_pokemon
+  received_pokemon.owner = original_owner
+end
 
 $game_temp.vms[:state] = [:idle, nil]
 
