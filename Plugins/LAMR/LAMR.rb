@@ -147,9 +147,9 @@ class PokemonPartyScreen
               screen = PokemonRegionMapScreen.new(scene)
               ret = screen.pbStartFlyScreen
               if ret
-                $PokemonTemp.flydata=ret
-                return [pkmn,pkmn.moves[i].id]
-              end
+  $game_temp.fly_destination = ret
+  return [pkmn, pkmn.moves[i].id]
+end
               @scene.pbStartScene(@party,
                 (@party.length>1) ? _INTL("Choose a Pokémon.") : _INTL("Choose Pokémon or cancel."))
               break
