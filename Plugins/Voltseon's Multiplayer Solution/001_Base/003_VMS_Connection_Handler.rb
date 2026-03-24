@@ -1,36 +1,32 @@
 module VMS
-  require 'socket'
+  require "socket"
   require "zlib"
 
   #---------------------------------------------------------------------------
-  # Follower packet keys
+  # Stable follower packet keys
   #---------------------------------------------------------------------------
   PACKET_KEYS[:follower_active]    ||= 31
   PACKET_KEYS[:follower_graphic]   ||= 32
   PACKET_KEYS[:follower_direction] ||= 33
-  PACKET_KEYS[:follower_x]         ||= 34
-  PACKET_KEYS[:follower_y]         ||= 35
-  PACKET_KEYS[:follower_real_x]    ||= 36
-  PACKET_KEYS[:follower_real_y]    ||= 37
-  PACKET_KEYS[:follower_pattern]   ||= 38
-  PACKET_KEYS[:follower_offset_x]  ||= 39
-  PACKET_KEYS[:follower_offset_y]  ||= 40
-  PACKET_KEYS[:follower_opacity]   ||= 41
+
+  REVERSE_KEYS[31] = :follower_active
+  REVERSE_KEYS[32] = :follower_graphic
+  REVERSE_KEYS[33] = :follower_direction
 
   # Usage: VMS.join(id #<Integer>) (connects to the server with the specified ID)
-  def self.join(id=-1)
-    if id == -1 # Invalid ID
+  def self.join(id = -1)
+    if id == -1
       VMS.log("No ID specified", true)
       return
     end
-    if !$game_temp.vms[:socket].nil? # Already connected
+    if !$game_temp.vms[:socket].nil?
       VMS.log("Already connected to a server")
       return
     end
-    # Determine connection parameters based on runtime server type
+
     host = $game_temp.vms[:using_external_server] ? VMS::EXTERNALHOST : VMS.target_host
     port = $game_temp.vms[:using_external_server] ? VMS::EXTERNALPORT : VMS::PORT
-    # Create socket
+
     begin
       if VMS::USE_TCP
         socket = TCPSocket.new(host, port)
@@ -45,29 +41,29 @@ module VMS
     ensure
       return if socket.nil?
     end
-    # Initialize variables
+
     $game_temp.vms[:cluster] = id
     player_data = VMS.generate_player_data
     $game_temp.vms[:socket] = socket
-    # Send connect message
+
     VMS.send_message(["connect", player_data])
     VMS.log("Connected to server")
   end
 
   # Usage: VMS.leave (disconnects from the server)
   def self.leave(show_message = true)
-    # Only stop integrated server if not using external server
     VMS::IntegratedServer.stop if !$game_temp.vms[:using_external_server] && defined?(VMS::IntegratedServer)
-    if $game_temp.vms[:socket].nil? # Not connected
+
+    if $game_temp.vms[:socket].nil?
       VMS.log("Not connected to a server") if show_message
       return
     end
+
     VMS.clear_events
-    # Send disconnect message
     VMS.send_message(["disconnect", VMS.generate_player_data])
-    # Close socket
+
     $game_temp.vms[:socket].close
-    # Reset variables
+
     System.set_window_title(System.game_title) if VMS::SHOW_PING
     $game_temp.vms[:socket] = nil
     $game_temp.vms[:cluster] = -1
@@ -77,14 +73,15 @@ module VMS
     $game_temp.vms[:players] = {}
     $game_temp.vms[:online_variables] = {}
     $game_temp.vms[:using_external_server] = false
+
     VMS.log("Disconnected from server") if show_message
     VMS.message(VMS::DISCONNECTED_MESSAGE) if !(VMS::DISCONNECTED_MESSAGE.nil? || VMS::DISCONNECTED_MESSAGE == "" || !show_message)
   end
 
   # Usage: VMS.update (sends and receives data from the server)
   def self.update
-    return if $game_temp.vms[:socket].nil? # Not connected
-    # Show ping
+    return if $game_temp.vms[:socket].nil?
+
     if VMS::SHOW_PING
       $game_temp.vms[:ping_log].push((VMS.ping * 500).round)
       $game_temp.vms[:ping_log].shift if $game_temp.vms[:ping_log].size > 50
@@ -93,32 +90,44 @@ module VMS
       cluster_str = cluster_id && cluster_id >= 0 ? " [Cluster #{cluster_id}]" : ""
       System.set_window_title(System.game_title + (ping != -1 ? " (#{ping}ms)" : "") + cluster_str)
     end
-    # Actually communicate with the server
+
     begin
-      # Send update message
       if VMS::TICK_RATE == 0 || Graphics.frame_count % (60 / VMS::TICK_RATE) == 0
         send_data = VMS.generate_player_data
         own_player = VMS.get_self
-        update_data = own_player.nil? ? send_data : send_data.reject do |key, value|
-          sym = VMS::REVERSE_KEYS[key]
-          sym != :state && sym != :cluster_id && sym != :id && sym != :heartbeat &&
-          ((!value.is_a?(Array) && own_player.instance_variable_get("@#{sym}") == value) ||
-          (value.is_a?(Array) && VMS.array_compare(own_player.instance_variable_get("@#{sym}"), value)))
+
+        update_data = if own_player.nil?
+          send_data
+        else
+          send_data.reject do |key, value|
+            sym = VMS::REVERSE_KEYS[key]
+            next false if sym.nil?
+
+            sym != :state &&
+            sym != :cluster_id &&
+            sym != :id &&
+            sym != :heartbeat &&
+            (
+              (!value.is_a?(Array) && own_player.instance_variable_get("@#{sym}") == value) ||
+              (value.is_a?(Array) && VMS.array_compare(own_player.instance_variable_get("@#{sym}"), value))
+            )
+          end
         end
+
         VMS.send_message(["update", update_data])
       end
-      # Receive data
+
       data = $game_temp.vms[:socket].read_nonblock(65536, exception: false)
-      # No data received
+
       if data == :wait_readable || data == :wait_writable || data.nil?
         $game_temp.vms[:time_since_last_message] += Graphics.delta
         VMS.leave if $game_temp.vms[:time_since_last_message] > VMS::TIMEOUT_SECONDS
         return
       end
-      # Process data
+
       $game_temp.vms[:time_since_last_message] = 0
       data = Marshal.load(Zlib::Inflate.inflate(data))
-      # Disconnect data
+
       if data.is_a?(Symbol)
         if [:disconnect, :disconnect_full].include?(data)
           suffix = data == :disconnect_full ? " (server full)" : ""
@@ -138,7 +147,7 @@ module VMS
           return
         end
       end
-      # Check if a player has disconnected
+
       if data[0] == :disconnect_player
         id = data[1]
         player = VMS.get_player(id)
@@ -149,21 +158,20 @@ module VMS
         $game_temp.vms[:players].delete(id)
         return
       end
-      # Actually use the data
+
       VMS.process(data)
+
     rescue Errno::ECONNREFUSED, Errno::ECONNRESET
-      # Server is not active
       VMS.log("Server is not active", true)
       VMS.leave(false)
       VMS.message(VMS::SERVER_INACTIVE_MESSAGE) if !(VMS::DISCONNECTED_MESSAGE.nil? || VMS::DISCONNECTED_MESSAGE == "")
       return
     rescue => e
-      # Something went wrong so disconnect
       VMS.log("Failed to communicate with server: #{e}", true)
       VMS.leave
       return
     end
-    # Check all players for timeouts (and disconnect them if necessary)
+
     VMS.get_players.each do |player|
       next if player.id == $player.id
       VMS.check_timeout(player)
@@ -254,33 +262,16 @@ module VMS
     return if player.follower_rf_event.nil?
 
     ev = player.follower_rf_event[:event]
+    fx, fy = VMS.remote_follower_coords(player)
 
-    ev.x = player.follower_x
-    ev.y = player.follower_y
+    ev.x = fx
+    ev.y = fy
     ev.direction = player.follower_direction || player.direction
-    ev.pattern = player.follower_pattern if ev.respond_to?(:pattern=)
     ev.character_name = player.follower_graphic
-    ev.opacity = player.follower_opacity || 255
+    ev.opacity = 255
     ev.through = true
     ev.step_anime = true if ev.respond_to?(:step_anime=)
     ev.walk_anime = true if ev.respond_to?(:walk_anime=)
-    ev.x_offset = player.follower_offset_x if ev.respond_to?(:x_offset=)
-    ev.y_offset = player.follower_offset_y if ev.respond_to?(:y_offset=)
-
-    if ev.respond_to?(:real_x=) && ev.respond_to?(:real_y=)
-      real_distance = Math.sqrt((ev.real_x - player.follower_real_x) ** 2 + (ev.real_y - player.follower_real_y) ** 2)
-      if VMS::SMOOTH_MOVEMENT && real_distance < VMS::SNAP_DISTANCE
-        ev.real_x = Math.lerp(ev.real_x, player.follower_real_x, VMS::SMOOTH_MOVEMENT_ACCURACY)
-        ev.real_y = Math.lerp(ev.real_y, player.follower_real_y, VMS::SMOOTH_MOVEMENT_ACCURACY)
-      else
-        ev.real_x = player.follower_real_x
-        ev.real_y = player.follower_real_y
-      end
-    end
-
-    distance = $map_factory.getRelativePos($game_map.map_id, $game_player.x, $game_player.y, player.map_id, player.follower_x, player.follower_y)
-    distanceNorm = Math.sqrt(distance[0] ** 2 + distance[1] ** 2)
-    ev.opacity = 0 if distance[0].abs > VMS::CULL_DISTANCE || distance[1].abs > VMS::CULL_DISTANCE || distanceNorm > VMS::CULL_DISTANCE
 
     ev.calculate_bush_depth if ev.respond_to?(:calculate_bush_depth)
     ev.refresh if ev.respond_to?(:refresh)
@@ -288,51 +279,49 @@ module VMS
 
   # Usage: VMS.process(data #<Hash>) (processes data received from the server)
   def self.process(data)
-    # Sync seed
     VMS.sync_seed if VMS::SEED_SYNC && $game_temp.vms[:battle_player].nil?
-    # Iterate through players
+
     data.each do |pl|
-      # Check for online variables
       if pl[0] == :online_variables
         $game_temp.vms[:online_variables] = pl[1]
         next
       end
-      # Get player
+
       id_key = VMS::PACKET_KEYS[:id]
       hb_key = VMS::PACKET_KEYS[:heartbeat]
       id = pl[id_key]
       player = $game_temp.vms[:players][id]
       is_self = id == $player.id
-      if player.nil? # Player doesn't exist yet
-        # Create player
+
+      if player.nil?
         $game_temp.vms[:players][id] = VMS::Player.new(id, "", 0)
         player = $game_temp.vms[:players][id]
       end
-      # Update ping if this is the player
+
       $game_temp.vms[:ping_stamp] = pl[hb_key] if is_self
-      # Check if packet is new
+
       new_packet = pl[hb_key] <= player.heartbeat - VMS::ADDED_DELAY
       next if !VMS::HANDLE_MORE_PACKETS && new_packet
-      # Update player
+
       player.update(pl)
       player.is_new = new_packet
-      # Don't create event if player is self and SHOW_SELF is false
+
       next unless VMS::SHOW_SELF if is_self
-      # Create event if necessary
+
       if player.rf_event.nil? || player.rf_event[:event].erased?
-        if $map_factory.areConnected?(player.map_id, $game_map.map_id) # Map connection check
+        if $map_factory.areConnected?(player.map_id, $game_map.map_id)
           player.rf_event = VMS.create_event(player.map_id, id)
         end
       elsif $map_factory.areConnected?(player.map_id, $game_map.map_id)
-        if player.rf_event[:event].map_id != player.map_id # Map change check
+        if player.rf_event[:event].map_id != player.map_id
           Rf.delete_event(player.rf_event) if VMS.event_deletion_possible?(player)
           player.rf_event = VMS.create_event(player.map_id, id)
         end
-      else # Event is on a different map, so delete it
+      else
         Rf.delete_event(player.rf_event) if VMS.event_deletion_possible?(player)
         player.rf_event = nil
       end
-      # Handle player
+
       VMS.handle_player(player)
       VMS.handle_follower(player)
     end
@@ -351,13 +340,14 @@ module VMS
   # Usage: VMS.clean_up_events (deletes all player events that are no longer necessary)
   def self.clean_up_events
     return unless $game_map
+
     $game_map.events.each_value do |event|
       next if event.nil?
       next if event.erased?
       next unless event.name
 
       if event.name.include?("vms_player")
-        id = (event.name.gsub("vms_player_","")).to_i
+        id = (event.name.gsub("vms_player_", "")).to_i
         player = VMS.get_player(id)
         if player.nil? || !$map_factory.areConnected?(player.map_id, $game_map.map_id)
           event.character_name = ""
@@ -365,7 +355,7 @@ module VMS
           event.erase
         end
       elsif event.name.include?("vms_follower")
-        id = (event.name.gsub("vms_follower_","")).to_i
+        id = (event.name.gsub("vms_follower_", "")).to_i
         player = VMS.get_player(id)
         if player.nil? || !$map_factory.areConnected?(player.map_id, $game_map.map_id)
           event.character_name = ""
@@ -378,18 +368,17 @@ module VMS
 
   # Usage: VMS.send_message(message #<String>) (sends a message to the server)
   def self.send_message(message)
-    if $game_temp.vms[:socket].nil? # Not connected
+    if $game_temp.vms[:socket].nil?
       VMS.log("Not connected to a server")
       return
     end
-    # Send message
+
     message = Zlib::Deflate.deflate(Marshal.dump(message), Zlib::BEST_SPEED)
     $game_temp.vms[:socket].send(message, 0)
   end
 
   # Usage: VMS.generate_player_data (generates a hash of the player's data)
   def self.generate_player_data
-    # Generate party data
     party = []
     $player.party.each do |pkmn|
       party.push(VMS.hash_pokemon(pkmn))
@@ -397,14 +386,13 @@ module VMS
 
     follower_event = VMS.local_follower_event
 
-    # Generate player data
     data = {}
-    data[VMS::PACKET_KEYS[:cluster_id]]       = $game_temp.vms[:cluster] || -1        # What cluster to connect to
-    data[VMS::PACKET_KEYS[:id]]               = $player.id                            # Player ID
-    data[VMS::PACKET_KEYS[:heartbeat]]        = Time.now                              # Used to calculate ping
-    data[VMS::PACKET_KEYS[:game_name]]        = System.game_title                     # The name of the game
-    data[VMS::PACKET_KEYS[:game_version]]     = Settings::GAME_VERSION                # The version of the game
-    data[VMS::PACKET_KEYS[:online_variables]] = $game_temp.vms[:online_variables]     # Online variables
+    data[VMS::PACKET_KEYS[:cluster_id]]       = $game_temp.vms[:cluster] || -1
+    data[VMS::PACKET_KEYS[:id]]               = $player.id
+    data[VMS::PACKET_KEYS[:heartbeat]]        = Time.now
+    data[VMS::PACKET_KEYS[:game_name]]        = System.game_title
+    data[VMS::PACKET_KEYS[:game_version]]     = Settings::GAME_VERSION
+    data[VMS::PACKET_KEYS[:online_variables]] = $game_temp.vms[:online_variables]
     data[VMS::PACKET_KEYS[:party]]            = party
     data[VMS::PACKET_KEYS[:name]]             = $player.name
     data[VMS::PACKET_KEYS[:trainer_type]]     = $player.trainer_type
@@ -429,17 +417,9 @@ module VMS
     data[VMS::PACKET_KEYS[:state]]            = $game_temp.vms[:state]
     data[VMS::PACKET_KEYS[:busy]]             = !VMS.interaction_possible?
 
-      data[VMS::PACKET_KEYS[:follower_active]]    = !follower_event.nil?
+    data[VMS::PACKET_KEYS[:follower_active]]    = !follower_event.nil?
     data[VMS::PACKET_KEYS[:follower_graphic]]   = follower_event ? follower_event.character_name : ""
     data[VMS::PACKET_KEYS[:follower_direction]] = follower_event ? follower_event.direction : 2
-    data[VMS::PACKET_KEYS[:follower_x]]         = follower_event ? follower_event.x : 0
-    data[VMS::PACKET_KEYS[:follower_y]]         = follower_event ? follower_event.y : 0
-    data[VMS::PACKET_KEYS[:follower_real_x]]    = follower_event ? follower_event.real_x : 0
-    data[VMS::PACKET_KEYS[:follower_real_y]]    = follower_event ? follower_event.real_y : 0
-    data[VMS::PACKET_KEYS[:follower_pattern]]   = follower_event ? follower_event.pattern : 0
-    data[VMS::PACKET_KEYS[:follower_offset_x]]  = follower_event && follower_event.respond_to?(:x_offset) ? follower_event.x_offset : 0
-    data[VMS::PACKET_KEYS[:follower_offset_y]]  = follower_event && follower_event.respond_to?(:y_offset) ? follower_event.y_offset : 0
-    data[VMS::PACKET_KEYS[:follower_opacity]]   = follower_event ? follower_event.opacity : 255
 
     return data
   end

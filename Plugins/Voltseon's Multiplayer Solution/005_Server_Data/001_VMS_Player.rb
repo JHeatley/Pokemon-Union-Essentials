@@ -10,29 +10,37 @@ module VMS
   class Player
     # Necessary for connections
     attr_reader :id, :address, :port, :heartbeat
+
     # Necessary for game
-    attr_accessor :name, :map_id, :x, :y, :real_x, :real_y, :trainer_type, :direction, :pattern, :graphic
+    attr_accessor :name, :map_id, :x, :y, :real_x, :real_y
+    attr_accessor :trainer_type, :direction, :pattern, :graphic
+
     # Additional information
-    attr_accessor :party, :animation, :offset_x, :offset_y, :opacity, :stop_animation, :rf_event
+    attr_accessor :party, :animation, :offset_x, :offset_y, :opacity
+    attr_accessor :stop_animation, :rf_event
+
     # Jumping information
     attr_accessor :jump_offset, :jumping_on_spot
+
     # Other data
     attr_accessor :surfing, :diving, :surf_base_coords
-    # Follower data
+
+    # Follower data (stable baseline only)
     attr_accessor :follower_active, :follower_graphic, :follower_direction, :follower_rf_event
-    attr_accessor :follower_x, :follower_y, :follower_real_x, :follower_real_y
-    attr_accessor :follower_pattern, :follower_offset_x, :follower_offset_y, :follower_opacity
+
     # Custom information
     attr_accessor :state, :busy
 
     def initialize(id, address, port)
       # Used to check what values can be nil
       @can_be_nil = [:surf_base_coords, :rf_event, :follower_rf_event]
+
       # Required for connections
       @id = id
       @address = address
       @port = port
       @heartbeat = Time.now
+
       # Necessary for game
       @name = ""
       @map_id = 0
@@ -41,9 +49,10 @@ module VMS
       @real_x = 0
       @real_y = 0
       @trainer_type = nil
-      @direction = 0
+      @direction = 2
       @pattern = 0
       @graphic = ""
+
       # Additional information
       @party = []
       @animation = []
@@ -52,26 +61,22 @@ module VMS
       @opacity = 255
       @stop_animation = false
       @rf_event = nil
+
       # Jumping information
       @jump_offset = 0
       @jumping_on_spot = false
+
       # Other data
       @surfing = false
       @diving = false
       @surf_base_coords = nil
-      # Follower data
+
+      # Follower data (stable baseline only)
       @follower_active = false
       @follower_graphic = ""
       @follower_direction = 2
       @follower_rf_event = nil
-      @follower_x = 0
-      @follower_y = 0
-      @follower_real_x = 0
-      @follower_real_y = 0
-      @follower_pattern = 0
-      @follower_offset_x = 0
-      @follower_offset_y = 0
-      @follower_opacity = 255
+
       # Custom information
       @state = [:idle, nil]
       @busy = false
@@ -89,7 +94,7 @@ module VMS
         end
 
         # Special handling for party data - deserialize from strings to Pokemon objects
-        if key == :party && value.is_a?(Array) && !value.empty?
+        if key == :party && value.is_a?(Array)
           deserialized_party = []
           value.each do |pkmn_data|
             next if pkmn_data.nil?
@@ -111,7 +116,7 @@ module VMS
       instance_variables.each do |var|
         sym = var.to_s.delete("@").to_sym
         next unless VMS::PACKET_KEYS.key?(sym)
-        next if [:address, :port, :can_be_nil, :follower_rf_event].include?(sym)
+        next if [:address, :port, :can_be_nil, :rf_event, :follower_rf_event].include?(sym)
 
         value = instance_variable_get(var)
         value = (value * 1000).round / 1000 if value.is_a?(Float)
