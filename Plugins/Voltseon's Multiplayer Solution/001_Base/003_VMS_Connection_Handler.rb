@@ -232,12 +232,16 @@ module VMS
       return
     end
 
+    created_now = false
+
     if player.respond_to?(:follower_rf_event)
       if player.follower_rf_event.nil? || player.follower_rf_event[:event].erased?
         player.follower_rf_event = VMS.create_follower_event(player.map_id, player.id)
+        created_now = true
       elsif player.follower_rf_event[:event].map_id != player.map_id
         VMS.delete_follower_event(player)
         player.follower_rf_event = VMS.create_follower_event(player.map_id, player.id)
+        created_now = true
       end
     else
       return
@@ -247,17 +251,58 @@ module VMS
 
     ev = player.follower_rf_event[:event]
     fx, fy = VMS.remote_follower_coords(player)
+    target_real_x = fx * Game_Map::REAL_RES_X
+    target_real_y = fy * Game_Map::REAL_RES_Y
 
-    ev.x = fx
-    ev.y = fy
-    ev.real_x = fx * Game_Map::REAL_RES_X if ev.respond_to?(:real_x=)
-    ev.real_y = fy * Game_Map::REAL_RES_Y if ev.respond_to?(:real_y=)
+    ev.character_name = graphic if ev.character_name != graphic
     ev.direction = player.follower_direction || player.direction
-    ev.character_name = graphic
     ev.opacity = player.opacity || 255
     ev.through = true
     ev.walk_anime = true if ev.respond_to?(:walk_anime=)
     ev.step_anime = true if ev.respond_to?(:step_anime=)
+
+    current_real_x = ev.respond_to?(:real_x) ? ev.real_x : target_real_x
+    current_real_y = ev.respond_to?(:real_y) ? ev.real_y : target_real_y
+
+    snap_distance_x = Game_Map::REAL_RES_X * 2
+    snap_distance_y = Game_Map::REAL_RES_Y * 2
+
+    if created_now || (current_real_x - target_real_x).abs > snap_distance_x || (current_real_y - target_real_y).abs > snap_distance_y
+      ev.x = fx
+      ev.y = fy
+      ev.real_x = target_real_x if ev.respond_to?(:real_x=)
+      ev.real_y = target_real_y if ev.respond_to?(:real_y=)
+    else
+      step_x = [Game_Map::REAL_RES_X / 4, 1].max
+      step_y = [Game_Map::REAL_RES_Y / 4, 1].max
+
+      if ev.respond_to?(:real_x=)
+        diff_x = target_real_x - current_real_x
+        if diff_x.abs <= step_x
+          ev.real_x = target_real_x
+        else
+          ev.real_x = current_real_x + (diff_x < 0 ? -step_x : step_x)
+        end
+      end
+
+      if ev.respond_to?(:real_y=)
+        diff_y = target_real_y - current_real_y
+        if diff_y.abs <= step_y
+          ev.real_y = target_real_y
+        else
+          ev.real_y = current_real_y + (diff_y < 0 ? -step_y : step_y)
+        end
+      end
+
+      if ev.respond_to?(:real_x) && ev.respond_to?(:real_y)
+        ev.x = (ev.real_x.to_f / Game_Map::REAL_RES_X).round
+        ev.y = (ev.real_y.to_f / Game_Map::REAL_RES_Y).round
+      else
+        ev.x = fx
+        ev.y = fy
+      end
+    end
+
     ev.calculate_bush_depth if ev.respond_to?(:calculate_bush_depth)
     ev.refresh if ev.respond_to?(:refresh)
   end
