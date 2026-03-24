@@ -72,4 +72,4 @@ WalkCharset = trainer_POKEMONTRAINER_Dawn
 RunCharset = pc8_run
 CycleCharset = pc8_run_bike
 SurfCharset = Lapras
-FishCharset = pc8_run_fish_offset
+FishCharset = pc8_fish_offset

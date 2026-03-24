@@ -2,9 +2,9 @@
 #   Developer-Configurable Constant Defaults
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-FAST_PICK_ITEM_ACTIVE = 1  # 1 = Items picked up get the BOTW anim.       0 = Old anim.
-FAST_PICK_BERRY_ACTIVE = 1 # 1 = Berries harvested up get the BOTW anim.  0 = Old anim.
-FAST_ITEM_GET_SE = "Voltorb Flip point" # Sound that will play after obtaining an item.
+FAST_PICK_ITEM_ACTIVE  = 1   # 1 = Items picked up get the BOTW anim.       0 = Old anim.
+FAST_PICK_BERRY_ACTIVE = 1   # 1 = Berries harvested get the BOTW anim.     0 = Old anim.
+FAST_ITEM_GET_SE       = "Voltorb Flip point"   # Sound that will play after obtaining an item.
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 #   Menu Handlers
@@ -31,11 +31,10 @@ MenuHandlers.add(:options_menu, :botw_berry_harvest, {
 })
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-#   UI        (Ported from v18.1)
+#   UI
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-# UI Object with timer, animation and other relevant data
-class UISprite < Sprite # Originally UISprite < SpriteWrapper, I assume SpriteWrapper is now Sprite???
+class UISprite < Sprite
   attr_accessor :scroll
   attr_accessor :timer
 
@@ -44,97 +43,105 @@ class UISprite < Sprite # Originally UISprite < SpriteWrapper, I assume SpriteWr
     self.bitmap = bitmap
     self.x = x
     self.y = y
+    self.z = 999999
+    self.zoom_x = 0.5
+    self.zoom_y = 0.5
     @scroll = false
     @timer = 0
   end
 
+  def scaled_width
+    return self.bitmap.width * self.zoom_x
+  end
+
+  def scaled_height
+    return self.bitmap.height * self.zoom_y
+  end
+
   def update
-    return if self.disposed?
+    return if disposed?
     @timer += 1
     case @timer
-    when (0..10)
-      self.x += self.bitmap.width / 10
-    when (100..110)
-      self.x -= self.bitmap.width / 10
+    when 0..10
+      self.x += scaled_width / 10.0
+    when 100..110
+      self.x -= scaled_width / 10.0
     when 111
-      self.dispose
+      dispose
     end
   end
 end
 
-
 class Spriteset_Map
-  # Handles all UI objects in order to control their positions on screen, timing 
-  # and disposal. Acts like a Queue.
   class UIHandler
     def initialize
-      @viewport = Viewport.new(0, 0, Graphics.width, Graphics.height) # Uses its own viewport to make it compatible with both v16 and v17.
-      @viewport.z = 9999
+      @viewport = Viewport.new(0, 0, Graphics.width, Graphics.height)
+      @viewport.z = 999999
       @sprites = []
     end
 
     def addSprite(x, y, bitmap)
-      @sprites.each{|sprite|
-        sprite.scroll = true
-      }
+      @sprites.each { |sprite| sprite.scroll = true }
       index = @sprites.length
       @sprites[index] = UISprite.new(x, y, bitmap, @viewport)
     end
 
     def update
       removed = []
-      @sprites.each_index{|key|
+      @sprites.each_index do |key|
         sprite = @sprites[key]
+        next if !sprite || sprite.disposed?
+
         if sprite.scroll
           sprite2 = @sprites[key + 1]
-          if sprite.x >= sprite2.x && sprite.x <= sprite2.bitmap.width + sprite2.x
-            if sprite.y >= sprite2.y && sprite.y <= sprite2.bitmap.height + sprite2.y + 5
-              sprite.y += 5
+          if sprite2 && !sprite2.disposed?
+            if sprite.x >= sprite2.x && sprite.x <= sprite2.x + sprite2.scaled_width
+              if sprite.y >= sprite2.y && sprite.y <= sprite2.y + sprite2.scaled_height + 5
+                sprite.y += 5
+              else
+                sprite.scroll = false
+              end
+            else
+              sprite.scroll = false
             end
           else
             sprite.scroll = false
           end
         end
+
         sprite.update
-        if sprite.disposed?
-          removed.push(sprite)
-        end
-      }
-      
-      removed.each{|sprite|
-        @sprites.delete(sprite)
-      }
+        removed.push(sprite) if sprite.disposed?
+      end
+
+      removed.each { |sprite| @sprites.delete(sprite) }
     end
-        
+
     def dispose
-      @sprites.each{|sprite|
-        if !sprite.disposed?
-          sprite.dispose
-        end
-      }
-      @viewport.dispose
+      @sprites.each do |sprite|
+        sprite.dispose if sprite && !sprite.disposed?
+      end
+      @viewport.dispose if @viewport && !@viewport.disposed?
     end
   end
-  
-  alias :disposeOld :dispose
-  alias :updateOld :update
+
+  alias botw_item_gathering_dispose_old dispose
+  alias botw_item_gathering_update_old update
 
   def dispose
     @ui.dispose if @ui
-    disposeOld
+    botw_item_gathering_dispose_old
   end
 
   def update
     @ui = UIHandler.new if !@ui
     @ui.update
-    updateOld
+    botw_item_gathering_update_old
   end
 
   def ui
     return @ui
   end
 end
-
 
 class Scene_Map
   def addSprite(x, y, bitmap)
@@ -143,7 +150,7 @@ class Scene_Map
 end
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-#   Animation        (Ported from v18.1)
+#   Animation
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 def itemAnim(item, qty)
@@ -153,56 +160,62 @@ def itemAnim(item, qty)
   shadow = Color.new(72, 80, 88)
   itemData = GameData::Item.get(item)
   move = GameData::Move.get(itemData.move) if itemData.is_machine?
+
   if itemData.is_machine?
     itemname = "#{itemData.portion_name} #{move.name}"
     if qty > 1
-      textpos = [[_INTL("{1} x{2}", itemname,qty), 5, 15, false, base, shadow]]
+      textpos = [[_INTL("{1} x{2}", itemname, qty), 5, 15, false, base, shadow]]
     else
       textpos = [[_INTL("{1}", itemname), 5, 15, false, base, shadow]]
     end
   else
     if qty > 1
-      textpos = [[_INTL("{1} x{2}", itemData.portion_name_plural,qty), 5, 15, false, base, shadow]]
+      textpos = [[_INTL("{1} x{2}", itemData.portion_name_plural, qty), 5, 15, false, base, shadow]]
     else
       textpos = [[_INTL("{1}", itemData.portion_name), 5, 15, false, base, shadow]]
     end
   end
-  pbDrawTextPositions(bitmap,textpos)
+
+  pbDrawTextPositions(bitmap, textpos)
+
   if itemData.is_machine?
-    if pbResolveBitmap("Graphics/Items/machine_#{move::type.to_s}")
-      bitmap.blt(274,5,Bitmap.new("Graphics/Items/machine_#{move::type.to_s}"),Rect.new(0,0,48,48))
+    if pbResolveBitmap("Graphics/Items/machine_#{move.type}")
+      bitmap.blt(274, 5, Bitmap.new("Graphics/Items/machine_#{move.type}"), Rect.new(0, 0, 48, 48))
     end
   else
-    if pbResolveBitmap("Graphics/Items/#{itemData::id.to_s}")
-      bitmap.blt(274,5,Bitmap.new("Graphics/Items/#{itemData::id.to_s}"),Rect.new(0,0,48,48))
+    if pbResolveBitmap("Graphics/Items/#{itemData.id}")
+      bitmap.blt(274, 5, Bitmap.new("Graphics/Items/#{itemData.id}"), Rect.new(0, 0, 48, 48))
     end
   end
+
   pbSEPlay(FAST_ITEM_GET_SE)
-  $scene.addSprite(-bitmap.width, 200, bitmap)
+  $scene.addSprite(-(bitmap.width * 0.5), 200, bitmap)
 end
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-#   Method Overrides        (Ported from v18.1)
+#   Method Overrides
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-alias :oldItem :pbItemBall
-def pbItemBall(item,quantity = 1)
-  if FAST_PICK_ITEM_ACTIVE == 0 # Old Animation
-    oldItem(item, quantity)
-  else # New Animation
+alias botw_item_gathering_oldItem pbItemBall
+def pbItemBall(item, quantity = 1)
+  if FAST_PICK_ITEM_ACTIVE == 0
+    botw_item_gathering_oldItem(item, quantity)
+  else
     item = GameData::Item.get(item)
     return false if !item || quantity < 1
+
     itemname = (quantity > 1) ? item.portion_name_plural : item.portion_name
     pocket = item.pocket
     move = item.move
     if item.is_machine?
       itemname += " #{GameData::Move.get(move).name}"
     end
-    if $bag.add(item, quantity)   # If item can be picked up 
+
+    if $bag.add(item, quantity)
       itemAnim(item, quantity)
       return true
-    else   # Can't add the item
-      if item.is_machine?   # TM or HM
+    else
+      if item.is_machine?
         if quantity > 1
           pbMessage(_INTL("You found {1} \\c[1]{2} {3}\\c[0]!", quantity, itemname, GameData::Move.get(move).name))
         else
@@ -221,24 +234,27 @@ def pbItemBall(item,quantity = 1)
   end
 end
 
-alias :oldBerry :pbPickBerry
-def pbPickBerry(berry, qty=1)
-  if FAST_PICK_BERRY_ACTIVE == 0 # Old Animation
-    oldBerry(berry, qty)
-  else # New Animation
-    interp=pbMapInterpreter
-    thisEvent=interp.get_self
-    berryData=interp.getVariable
+alias botw_item_gathering_oldBerry pbPickBerry
+def pbPickBerry(berry, qty = 1)
+  if FAST_PICK_BERRY_ACTIVE == 0
+    botw_item_gathering_oldBerry(berry, qty)
+  else
+    interp = pbMapInterpreter
+    thisEvent = interp.get_self
+    berryData = interp.getVariable
     berry = GameData::Item.get(berry)
-    itemname=(qty > 1) ? GameData::Item.get(berry).portion_name_plural : GameData::Item.get(berry).portion_name
+    itemname = (qty > 1) ? berry.portion_name_plural : berry.portion_name
+
     if !$bag.can_add?(berry, qty)
       pbMessage(_INTL("Too bad...\nThe Bag is full..."))
       return false
     end
+
     $stats.berry_plants_picked += 1
     if qty >= GameData::BerryPlant.get(berry.id).maximum_yield
       $stats.max_yield_berry_plants += 1
     end
+
     $bag.add(berry, qty)
     itemAnim(berry, qty)
     pbSetSelfSwitch(thisEvent.id, "A", true)
