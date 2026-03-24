@@ -218,6 +218,25 @@ module VMS
     end
   end
 
+  def self.remote_follower_real_target(player, fx, fy)
+    target_real_x, target_real_y = VMS.remote_follower_real_target(player, fx, fy)
+
+    # Add a small extra trailing offset so the follower sits a bit farther back
+    # than the snapped "one tile behind" guess. This helps the follower feel
+    # less crowded against the remote player without changing packet formats.
+    trail_x = Game_Map::REAL_RES_X / 3
+    trail_y = Game_Map::REAL_RES_Y / 3
+
+    case player.direction
+    when 2 then target_real_y -= trail_y
+    when 4 then target_real_x += trail_x
+    when 6 then target_real_x -= trail_x
+    when 8 then target_real_y += trail_y
+    end
+
+    return [target_real_x, target_real_y]
+  end
+
   def self.handle_follower(player)
     return if player.nil?
     return unless player.respond_to?(:follower_active)
@@ -251,8 +270,7 @@ module VMS
 
     ev = player.follower_rf_event[:event]
     fx, fy = VMS.remote_follower_coords(player)
-    target_real_x = fx * Game_Map::REAL_RES_X
-    target_real_y = fy * Game_Map::REAL_RES_Y
+    target_real_x, target_real_y = VMS.remote_follower_real_target(player, fx, fy)
 
     ev.character_name = graphic if ev.character_name != graphic
     ev.direction = player.follower_direction || player.direction
@@ -273,8 +291,8 @@ module VMS
       ev.real_x = target_real_x if ev.respond_to?(:real_x=)
       ev.real_y = target_real_y if ev.respond_to?(:real_y=)
     else
-      step_x = [Game_Map::REAL_RES_X / 4, 1].max
-      step_y = [Game_Map::REAL_RES_Y / 4, 1].max
+      step_x = [Game_Map::REAL_RES_X / 6, 1].max
+      step_y = [Game_Map::REAL_RES_Y / 6, 1].max
 
       if ev.respond_to?(:real_x=)
         diff_x = target_real_x - current_real_x
@@ -295,8 +313,8 @@ module VMS
       end
 
       if ev.respond_to?(:real_x) && ev.respond_to?(:real_y)
-        ev.x = (ev.real_x.to_f / Game_Map::REAL_RES_X).round
-        ev.y = (ev.real_y.to_f / Game_Map::REAL_RES_Y).round
+        ev.x = ((ev.real_x.to_f + (Game_Map::REAL_RES_X / 2.0)) / Game_Map::REAL_RES_X).floor
+        ev.y = ((ev.real_y.to_f + (Game_Map::REAL_RES_Y / 2.0)) / Game_Map::REAL_RES_Y).floor
       else
         ev.x = fx
         ev.y = fy
