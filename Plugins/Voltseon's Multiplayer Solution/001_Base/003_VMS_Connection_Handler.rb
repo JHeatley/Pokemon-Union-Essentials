@@ -8,6 +8,14 @@ module VMS
   PACKET_KEYS[:follower_active]    ||= 31
   PACKET_KEYS[:follower_graphic]   ||= 32
   PACKET_KEYS[:follower_direction] ||= 33
+  PACKET_KEYS[:follower_x]         ||= 34
+  PACKET_KEYS[:follower_y]         ||= 35
+  PACKET_KEYS[:follower_real_x]    ||= 36
+  PACKET_KEYS[:follower_real_y]    ||= 37
+  PACKET_KEYS[:follower_pattern]   ||= 38
+  PACKET_KEYS[:follower_offset_x]  ||= 39
+  PACKET_KEYS[:follower_offset_y]  ||= 40
+  PACKET_KEYS[:follower_opacity]   ||= 41
 
   # Usage: VMS.join(id #<Integer>) (connects to the server with the specified ID)
   def self.join(id=-1)
@@ -246,18 +254,34 @@ module VMS
     return if player.follower_rf_event.nil?
 
     ev = player.follower_rf_event[:event]
-    fx, fy = VMS.remote_follower_coords(player)
 
-    ev.x = fx
-    ev.y = fy
-    ev.real_x = fx * Game_Map::REAL_RES_X if ev.respond_to?(:real_x=)
-    ev.real_y = fy * Game_Map::REAL_RES_Y if ev.respond_to?(:real_y=)
+    ev.x = player.follower_x
+    ev.y = player.follower_y
     ev.direction = player.follower_direction || player.direction
-    ev.character_name = graphic
-    ev.opacity = player.opacity || 255
+    ev.pattern = player.follower_pattern if ev.respond_to?(:pattern=)
+    ev.character_name = player.follower_graphic
+    ev.opacity = player.follower_opacity || 255
     ev.through = true
-    ev.walk_anime = true if ev.respond_to?(:walk_anime=)
     ev.step_anime = true if ev.respond_to?(:step_anime=)
+    ev.walk_anime = true if ev.respond_to?(:walk_anime=)
+    ev.x_offset = player.follower_offset_x if ev.respond_to?(:x_offset=)
+    ev.y_offset = player.follower_offset_y if ev.respond_to?(:y_offset=)
+
+    if ev.respond_to?(:real_x=) && ev.respond_to?(:real_y=)
+      real_distance = Math.sqrt((ev.real_x - player.follower_real_x) ** 2 + (ev.real_y - player.follower_real_y) ** 2)
+      if VMS::SMOOTH_MOVEMENT && real_distance < VMS::SNAP_DISTANCE
+        ev.real_x = Math.lerp(ev.real_x, player.follower_real_x, VMS::SMOOTH_MOVEMENT_ACCURACY)
+        ev.real_y = Math.lerp(ev.real_y, player.follower_real_y, VMS::SMOOTH_MOVEMENT_ACCURACY)
+      else
+        ev.real_x = player.follower_real_x
+        ev.real_y = player.follower_real_y
+      end
+    end
+
+    distance = $map_factory.getRelativePos($game_map.map_id, $game_player.x, $game_player.y, player.map_id, player.follower_x, player.follower_y)
+    distanceNorm = Math.sqrt(distance[0] ** 2 + distance[1] ** 2)
+    ev.opacity = 0 if distance[0].abs > VMS::CULL_DISTANCE || distance[1].abs > VMS::CULL_DISTANCE || distanceNorm > VMS::CULL_DISTANCE
+
     ev.calculate_bush_depth if ev.respond_to?(:calculate_bush_depth)
     ev.refresh if ev.respond_to?(:refresh)
   end
@@ -405,9 +429,17 @@ module VMS
     data[VMS::PACKET_KEYS[:state]]            = $game_temp.vms[:state]
     data[VMS::PACKET_KEYS[:busy]]             = !VMS.interaction_possible?
 
-    data[VMS::PACKET_KEYS[:follower_active]]    = !follower_event.nil?
+      data[VMS::PACKET_KEYS[:follower_active]]    = !follower_event.nil?
     data[VMS::PACKET_KEYS[:follower_graphic]]   = follower_event ? follower_event.character_name : ""
     data[VMS::PACKET_KEYS[:follower_direction]] = follower_event ? follower_event.direction : 2
+    data[VMS::PACKET_KEYS[:follower_x]]         = follower_event ? follower_event.x : 0
+    data[VMS::PACKET_KEYS[:follower_y]]         = follower_event ? follower_event.y : 0
+    data[VMS::PACKET_KEYS[:follower_real_x]]    = follower_event ? follower_event.real_x : 0
+    data[VMS::PACKET_KEYS[:follower_real_y]]    = follower_event ? follower_event.real_y : 0
+    data[VMS::PACKET_KEYS[:follower_pattern]]   = follower_event ? follower_event.pattern : 0
+    data[VMS::PACKET_KEYS[:follower_offset_x]]  = follower_event && follower_event.respond_to?(:x_offset) ? follower_event.x_offset : 0
+    data[VMS::PACKET_KEYS[:follower_offset_y]]  = follower_event && follower_event.respond_to?(:y_offset) ? follower_event.y_offset : 0
+    data[VMS::PACKET_KEYS[:follower_opacity]]   = follower_event ? follower_event.opacity : 255
 
     return data
   end

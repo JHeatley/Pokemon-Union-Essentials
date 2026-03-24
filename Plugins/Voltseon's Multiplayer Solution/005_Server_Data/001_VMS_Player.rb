@@ -20,6 +20,8 @@ module VMS
     attr_accessor :surfing, :diving, :surf_base_coords
     # Follower data
     attr_accessor :follower_active, :follower_graphic, :follower_direction, :follower_rf_event
+    attr_accessor :follower_x, :follower_y, :follower_real_x, :follower_real_y
+    attr_accessor :follower_pattern, :follower_offset_x, :follower_offset_y, :follower_opacity
     # Custom information
     attr_accessor :state, :busy
 
@@ -62,6 +64,14 @@ module VMS
       @follower_graphic = ""
       @follower_direction = 2
       @follower_rf_event = nil
+      @follower_x = 0
+      @follower_y = 0
+      @follower_real_x = 0
+      @follower_real_y = 0
+      @follower_pattern = 0
+      @follower_offset_x = 0
+      @follower_offset_y = 0
+      @follower_opacity = 255
       # Custom information
       @state = [:idle, nil]
       @busy = false
