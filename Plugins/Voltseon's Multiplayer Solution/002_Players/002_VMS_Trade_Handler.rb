@@ -84,22 +84,14 @@ module VMS
         return
       end
 
-original_owner = Marshal.load(Marshal.dump(trade_pokemon.owner))
+      pbStartTrade(pokemon_index, trade_pokemon, trade_pokemon_name, trade_pokemon.owner.name)
+      $game_temp.vms[:state] = [:idle, nil]
 
-pbStartTrade(pokemon_index, trade_pokemon, trade_pokemon_name, trade_pokemon.owner.name)
-
-received_pokemon = $player.party[pokemon_index]
-if received_pokemon
-  received_pokemon.owner = original_owner
-end
-
-$game_temp.vms[:state] = [:idle, nil]
-
-if Game.save
-  VMS.message("\\se[]" + _INTL("{1} saved the game.", $player.name) + "\\me[GUI save game]\\wtnp[30]")
-else
-  VMS.message("\\se[]" + _INTL("Save failed.") + "\\wtnp[30]")
-end
+      if Game.save
+        VMS.message("\\se[]" + _INTL("{1} saved the game.", $player.name) + "\\me[GUI save game]\\wtnp[30]")
+      else
+        VMS.message("\\se[]" + _INTL("Save failed.") + "\\wtnp[30]")
+      end
     end
   rescue StandardError => e
     VMS.log("An error occurred whilst trading: #{e.message}", true)
