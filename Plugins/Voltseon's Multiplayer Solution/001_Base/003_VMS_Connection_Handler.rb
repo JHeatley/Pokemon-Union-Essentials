@@ -219,7 +219,8 @@ module VMS
   end
 
   def self.remote_follower_real_target(player, fx, fy)
-    target_real_x, target_real_y = VMS.remote_follower_real_target(player, fx, fy)
+    target_real_x = fx * Game_Map::REAL_RES_X
+    target_real_y = fy * Game_Map::REAL_RES_Y
 
     # Add a small extra trailing offset so the follower sits a bit farther back
     # than the snapped "one tile behind" guess. This helps the follower feel
