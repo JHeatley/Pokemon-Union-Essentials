@@ -5,12 +5,21 @@ def pbInteractOverworldEncounter
   evt.lock
   pkmn = evt.variable[0]
   return pbDestroyOverworldEncounter(evt) if pkmn.nil?
+
   GameData::Species.play_cry_from_pokemon(pkmn)
   name = pkmn.name
   name_half = (name.length.to_f / 2).ceil
   textcol = VOESettings::COLORFUL_TEXT ? ((pkmn.genderless?) ? "" : (pkmn.male?) ? "\\b" : "\\r") : ""
   pbMessage(_INTL("{1}{2}!", textcol, name[0, name_half] + name[name_half] + name[name_half]))
-  decision = WildBattle.start(pkmn)
+
+  safari_maps = [155, 157, 159, 161]
+
+  if defined?(pbInSafari?) && pbInSafari? && safari_maps.include?($game_map.map_id)
+    decision = pbSafariBattle(pkmn.species, pkmn.level)
+  else
+    decision = WildBattle.start(pkmn)
+  end
+
   $game_temp.overworld_encounter = false
   pbDestroyOverworldEncounter(evt, decision == 4, decision != 4)
 end
