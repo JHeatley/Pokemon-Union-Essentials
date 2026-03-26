@@ -78,7 +78,7 @@ Autoplay BGM: true
 Autoplay BGS: false
 BGM: Pallet Town / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
-Event Count: 15
+Event Count: 16
 Events:
   - Event ID 1: Player's House Door @ (18,7) | Pages: 2
   - Event ID 2: Rival's House Door @ (27,7) | Pages: 2
@@ -93,8 +93,9 @@ Events:
   - Event ID 11: Oak Encounter 1 @ (24,1) | Pages: 2
   - Event ID 12: Prof. Oak @ (23,8) | Pages: 1
   - Event ID 13: Oak Encounter 2 @ (25,1) | Pages: 2
-  - Event ID 14: Oak Event 2 @ (2,1) | Pages: 1
+  - Event ID 14: EV014 @ (15,9) | Pages: 1
   - Event ID 15: EV015 @ (0,1) | Pages: 1
+  - Event ID 16: EV016 @ (23,14) | Pages: 2
 
 [Map 006]
 Name: Oak's Lab
@@ -220,7 +221,7 @@ Events:
 Name: Viridian City
 Parent ID: 4
 Order: 10
-Expanded: false
+Expanded: true
 File: Data/Map010.rxdata
 Width: 50
 Height: 40
@@ -319,8 +320,9 @@ Autoplay BGM: true
 Autoplay BGS: false
 BGM: Pokémon Gym / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
-Event Count: 14
+Event Count: 26
 Events:
+  - Event ID 1: Arrow @ (19,2) | Pages: 1
   - Event ID 2: Black Belt Takashi Sight(3) @ (10,2) | Pages: 2
   - Event ID 3: Cooltrainer Samuel Sight(3) @ (6,8) | Pages: 2
   - Event ID 4: Leader Giovanni @ (2,2) | Pages: 3
@@ -334,7 +336,18 @@ Events:
   - Event ID 12: Area Transition Arrow @ (17,22) | Pages: 1
   - Event ID 13: Gym Plaque @ (15,20) | Pages: 2
   - Event ID 14: Gym Plaque @ (19,20) | Pages: 2
+  - Event ID 15: Arrow @ (18,3) | Pages: 1
   - Event ID 16: Gym Man @ (16,20) | Pages: 2
+  - Event ID 17: Arrow @ (11,3) | Pages: 1
+  - Event ID 18: Arrow @ (19,14) | Pages: 1
+  - Event ID 19: Arrow @ (16,13) | Pages: 1
+  - Event ID 20: Arrow @ (4,10) | Pages: 1
+  - Event ID 21: Arrow @ (5,17) | Pages: 1
+  - Event ID 22: Arrow @ (4,18) | Pages: 1
+  - Event ID 23: Arrow @ (1,20) | Pages: 1
+  - Event ID 24: Arrow @ (0,20) | Pages: 1
+  - Event ID 25: Arrow @ (13,21) | Pages: 1
+  - Event ID 26: Arrow @ (13,22) | Pages: 1
 
 [Map 014]
 Name: Viridian House
@@ -434,7 +447,7 @@ Events:
 Name: Route 2
 Parent ID: 4
 Order: 18
-Expanded: false
+Expanded: true
 File: Data/Map018.rxdata
 Width: 54
 Height: 80
@@ -443,7 +456,7 @@ Autoplay BGM: true
 Autoplay BGS: false
 BGM: Route 1 / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
-Event Count: 19
+Event Count: 20
 Events:
   - Event ID 1: Entrance to Diglett's Cave @ (33,11) | Pages: 2
   - Event ID 2: Hidden House Door @ (33,22) | Pages: 2
@@ -464,6 +477,7 @@ Events:
   - Event ID 17: Cut Tree @ (31,69) | Pages: 1
   - Event ID 18: Ether @ (33,54) | Pages: 2
   - Event ID 19: Paralyze Heal @ (33,64) | Pages: 2
+  - Event ID 20: Grotto size(2,1) @ (36,2) | Pages: 1
 
 [Map 019]
 Name: Gatehouse South
@@ -542,13 +556,16 @@ Autoplay BGM: true
 Autoplay BGS: false
 BGM: Pewter City / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
-Event Count: 5
+Event Count: 8
 Events:
   - Event ID 1: Area Transition Arrow @ (4,7) | Pages: 1
   - Event ID 2: Town Map size(2,1) @ (9,1) | Pages: 1
   - Event ID 3: Scientist @ (4,5) | Pages: 1
   - Event ID 4: Exit to Route 2 @ (4,8) | Pages: 1
+  - Event ID 5: EV005 @ (5,1) | Pages: 1
   - Event ID 6: Mr. Mime Trader @ (7,2) | Pages: 2
+  - Event ID 7: EV007 @ (0,1) | Pages: 1
+  - Event ID 8: EV008 @ (2,1) | Pages: 1
 
 [Map 023]
 Name: Diglett's Cave - Entrance
@@ -617,7 +634,7 @@ Events:
 Name: Pewter City
 Parent ID: 4
 Order: 25
-Expanded: false
+Expanded: true
 File: Data/Map025.rxdata
 Width: 52
 Height: 44
@@ -626,7 +643,7 @@ Autoplay BGM: true
 Autoplay BGS: false
 BGM: Pewter City / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
-Event Count: 22
+Event Count: 23
 Events:
   - Event ID 1: Museum Door @ (29,8) | Pages: 2
   - Event ID 2: Museum Entrance @ (21,11) | Pages: 2
@@ -650,6 +667,7 @@ Events:
   - Event ID 20: Cut Tree @ (34,9) | Pages: 1
   - Event ID 21: Oak's Aide @ (50,24) | Pages: 2
   - Event ID 22: Aide Encounter size(1,3) @ (50,27) | Pages: 2
+  - Event ID 23: Hidden Antidote @ (10,7) | Pages: 2
 
 [Map 026]
 Name: Pewter Pokémon Center
@@ -834,7 +852,7 @@ Events:
   - Event ID 2: Bug Catcher Colton Sight(3) @ (12,6) | Pages: 2
   - Event ID 3: Youngster Ben Sight(2) @ (17,4) | Pages: 2
   - Event ID 4: Lass Sally Sight(5) @ (30,3) | Pages: 2
-  - Event ID 5: Bug Catcher Greg Sight(2) @ (25,4) | Pages: 2
+  - Event ID 5: Bug Catcher Greg Sight(2) @ (25,6) | Pages: 2
   - Event ID 6: Bug Catcher James Sight(4) @ (32,6) | Pages: 2
   - Event ID 7: Youngster Calvin Sight(5) @ (29,10) | Pages: 2
   - Event ID 8: Lass Robin Sight(2) @ (40,11) | Pages: 2
@@ -847,7 +865,7 @@ Events:
 Name: Route 4
 Parent ID: 4
 Order: 33
-Expanded: false
+Expanded: true
 File: Data/Map033.rxdata
 Width: 168
 Height: 35
@@ -929,7 +947,7 @@ Autoplay BGM: true
 Autoplay BGS: false
 BGM: Mt. Moon / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
-Event Count: 19
+Event Count: 21
 Events:
   - Event ID 1: Lass Iris Sight(2) @ (26,30) | Pages: 2
   - Event ID 2: Sign @ (25,30) | Pages: 1
@@ -949,6 +967,8 @@ Events:
   - Event ID 16: Potion @ (32,36) | Pages: 2
   - Event ID 17: Rare Candy @ (48,39) | Pages: 2
   - Event ID 18: Moon Stone @ (9,6) | Pages: 2
+  - Event ID 19: EV019 @ (24,35) | Pages: 2
+  - Event ID 20: EV020 @ (27,43) | Pages: 2
   - Event ID 33: Area Transition Arrow @ (24,41) | Pages: 1
 
 [Map 037]
@@ -1063,7 +1083,7 @@ Events:
   - Event ID 38: Rocket Grunt 6 Encounter 2 @ (33,7) | Pages: 2
   - Event ID 40: Cerulean City Checkpoint size(1,3) @ (0,22) | Pages: 2
   - Event ID 41: Sign @ (27,21) | Pages: 1
-  - Event ID 42: Cerulean City Sign size(2,1) @ (20,25) | Pages: 1
+  - Event ID 42: Cerulean City Sign @ (20,25) | Pages: 1
 
 [Map 040]
 Name: Cerulean Pokémon Center
@@ -1384,7 +1404,7 @@ Events:
 Name: Route 25
 Parent ID: 4
 Order: 54
-Expanded: true
+Expanded: false
 File: Data/Map054.rxdata
 Width: 69
 Height: 44
@@ -1433,7 +1453,7 @@ Events:
   - Event ID 1: Exit to Route 25 @ (7,10) | Pages: 1
   - Event ID 2: Area Transition Arrow @ (7,9) | Pages: 1
   - Event ID 3: Bill the Pokémon @ (10,6) | Pages: 2
-  - Event ID 4: Bill's PC @ (4,5) | Pages: 2
+  - Event ID 4: Bill's PC @ (4,5) | Pages: 3
   - Event ID 5: Bill the Pokémaniac @ (3,2) | Pages: 2
   - Event ID 6: Cell Separator Door 1 @ (3,3) | Pages: 1
   - Event ID 7: Cell Separator Door 2 @ (10,3) | Pages: 1
@@ -1618,7 +1638,7 @@ Events:
 Name: Vermilion City
 Parent ID: 4
 Order: 64
-Expanded: false
+Expanded: true
 File: Data/Map064.rxdata
 Width: 52
 Height: 43
@@ -1627,7 +1647,7 @@ Autoplay BGM: true
 Autoplay BGS: false
 BGM: Vermilion City / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
-Event Count: 30
+Event Count: 31
 Events:
   - Event ID 1: Cut Tree @ (23,24) | Pages: 1
   - Event ID 2: Sign size(2,1) @ (17,6) | Pages: 1
@@ -1636,7 +1656,7 @@ Events:
   - Event ID 5: Sign @ (38,18) | Pages: 1
   - Event ID 6: Sign @ (49,17) | Pages: 1
   - Event ID 7: Ticketmaster @ (28,33) | Pages: 2
-  - Event ID 8: NPC @ (40,30) | Pages: 1
+  - Event ID 8: NPC @ (40,33) | Pages: 2
   - Event ID 9: Exit to Vermilion Harbor 1 @ (26,35) | Pages: 1
   - Event ID 10: Gym Door @ (18,25) | Pages: 1
   - Event ID 11: Pokémon Center Door @ (19,6) | Pages: 2
@@ -1650,7 +1670,8 @@ Events:
   - Event ID 19: NPC @ (21,9) | Pages: 2
   - Event ID 20: Hidden Item: Max Ether @ (18,11) | Pages: 2
   - Event ID 21: NPC @ (26,11) | Pages: 1
-  - Event ID 22: Prof. Oak's Aide @ (29,7) | Pages: 2
+  - Event ID 23: Exit @ (40,34) | Pages: 1
+  - Event ID 24: EV024 @ (38,30) | Pages: 2
   - Event ID 29: Exit to Vermilion Harbor 2 @ (27,35) | Pages: 1
   - Event ID 30: Exit to Vermilion Harbor 3 @ (28,35) | Pages: 1
   - Event ID 31: Area Transition Arrow @ (26,34) | Pages: 1
@@ -1733,10 +1754,10 @@ Events:
   - Event ID 3: Gentleman Tucker Sight(3) @ (3,8) | Pages: 2
   - Event ID 4: Lock 2 2 @ (3,15) | Pages: 2
   - Event ID 5: Leader Lt. Surge @ (5,2) | Pages: 2
-  - Event ID 6: Gym Plaque @ (7,17) | Pages: 2
+  - Event ID 6: Gym Plaque @ (7,18) | Pages: 2
   - Event ID 7: Exit to Vermilion City @ (5,20) | Pages: 1
   - Event ID 8: Lock 1 1 @ (1,14) | Pages: 2
-  - Event ID 9: Gym Plaque @ (3,17) | Pages: 2
+  - Event ID 9: Gym Plaque @ (3,18) | Pages: 2
   - Event ID 10: Lock 2 1 @ (6,11) | Pages: 2
   - Event ID 11: Lock 1 2 @ (2,14) | Pages: 2
   - Event ID 12: Lock 1 3 @ (3,14) | Pages: 2
@@ -1871,7 +1892,7 @@ Events:
 Name: Vermilion Harbor
 Parent ID: 4
 Order: 72
-Expanded: true
+Expanded: false
 File: Data/Map072.rxdata
 Width: 20
 Height: 25
@@ -2123,7 +2144,7 @@ Events:
 [Map 079]
 Name: Route 11
 Parent ID: 4
-Order: 79
+Order: 80
 Expanded: false
 File: Data/Map079.rxdata
 Width: 72
@@ -2159,7 +2180,7 @@ Events:
 [Map 080]
 Name: Gatehouse
 Parent ID: 79
-Order: 80
+Order: 81
 Expanded: false
 File: Data/Map080.rxdata
 Width: 34
@@ -2187,7 +2208,7 @@ Events:
 [Map 081]
 Name: Diglett's Cave - Entrance
 Parent ID: 79
-Order: 81
+Order: 82
 Expanded: true
 File: Data/Map081.rxdata
 Width: 22
@@ -2206,7 +2227,7 @@ Events:
 [Map 082]
 Name: Diglett's Cave - Tunnel
 Parent ID: 81
-Order: 82
+Order: 83
 Expanded: false
 File: Data/Map082.rxdata
 Width: 97
@@ -2224,7 +2245,7 @@ Events:
 [Map 083]
 Name: Route 12
 Parent ID: 4
-Order: 83
+Order: 84
 Expanded: false
 File: Data/Map083.rxdata
 Width: 30
@@ -2261,7 +2282,7 @@ Events:
 [Map 084]
 Name: Gatehouse
 Parent ID: 83
-Order: 84
+Order: 85
 Expanded: false
 File: Data/Map084.rxdata
 Width: 33
@@ -2286,7 +2307,7 @@ Events:
 [Map 085]
 Name: Fishing Guru's House
 Parent ID: 83
-Order: 85
+Order: 86
 Expanded: false
 File: Data/Map085.rxdata
 Width: 20
@@ -2308,7 +2329,7 @@ Events:
 [Map 086]
 Name: Route 9
 Parent ID: 4
-Order: 86
+Order: 87
 Expanded: false
 File: Data/Map086.rxdata
 Width: 72
@@ -2340,8 +2361,8 @@ Events:
 [Map 087]
 Name: Route 10
 Parent ID: 4
-Order: 87
-Expanded: false
+Order: 88
+Expanded: true
 File: Data/Map087.rxdata
 Width: 30
 Height: 90
@@ -2350,7 +2371,7 @@ Autoplay BGM: true
 Autoplay BGS: false
 BGM: Route 3 / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
-Event Count: 25
+Event Count: 26
 Events:
   - Event ID 1: Cut Tree @ (10,30) | Pages: 1
   - Event ID 2: Cut Tree @ (10,32) | Pages: 1
@@ -2377,11 +2398,12 @@ Events:
   - Event ID 23: Sign @ (7,31) | Pages: 1
   - Event ID 24: Sign @ (6,52) | Pages: 1
   - Event ID 25: Sign @ (15,69) | Pages: 1
+  - Event ID 26: Max Ether @ (5,30) | Pages: 2
 
 [Map 088]
 Name: Rock Tunnel Pokémon Center
 Parent ID: 87
-Order: 88
+Order: 89
 Expanded: false
 File: Data/Map088.rxdata
 Width: 20
@@ -2408,8 +2430,8 @@ Events:
 [Map 089]
 Name: Rock Tunnel
 Parent ID: 87
-Order: 89
-Expanded: false
+Order: 90
+Expanded: true
 File: Data/Map089.rxdata
 Width: 20
 Height: 15
@@ -2423,7 +2445,7 @@ Event Count: 0
 [Map 090]
 Name: Rock Tunnel - 1F
 Parent ID: 89
-Order: 90
+Order: 91
 Expanded: false
 File: Data/Map090.rxdata
 Width: 61
@@ -2433,7 +2455,7 @@ Autoplay BGM: true
 Autoplay BGS: false
 BGM: Mt. Moon / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
-Event Count: 18
+Event Count: 19
 Events:
   - Event ID 1: Ladder to Route 10 @ (24,7) | Pages: 1
   - Event ID 2: Hiker Lenny Sight(4) @ (14,10) | Pages: 2
@@ -2453,11 +2475,12 @@ Events:
   - Event ID 16: Ladder to B1F 4 @ (52,26) | Pages: 1
   - Event ID 17: Exit to Route 10 @ (24,43) | Pages: 1
   - Event ID 18: Area Transition Arrow @ (24,42) | Pages: 1
+  - Event ID 19: Max Ether @ (24,9) | Pages: 2
 
 [Map 091]
 Name: Rock Tunnel - B1F
 Parent ID: 89
-Order: 91
+Order: 92
 Expanded: false
 File: Data/Map091.rxdata
 Width: 61
@@ -2503,7 +2526,7 @@ Events:
 [Map 092]
 Name: Power Plant
 Parent ID: 87
-Order: 92
+Order: 93
 Expanded: false
 File: Data/Map092.rxdata
 Width: 51
@@ -2540,8 +2563,8 @@ Events:
 [Map 093]
 Name: Lavender Town
 Parent ID: 4
-Order: 93
-Expanded: false
+Order: 94
+Expanded: true
 File: Data/Map093.rxdata
 Width: 30
 Height: 20
@@ -2571,7 +2594,7 @@ Events:
 [Map 094]
 Name: Lavender Pokémon Center
 Parent ID: 93
-Order: 94
+Order: 95
 Expanded: false
 File: Data/Map094.rxdata
 Width: 20
@@ -2597,7 +2620,7 @@ Events:
 [Map 095]
 Name: Lavender Poké Mart
 Parent ID: 93
-Order: 95
+Order: 96
 Expanded: false
 File: Data/Map095.rxdata
 Width: 20
@@ -2624,7 +2647,7 @@ Events:
 [Map 096]
 Name: Lavender House
 Parent ID: 93
-Order: 96
+Order: 97
 Expanded: false
 File: Data/Map096.rxdata
 Width: 20
@@ -2648,7 +2671,7 @@ Events:
 [Map 097]
 Name: Name Rater's House
 Parent ID: 93
-Order: 97
+Order: 98
 Expanded: false
 File: Data/Map097.rxdata
 Width: 20
@@ -2671,7 +2694,7 @@ Events:
 [Map 098]
 Name: Mr. Fuji's House
 Parent ID: 93
-Order: 98
+Order: 99
 Expanded: false
 File: Data/Map098.rxdata
 Width: 20
@@ -2699,7 +2722,7 @@ Events:
 [Map 099]
 Name: Pokémon Tower
 Parent ID: 93
-Order: 99
+Order: 100
 Expanded: true
 File: Data/Map099.rxdata
 Width: 20
@@ -2714,7 +2737,7 @@ Event Count: 0
 [Map 100]
 Name: Pokémon Tower - 1F
 Parent ID: 99
-Order: 100
+Order: 101
 Expanded: false
 File: Data/Map100.rxdata
 Width: 22
@@ -2738,7 +2761,7 @@ Events:
 [Map 101]
 Name: Pokémon Tower - 2F
 Parent ID: 99
-Order: 101
+Order: 102
 Expanded: false
 File: Data/Map101.rxdata
 Width: 22
@@ -2760,7 +2783,7 @@ Events:
 [Map 102]
 Name: Pokémon Tower - 3F
 Parent ID: 99
-Order: 102
+Order: 103
 Expanded: false
 File: Data/Map102.rxdata
 Width: 22
@@ -2782,7 +2805,7 @@ Events:
 [Map 103]
 Name: Pokémon Tower - 4F
 Parent ID: 99
-Order: 103
+Order: 104
 Expanded: false
 File: Data/Map103.rxdata
 Width: 22
@@ -2806,7 +2829,7 @@ Events:
 [Map 104]
 Name: Pokémon Tower - 5F
 Parent ID: 99
-Order: 104
+Order: 105
 Expanded: false
 File: Data/Map104.rxdata
 Width: 22
@@ -2832,7 +2855,7 @@ Events:
 [Map 105]
 Name: Pokémon Tower - 6F
 Parent ID: 99
-Order: 105
+Order: 106
 Expanded: false
 File: Data/Map105.rxdata
 Width: 22
@@ -2858,7 +2881,7 @@ Events:
 [Map 106]
 Name: Pokémon Tower - 7F
 Parent ID: 99
-Order: 106
+Order: 107
 Expanded: false
 File: Data/Map106.rxdata
 Width: 22
@@ -2879,7 +2902,7 @@ Events:
 [Map 107]
 Name: Route 8
 Parent ID: 4
-Order: 107
+Order: 108
 Expanded: false
 File: Data/Map107.rxdata
 Width: 68
@@ -2917,7 +2940,7 @@ Events:
 [Map 108]
 Name: Saffron Gate East
 Parent ID: 107
-Order: 108
+Order: 109
 Expanded: false
 File: Data/Map108.rxdata
 Width: 20
@@ -2939,8 +2962,8 @@ Events:
 [Map 109]
 Name: Underground Path - Entrance
 Parent ID: 107
-Order: 109
-Expanded: false
+Order: 110
+Expanded: true
 File: Data/Map109.rxdata
 Width: 20
 Height: 15
@@ -2959,7 +2982,7 @@ Events:
 [Map 110]
 Name: Underground Path - Tunnel
 Parent ID: 109
-Order: 110
+Order: 111
 Expanded: false
 File: Data/Map110.rxdata
 Width: 82
@@ -2977,7 +3000,7 @@ Events:
 [Map 111]
 Name: Route 7
 Parent ID: 4
-Order: 111
+Order: 112
 Expanded: false
 File: Data/Map111.rxdata
 Width: 20
@@ -2998,7 +3021,7 @@ Events:
 [Map 112]
 Name: Saffron Gate West
 Parent ID: 111
-Order: 112
+Order: 113
 Expanded: false
 File: Data/Map112.rxdata
 Width: 20
@@ -3020,7 +3043,7 @@ Events:
 [Map 113]
 Name: Underground Path - Entrance
 Parent ID: 111
-Order: 113
+Order: 114
 Expanded: false
 File: Data/Map113.rxdata
 Width: 20
@@ -3040,8 +3063,8 @@ Events:
 [Map 114]
 Name: Celadon City
 Parent ID: 4
-Order: 114
-Expanded: false
+Order: 115
+Expanded: true
 File: Data/Map114.rxdata
 Width: 60
 Height: 49
@@ -3076,7 +3099,7 @@ Events:
   - Event ID 22: EV022 @ (53,16) | Pages: 2
   - Event ID 23: Sign @ (18,19) | Pages: 1
   - Event ID 24: Celadon Mansion Door @ (30,16) | Pages: 2
-  - Event ID 25: Goose sight(4) @ (51,21) | Pages: 2
+  - Event ID 25: Goose sight(4) @ (51,21) | Pages: 3
   - Event ID 26: House Door @ (41,34) | Pages: 2
   - Event ID 27: Hotel Door @ (49,34) | Pages: 2
   - Event ID 34: Celadon Mansion Backdoor @ (30,11) | Pages: 1
@@ -3085,7 +3108,7 @@ Events:
   - Event ID 40: Rocket Grunt @ (38,36) | Pages: 2
   - Event ID 41: Rocket Grunt @ (48,20) | Pages: 2
   - Event ID 42: Silph Scientist @ (47,29) | Pages: 1
-  - Event ID 43: Old Man @ (26,24) | Pages: 1
+  - Event ID 43: Old Man @ (26,24) | Pages: 2
   - Event ID 44: NPC @ (30,29) | Pages: 1
   - Event ID 45: NPC @ (18,27) | Pages: 1
   - Event ID 46: NPC @ (11,23) | Pages: 1
@@ -3095,7 +3118,7 @@ Events:
 [Map 115]
 Name: Celadon Pokémon Center
 Parent ID: 114
-Order: 115
+Order: 116
 Expanded: false
 File: Data/Map115.rxdata
 Width: 20
@@ -3122,8 +3145,8 @@ Events:
 [Map 116]
 Name: Celadon Dept. Store
 Parent ID: 114
-Order: 116
-Expanded: false
+Order: 117
+Expanded: true
 File: Data/Map116.rxdata
 Width: 20
 Height: 15
@@ -3137,7 +3160,7 @@ Event Count: 0
 [Map 117]
 Name: Celadon Dept. Store - 1F
 Parent ID: 116
-Order: 117
+Order: 118
 Expanded: false
 File: Data/Map117.rxdata
 Width: 20
@@ -3163,7 +3186,7 @@ Events:
 [Map 118]
 Name: Celadon Dept. Store - 2F
 Parent ID: 116
-Order: 118
+Order: 119
 Expanded: false
 File: Data/Map118.rxdata
 Width: 20
@@ -3193,7 +3216,7 @@ Events:
 [Map 119]
 Name: Celadon Dept. Store - 3F
 Parent ID: 116
-Order: 119
+Order: 120
 Expanded: false
 File: Data/Map119.rxdata
 Width: 20
@@ -3228,7 +3251,7 @@ Events:
 [Map 120]
 Name: Celadon Dept. Store - 4F
 Parent ID: 116
-Order: 120
+Order: 121
 Expanded: false
 File: Data/Map120.rxdata
 Width: 20
@@ -3257,7 +3280,7 @@ Events:
 [Map 121]
 Name: Celadon Dept. Store - 5F
 Parent ID: 116
-Order: 121
+Order: 122
 Expanded: false
 File: Data/Map121.rxdata
 Width: 20
@@ -3288,7 +3311,7 @@ Events:
 [Map 122]
 Name: Celadon Dept. Store - Rooftop
 Parent ID: 116
-Order: 122
+Order: 123
 Expanded: false
 File: Data/Map122.rxdata
 Width: 32
@@ -3310,7 +3333,7 @@ Events:
 [Map 123]
 Name: Celadon Dept. Store - Elevator
 Parent ID: 116
-Order: 123
+Order: 124
 Expanded: false
 File: Data/Map123.rxdata
 Width: 20
@@ -3332,7 +3355,7 @@ Events:
 [Map 124]
 Name: Celadon Gym
 Parent ID: 114
-Order: 124
+Order: 125
 Expanded: false
 File: Data/Map124.rxdata
 Width: 25
@@ -3344,26 +3367,26 @@ BGM: Pokémon Gym / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
 Event Count: 15
 Events:
-  - Event ID 1: Leader Erika @ (6,4) | Pages: 2
+  - Event ID 1: Leader Erika @ (6,2) | Pages: 2
   - Event ID 2: Gym Plaque @ (4,16) | Pages: 2
   - Event ID 3: Gym Plaque @ (8,16) | Pages: 2
   - Event ID 4: Cut Tree @ (3,5) | Pages: 1
   - Event ID 5: Exit to Celadon City @ (6,19) | Pages: 1
   - Event ID 6: Cut Tree @ (6,8) | Pages: 1
-  - Event ID 7: Picnicker Tina Sight(2) @ (10,7) | Pages: 2
+  - Event ID 7: Picnicker Tina Sight(2) @ (10,7) | Pages: 3
   - Event ID 8: Cut Tree @ (9,6) | Pages: 1
   - Event ID 13: Area Transition Arrow @ (6,18) | Pages: 1
-  - Event ID 42: Lass Kay Sight(3) @ (3,11) | Pages: 2
-  - Event ID 43: Beauty Bridget Sight(3) @ (9,10) | Pages: 2
-  - Event ID 44: Beauty Tamia Sight(4) @ (2,6) | Pages: 2
-  - Event ID 45: Beauty Lori Sight(3) @ (5,4) | Pages: 2
-  - Event ID 46: Lass Lisa Sight(2) @ (7,4) | Pages: 2
-  - Event ID 47: Cooltrainer Mary Sight(2) @ (8,7) | Pages: 2
+  - Event ID 42: Lass Kay Sight(3) @ (3,11) | Pages: 3
+  - Event ID 43: Beauty Bridget Sight(3) @ (9,10) | Pages: 3
+  - Event ID 44: Beauty Tamia Sight(4) @ (2,6) | Pages: 3
+  - Event ID 45: Beauty Lori Sight(3) @ (5,4) | Pages: 3
+  - Event ID 46: Lass Lisa Sight(2) @ (7,4) | Pages: 3
+  - Event ID 47: Cooltrainer Mary Sight(2) @ (8,7) | Pages: 3
 
 [Map 125]
 Name: Celadon Diner
 Parent ID: 114
-Order: 125
+Order: 126
 Expanded: false
 File: Data/Map125.rxdata
 Width: 20
@@ -3388,7 +3411,7 @@ Events:
 [Map 126]
 Name: Celadon Hotel
 Parent ID: 114
-Order: 126
+Order: 127
 Expanded: false
 File: Data/Map126.rxdata
 Width: 20
@@ -3410,7 +3433,7 @@ Events:
 [Map 127]
 Name: Celadon House
 Parent ID: 114
-Order: 127
+Order: 128
 Expanded: false
 File: Data/Map127.rxdata
 Width: 20
@@ -3434,7 +3457,7 @@ Events:
 [Map 128]
 Name: Celadon Mansion
 Parent ID: 114
-Order: 128
+Order: 129
 Expanded: false
 File: Data/Map128.rxdata
 Width: 97
@@ -3446,15 +3469,15 @@ BGM: Celadon City / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
 Event Count: 43
 Events:
-  - Event ID 1: Tea Lady @ (2,9) | Pages: 3
-  - Event ID 3: Exit to Celadon City 1 @ (12,19) | Pages: 1
-  - Event ID 4: Area Transition Arrow @ (12,18) | Pages: 1
-  - Event ID 5: Exit to Celadon City 2 @ (2,1) | Pages: 2
+  - Event ID 1: Tea Lady @ (3,9) | Pages: 3
+  - Event ID 3: Exit to Celadon City 1 @ (13,19) | Pages: 1
+  - Event ID 4: Area Transition Arrow @ (13,18) | Pages: 1
+  - Event ID 5: Exit to Celadon City 2 @ (3,1) | Pages: 2
   - Event ID 6: Exit to Roof @ (73,8) | Pages: 1
   - Event ID 7: Area Transition Arrow @ (73,7) | Pages: 1
   - Event ID 8: Entrance to Roof House @ (78,30) | Pages: 2
-  - Event ID 9: Stairs Up to 2F 1 @ (5,2) | Pages: 1
-  - Event ID 10: Stairs Up to 2F 2 @ (13,2) | Pages: 1
+  - Event ID 9: Stairs Up to 2F 1 @ (6,2) | Pages: 1
+  - Event ID 10: Stairs Up to 2F 2 @ (14,2) | Pages: 1
   - Event ID 11: Stairs Up to Roof 1 @ (51,2) | Pages: 1
   - Event ID 12: Stairs Up to Roof 2 @ (59,2) | Pages: 1
   - Event ID 13: Stairs Down to 1F 2 @ (36,2) | Pages: 1
@@ -3465,21 +3488,21 @@ Events:
   - Event ID 18: Stairs Up to 3F 2 @ (33,2) | Pages: 1
   - Event ID 19: Stairs Down to 3F 1 @ (81,20) | Pages: 1
   - Event ID 20: Stairs Down to 3F 2 @ (87,20) | Pages: 1
-  - Event ID 21: Sign size(2,1) @ (7,12) | Pages: 1
+  - Event ID 21: Sign size(2,1) @ (8,12) | Pages: 1
   - Event ID 22: Sign size(2,1) @ (79,30) | Pages: 1
   - Event ID 23: Hitmonchan Poké Ball @ (76,3) | Pages: 2
-  - Event ID 24: Display Shelf size(2,1) @ (2,16) | Pages: 1
-  - Event ID 25: Telephone @ (3,6) | Pages: 1
-  - Event ID 26: Picture size(2,1) @ (5,6) | Pages: 1
-  - Event ID 27: Picture size(2,1) @ (9,1) | Pages: 1
+  - Event ID 24: Display Shelf size(2,1) @ (3,16) | Pages: 1
+  - Event ID 25: Telephone @ (4,6) | Pages: 1
+  - Event ID 26: Picture size(2,1) @ (6,6) | Pages: 1
+  - Event ID 27: Picture size(2,1) @ (10,1) | Pages: 1
   - Event ID 28: Picture size(2,1) @ (25,16) | Pages: 1
   - Event ID 29: Sign size(2,1) @ (30,12) | Pages: 1
   - Event ID 30: Bookshelf size(2,1) @ (28,6) | Pages: 1
   - Event ID 31: Picture size(2,1) @ (48,16) | Pages: 1
   - Event ID 32: Sign size(2,1) @ (53,12) | Pages: 1
-  - Event ID 33: Clefairy @ (5,13) | Pages: 1
-  - Event ID 34: Meowth @ (1,9) | Pages: 1
-  - Event ID 35: NidoranF @ (5,8) | Pages: 1
+  - Event ID 33: Clefairy @ (6,13) | Pages: 1
+  - Event ID 34: Meowth @ (2,9) | Pages: 1
+  - Event ID 35: NidoranF @ (6,8) | Pages: 1
   - Event ID 36: Game Designer @ (49,8) | Pages: 1
   - Event ID 37: Programmer @ (46,10) | Pages: 1
   - Event ID 38: Graphic Artist @ (50,10) | Pages: 1
@@ -3493,8 +3516,8 @@ Events:
 [Map 129]
 Name: Game Corner
 Parent ID: 114
-Order: 129
-Expanded: true
+Order: 130
+Expanded: false
 File: Data/Map129.rxdata
 Width: 38
 Height: 17
@@ -3565,7 +3588,7 @@ Events:
 [Map 130]
 Name: Rocket Hideout
 Parent ID: 129
-Order: 130
+Order: 131
 Expanded: true
 File: Data/Map130.rxdata
 Width: 20
@@ -3580,7 +3603,7 @@ Event Count: 0
 [Map 131]
 Name: Rocket Hideout - B1F
 Parent ID: 130
-Order: 131
+Order: 132
 Expanded: false
 File: Data/Map131.rxdata
 Width: 30
@@ -3619,13 +3642,13 @@ Events:
   - Event ID 25: Blueprint size(2,1) @ (5,24) | Pages: 1
   - Event ID 26: Computer @ (9,24) | Pages: 1
   - Event ID 27: Machine size(3,1) @ (1,21) | Pages: 1
-  - Event ID 28: Machine size(3,1) @ (6,21) | Pages: 1
+  - Event ID 28: Machine @ (6,21) | Pages: 1
   - Event ID 29: Telephone @ (7,21) | Pages: 1
 
 [Map 132]
 Name: Rocket Hideout - B2F
 Parent ID: 130
-Order: 132
+Order: 133
 Expanded: false
 File: Data/Map132.rxdata
 Width: 34
@@ -3694,7 +3717,7 @@ Events:
 [Map 133]
 Name: Rocket Hideout - B3F
 Parent ID: 130
-Order: 133
+Order: 134
 Expanded: false
 File: Data/Map133.rxdata
 Width: 24
@@ -3740,7 +3763,7 @@ Events:
 [Map 134]
 Name: Rocket Hideout - B4F
 Parent ID: 130
-Order: 134
+Order: 135
 Expanded: false
 File: Data/Map134.rxdata
 Width: 26
@@ -3781,7 +3804,7 @@ Events:
 [Map 135]
 Name: Rocket Hideout - Elevator
 Parent ID: 130
-Order: 135
+Order: 136
 Expanded: false
 File: Data/Map135.rxdata
 Width: 20
@@ -3794,18 +3817,18 @@ BGS:  / vol 80 / pitch 100
 Event Count: 7
 Events:
   - Event ID 1: Elevator Exit @ (2,6) | Pages: 1
-  - Event ID 2: Elevator Controls @ (19,14) | Pages: 1
+  - Event ID 2: Elevator Controls @ (0,2) | Pages: 1
   - Event ID 3: Wall left @ (1,2) | Pages: 1
   - Event ID 4: Wall middle @ (2,2) | Pages: 1
   - Event ID 5: Wall right @ (3,2) | Pages: 1
   - Event ID 6: Area Transition Arrow @ (2,5) | Pages: 1
-  - Event ID 7: Controls @ (0,2) | Pages: 1
+  - Event ID 7: Controls @ (18,7) | Pages: 1
 
 [Map 136]
 Name: Route 16
 Parent ID: 4
-Order: 136
-Expanded: true
+Order: 137
+Expanded: false
 File: Data/Map136.rxdata
 Width: 54
 Height: 49
@@ -3838,7 +3861,7 @@ Events:
 [Map 137]
 Name: Cycling Road Gate
 Parent ID: 136
-Order: 137
+Order: 138
 Expanded: false
 File: Data/Map137.rxdata
 Width: 35
@@ -3871,7 +3894,7 @@ Events:
 [Map 138]
 Name: Secret House
 Parent ID: 136
-Order: 138
+Order: 139
 Expanded: false
 File: Data/Map138.rxdata
 Width: 20
@@ -3895,7 +3918,7 @@ Events:
 [Map 139]
 Name: Route 16
 Parent ID: 136
-Order: 139
+Order: 140
 Expanded: false
 File: Data/Map139.rxdata
 Width: 35
@@ -3920,7 +3943,7 @@ Events:
 [Map 140]
 Name: Route 17
 Parent ID: 4
-Order: 140
+Order: 141
 Expanded: false
 File: Data/Map140.rxdata
 Width: 36
@@ -4063,8 +4086,8 @@ Events:
 [Map 141]
 Name: Route 18
 Parent ID: 4
-Order: 141
-Expanded: true
+Order: 142
+Expanded: false
 File: Data/Map141.rxdata
 Width: 108
 Height: 60
@@ -4085,7 +4108,7 @@ Events:
 [Map 142]
 Name: Cycling Road Gate
 Parent ID: 141
-Order: 142
+Order: 143
 Expanded: false
 File: Data/Map142.rxdata
 Width: 34
@@ -4112,7 +4135,7 @@ Events:
 [Map 143]
 Name: Route 18
 Parent ID: 141
-Order: 143
+Order: 144
 Expanded: false
 File: Data/Map143.rxdata
 Width: 50
@@ -4134,8 +4157,8 @@ Events:
 [Map 144]
 Name: Fuchsia City
 Parent ID: 4
-Order: 144
-Expanded: true
+Order: 145
+Expanded: false
 File: Data/Map144.rxdata
 Width: 48
 Height: 44
@@ -4144,7 +4167,7 @@ Autoplay BGM: true
 Autoplay BGS: false
 BGM: Cerulean City / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
-Event Count: 39
+Event Count: 41
 Events:
   - Event ID 1: Cut Tree @ (32,20) | Pages: 1
   - Event ID 2: Cut Tree @ (24,26) | Pages: 1
@@ -4156,7 +4179,7 @@ Events:
   - Event ID 8: Sign @ (26,22) | Pages: 1
   - Event ID 9: Fuchsia City Sign @ (31,22) | Pages: 1
   - Event ID 10: Sign @ (22,11) | Pages: 1
-  - Event ID 11: Sign @ (11,14) | Pages: 2
+  - Event ID 11: Sign @ (11,14) | Pages: 1
   - Event ID 12: Sign @ (17,14) | Pages: 1
   - Event ID 13: Sign @ (17,22) | Pages: 1
   - Event ID 14: Sign @ (35,14) | Pages: 1
@@ -4173,9 +4196,11 @@ Events:
   - Event ID 25: Backdoor to House @ (39,33) | Pages: 1
   - Event ID 26: Pokémon Mart Sign size(2,1) @ (9,19) | Pages: 1
   - Event ID 27: Sign size(2,1) @ (23,35) | Pages: 1
+  - Event ID 28: EV028 @ (5,14) | Pages: 1
+  - Event ID 29: EV029 @ (9,12) | Pages: 1
   - Event ID 33: Area Transition Arrow @ (39,32) | Pages: 1
   - Event ID 36: Lapras @ (12,24) | Pages: 1
-  - Event ID 37: Omanyte / Kabuto @ (8,12) | Pages: 2
+  - Event ID 37: Omanyte / Kabuto @ (7,12) | Pages: 1
   - Event ID 38: Kangaskhan @ (15,12) | Pages: 1
   - Event ID 39: Voltorb @ (33,12) | Pages: 1
   - Event ID 40: Chansey @ (40,12) | Pages: 1
@@ -4189,7 +4214,7 @@ Events:
 [Map 145]
 Name: Fuchsia Pokémon Center
 Parent ID: 144
-Order: 145
+Order: 146
 Expanded: false
 File: Data/Map145.rxdata
 Width: 20
@@ -4215,7 +4240,7 @@ Events:
 [Map 146]
 Name: Fuchsia Poké Mart
 Parent ID: 144
-Order: 146
+Order: 147
 Expanded: false
 File: Data/Map146.rxdata
 Width: 20
@@ -4241,7 +4266,7 @@ Events:
 [Map 147]
 Name: Fuchsia Gym
 Parent ID: 144
-Order: 147
+Order: 148
 Expanded: false
 File: Data/Map147.rxdata
 Width: 20
@@ -4269,7 +4294,7 @@ Events:
 [Map 148]
 Name: Fuchsia House
 Parent ID: 144
-Order: 148
+Order: 149
 Expanded: false
 File: Data/Map148.rxdata
 Width: 20
@@ -4292,7 +4317,7 @@ Events:
 [Map 149]
 Name: Fuchsia House
 Parent ID: 144
-Order: 149
+Order: 150
 Expanded: false
 File: Data/Map149.rxdata
 Width: 20
@@ -4317,7 +4342,7 @@ Events:
 [Map 150]
 Name: Fuchsia House
 Parent ID: 144
-Order: 150
+Order: 151
 Expanded: false
 File: Data/Map150.rxdata
 Width: 20
@@ -4340,7 +4365,7 @@ Events:
 [Map 151]
 Name: Fisherman's House
 Parent ID: 144
-Order: 151
+Order: 152
 Expanded: false
 File: Data/Map151.rxdata
 Width: 20
@@ -4361,7 +4386,7 @@ Events:
 [Map 152]
 Name: Warden's House
 Parent ID: 144
-Order: 152
+Order: 153
 Expanded: false
 File: Data/Map152.rxdata
 Width: 20
@@ -4388,7 +4413,7 @@ Events:
 [Map 153]
 Name: Safari Zone Gate
 Parent ID: 144
-Order: 153
+Order: 154
 Expanded: false
 File: Data/Map153.rxdata
 Width: 20
@@ -4409,8 +4434,8 @@ Events:
 [Map 154]
 Name: Safari Zone
 Parent ID: 153
-Order: 154
-Expanded: true
+Order: 155
+Expanded: false
 File: Data/Map154.rxdata
 Width: 20
 Height: 15
@@ -4424,7 +4449,7 @@ Event Count: 0
 [Map 155]
 Name: Safari Zone - South
 Parent ID: 154
-Order: 155
+Order: 156
 Expanded: true
 File: Data/Map155.rxdata
 Width: 52
@@ -4462,7 +4487,7 @@ Events:
 [Map 156]
 Name: Safari Rest House
 Parent ID: 155
-Order: 156
+Order: 157
 Expanded: false
 File: Data/Map156.rxdata
 Width: 20
@@ -4483,7 +4508,7 @@ Events:
 [Map 157]
 Name: Safari Zone - East
 Parent ID: 154
-Order: 157
+Order: 158
 Expanded: true
 File: Data/Map157.rxdata
 Width: 54
@@ -4515,7 +4540,7 @@ Events:
 [Map 158]
 Name: Safari Rest House
 Parent ID: 157
-Order: 158
+Order: 159
 Expanded: false
 File: Data/Map158.rxdata
 Width: 20
@@ -4537,7 +4562,7 @@ Events:
 [Map 159]
 Name: Safari Zone - North
 Parent ID: 154
-Order: 159
+Order: 160
 Expanded: true
 File: Data/Map159.rxdata
 Width: 57
@@ -4578,7 +4603,7 @@ Events:
 [Map 160]
 Name: Safari Rest House
 Parent ID: 159
-Order: 160
+Order: 161
 Expanded: false
 File: Data/Map160.rxdata
 Width: 20
@@ -4601,7 +4626,7 @@ Events:
 [Map 161]
 Name: Safari Zone - West
 Parent ID: 154
-Order: 161
+Order: 162
 Expanded: true
 File: Data/Map161.rxdata
 Width: 51
@@ -4640,7 +4665,7 @@ Events:
 [Map 162]
 Name: Safari Rest House
 Parent ID: 161
-Order: 162
+Order: 163
 Expanded: false
 File: Data/Map162.rxdata
 Width: 20
@@ -4662,7 +4687,7 @@ Events:
 [Map 163]
 Name: Secret Safari House
 Parent ID: 161
-Order: 163
+Order: 164
 Expanded: false
 File: Data/Map163.rxdata
 Width: 20
@@ -4685,8 +4710,8 @@ Events:
 [Map 164]
 Name: Route 15
 Parent ID: 4
-Order: 164
-Expanded: true
+Order: 165
+Expanded: false
 File: Data/Map164.rxdata
 Width: 71
 Height: 44
@@ -4719,7 +4744,7 @@ Events:
 [Map 165]
 Name: Gatehouse
 Parent ID: 164
-Order: 165
+Order: 166
 Expanded: false
 File: Data/Map165.rxdata
 Width: 34
@@ -4745,7 +4770,7 @@ Events:
 [Map 166]
 Name: Route 14
 Parent ID: 4
-Order: 166
+Order: 167
 Expanded: false
 File: Data/Map166.rxdata
 Width: 25
@@ -4779,7 +4804,7 @@ Events:
 [Map 167]
 Name: Route 13
 Parent ID: 4
-Order: 167
+Order: 168
 Expanded: false
 File: Data/Map167.rxdata
 Width: 78
@@ -4810,7 +4835,7 @@ Events:
 [Map 168]
 Name: Saffron City
 Parent ID: 4
-Order: 168
+Order: 169
 Expanded: false
 File: Data/Map168.rxdata
 Width: 56
@@ -4870,7 +4895,7 @@ Events:
 [Map 169]
 Name: Saffron Pokémon Center
 Parent ID: 168
-Order: 169
+Order: 170
 Expanded: false
 File: Data/Map169.rxdata
 Width: 20
@@ -4896,7 +4921,7 @@ Events:
 [Map 170]
 Name: Saffron Poké Mart
 Parent ID: 168
-Order: 170
+Order: 171
 Expanded: false
 File: Data/Map170.rxdata
 Width: 20
@@ -4922,7 +4947,7 @@ Events:
 [Map 171]
 Name: Saffron Gym
 Parent ID: 168
-Order: 171
+Order: 172
 Expanded: false
 File: Data/Map171.rxdata
 Width: 34
@@ -4981,7 +5006,7 @@ Events:
 [Map 172]
 Name: Fighting Dojo
 Parent ID: 168
-Order: 172
+Order: 173
 Expanded: false
 File: Data/Map172.rxdata
 Width: 20
@@ -4993,8 +5018,8 @@ BGM: Pewter City / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
 Event Count: 13
 Events:
-  - Event ID 1: Hitmonlee Poké Ball @ (4,2) | Pages: 3
-  - Event ID 2: Hitmonchan Poké Ball @ (6,2) | Pages: 3
+  - Event ID 1: Hitmonlee Poké Ball @ (4,2) | Pages: 2
+  - Event ID 2: Hitmonchan Poké Ball @ (6,2) | Pages: 2
   - Event ID 3: Dojo Plaque @ (2,12) | Pages: 1
   - Event ID 4: Exit to Saffron City @ (5,14) | Pages: 1
   - Event ID 5: Area Transition Arrow @ (5,13) | Pages: 1
@@ -5010,7 +5035,7 @@ Events:
 [Map 173]
 Name: Pokémon Trainer Fan Club
 Parent ID: 168
-Order: 173
+Order: 174
 Expanded: false
 File: Data/Map173.rxdata
 Width: 20
@@ -5036,7 +5061,7 @@ Events:
 [Map 174]
 Name: Saffron House
 Parent ID: 168
-Order: 174
+Order: 175
 Expanded: false
 File: Data/Map174.rxdata
 Width: 34
@@ -5044,7 +5069,7 @@ Height: 15
 Tileset ID: 3
 Autoplay BGM: true
 Autoplay BGS: false
-BGM: Saffron City / vol 100 / pitch 100
+BGM: frlg_saffron / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
 Event Count: 21
 Events:
@@ -5073,7 +5098,7 @@ Events:
 [Map 175]
 Name: Saffron House
 Parent ID: 168
-Order: 175
+Order: 176
 Expanded: false
 File: Data/Map175.rxdata
 Width: 20
@@ -5081,7 +5106,7 @@ Height: 15
 Tileset ID: 3
 Autoplay BGM: true
 Autoplay BGS: false
-BGM: Saffron City / vol 100 / pitch 100
+BGM: frlg_saffron / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
 Event Count: 10
 Events:
@@ -5099,7 +5124,7 @@ Events:
 [Map 176]
 Name: Saffron House
 Parent ID: 168
-Order: 176
+Order: 177
 Expanded: false
 File: Data/Map176.rxdata
 Width: 20
@@ -5107,7 +5132,7 @@ Height: 15
 Tileset ID: 3
 Autoplay BGM: true
 Autoplay BGS: false
-BGM: Saffron City / vol 100 / pitch 100
+BGM: frlg_saffron / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
 Event Count: 4
 Events:
@@ -5116,10 +5141,34 @@ Events:
   - Event ID 3: Town Map, size(2,1) @ (9,1) | Pages: 1
   - Event ID 4: Mr. Psychic @ (7,4) | Pages: 2
 
+[Map 177]
+Name: FIVE ISLAND SUMMER
+Parent ID: 378
+Order: 438
+Expanded: true
+File: Data/Map177.rxdata
+Width: 30
+Height: 24
+Tileset ID: 31
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Islands 4 & 5 / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 8
+Events:
+  - Event ID 1: Door @ (18,6) | Pages: 2
+  - Event ID 2: Door @ (28,9) | Pages: 2
+  - Event ID 3: Port Door @ (18,15) | Pages: 1
+  - Event ID 4: Center sign, size(2,1) @ (22,6) | Pages: 1
+  - Event ID 5: PC Door @ (24,6) | Pages: 2
+  - Event ID 6: Four Island Sign @ (26,8) | Pages: 1
+  - Event ID 7: NPC @ (22,10) | Pages: 1
+  - Event ID 8: NPC @ (14,5) | Pages: 1
+
 [Map 178]
 Name: Silph Co. New
 Parent ID: 168
-Order: 177
+Order: 178
 Expanded: false
 File: Data/Map178.rxdata
 Width: 36
@@ -5289,7 +5338,7 @@ Events:
   - Event ID 156: Gate vertical, size(2,3) @ (2,71) | Pages: 2
   - Event ID 157: Gate vertical, size(2,3) @ (5,157) | Pages: 2
   - Event ID 158: Item @ (22,189) | Pages: 2
-  - Event ID 159: EV159 @ (30,295) | Pages: 3
+  - Event ID 159: EV159 @ (8,308) | Pages: 4
   - Event ID 160: Rival event start up @ (2,118) | Pages: 2
   - Event ID 161: Rival event start down @ (2,119) | Pages: 2
   - Event ID 162: Rival @ (2,120) | Pages: 2
@@ -5297,7 +5346,7 @@ Events:
 [Map 179]
 Name: Rt103
 Parent ID: 225
-Order: 268
+Order: 269
 Expanded: false
 File: Data/Map179.rxdata
 Width: 86
@@ -5327,10 +5376,242 @@ Events:
   - Event ID 16: EV016 @ (70,12) | Pages: 1
   - Event ID 17: EV017 @ (71,12) | Pages: 1
 
+[Map 180]
+Name: Vermilion Port
+Parent ID: 72
+Order: 79
+Expanded: false
+File: Data/Map180.rxdata
+Width: 34
+Height: 15
+Tileset ID: 15
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: Route 1 / vol 80 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 5
+Events:
+  - Event ID 1: Door, size(2,1) @ (16,2) | Pages: 2
+  - Event ID 2: RegionSailor @ (8,6) | Pages: 1
+  - Event ID 3: Controller @ (25,7) | Pages: 2
+  - Event ID 4: Controller @ (8,7) | Pages: 2
+  - Event ID 5: VermilionSeagallopSailor @ (25,6) | Pages: 1
+
+[Map 181]
+Name: PokeCentre
+Parent ID: 177
+Order: 439
+Expanded: false
+File: Data/Map181.rxdata
+Width: 20
+Height: 15
+Tileset ID: 4
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: Poke Center / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 8
+Events:
+  - Event ID 1: PC @ (11,1) | Pages: 1
+  - Event ID 2: Nurse @ (7,2) | Pages: 2
+  - Event ID 3: Bookshelf, size(2,1) @ (2,1) | Pages: 1
+  - Event ID 4: Healing balls @ (5,2) | Pages: 7
+  - Event ID 5: NPC @ (4,8) | Pages: 1
+  - Event ID 6: Town Map, size(2,1) @ (12,1) | Pages: 1
+  - Event ID 7: EV007 @ (9,4) | Pages: 1
+  - Event ID 8: Exit @ (7,9) | Pages: 1
+
+[Map 182]
+Name: Port
+Parent ID: 177
+Order: 440
+Expanded: false
+File: Data/Map182.rxdata
+Width: 20
+Height: 17
+Tileset ID: 33
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Island Route / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 3
+Events:
+  - Event ID 1: Sailor @ (8,6) | Pages: 1
+  - Event ID 2: Controller @ (8,7) | Pages: 2
+  - Event ID 4: Exit @ (8,2) | Pages: 2
+
+[Map 183]
+Name: Houses
+Parent ID: 177
+Order: 441
+Expanded: false
+File: Data/Map183.rxdata
+Width: 30
+Height: 15
+Tileset ID: 32
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Island Route / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 14
+Events:
+  - Event ID 1: Fridge @ (10,1) | Pages: 1
+  - Event ID 2: Kitchen, size(2,1) @ (8,1) | Pages: 1
+  - Event ID 3: Picture @ (4,1) | Pages: 1
+  - Event ID 4: China Cabinet, size(2,1) @ (2,1) | Pages: 1
+  - Event ID 5: Bookshelf @ (1,1) | Pages: 1
+  - Event ID 6: Bookshelf @ (20,1) | Pages: 1
+  - Event ID 7: Exit @ (4,8) | Pages: 1
+  - Event ID 8: EV008 @ (10,2) | Pages: 1
+  - Event ID 9: China Cabinet, size(2,1) @ (21,1) | Pages: 1
+  - Event ID 10: Picture @ (23,1) | Pages: 1
+  - Event ID 11: Kitchen, size(2,1) @ (27,1) | Pages: 1
+  - Event ID 12: Fridge @ (29,1) | Pages: 1
+  - Event ID 13: Exit @ (23,8) | Pages: 1
+  - Event ID 14: EV014 @ (21,3) | Pages: 1
+
+[Map 184]
+Name: WATER LABYRINTH SPRING
+Parent ID: 177
+Order: 442
+Expanded: false
+File: Data/Map184.rxdata
+Width: 76
+Height: 20
+Tileset ID: 31
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Island Route / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 2
+Events:
+  - Event ID 1: NPC_Togepi @ (18,11) | Pages: 2
+  - Event ID 2: Trainer @ (13,7) | Pages: 3
+
+[Map 185]
+Name: RESORT GORGEOUS SPRING
+Parent ID: 177
+Order: 443
+Expanded: false
+File: Data/Map185.rxdata
+Width: 72
+Height: 20
+Tileset ID: 31
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Island Route / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 12
+Events:
+  - Event ID 1: Cave entrance @ (64,13) | Pages: 2
+  - Event ID 2: Door @ (39,8) | Pages: 2
+  - Event ID 3: Trainer @ (12,10) | Pages: 3
+  - Event ID 4: Trainer @ (23,9) | Pages: 3
+  - Event ID 5: Trainer @ (33,12) | Pages: 3
+  - Event ID 6: Trainer @ (33,8) | Pages: 3
+  - Event ID 7: Trainer @ (33,3) | Pages: 3
+  - Event ID 8: SelphyAnim @ (39,9) | Pages: 2
+  - Event ID 9: Trainer @ (44,10) | Pages: 3
+  - Event ID 10: Trainer @ (56,7) | Pages: 3
+  - Event ID 11: My mailbox @ (42,9) | Pages: 1
+  - Event ID 12: SelphyController @ (39,10) | Pages: 2
+
+[Map 186]
+Name: FIVE ISLE MEADOW SPRING
+Parent ID: 177
+Order: 444
+Expanded: false
+File: Data/Map186.rxdata
+Width: 24
+Height: 40
+Tileset ID: 31
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Islands 4 & 5 / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 6
+Events:
+  - Event ID 1: PC Door @ (12,21) | Pages: 3
+  - Event ID 2: CutTree @ (8,9) | Pages: 1
+  - Event ID 3: CutTree @ (19,12) | Pages: 1
+  - Event ID 4: Trainer(5) @ (17,5) | Pages: 3
+  - Event ID 5: Trainer(1) @ (18,18) | Pages: 3
+  - Event ID 6: Trainer(3) @ (11,27) | Pages: 3
+
+[Map 187]
+Name: MEMORIAL PILLAR SPRING
+Parent ID: 177
+Order: 445
+Expanded: false
+File: Data/Map187.rxdata
+Width: 24
+Height: 60
+Tileset ID: 31
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Islands 4 & 5 / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 5
+Events:
+  - Event ID 1: Trainer @ (12,6) | Pages: 3
+  - Event ID 2: Trainer @ (14,17) | Pages: 3
+  - Event ID 3: Trainer @ (17,31) | Pages: 3
+  - Event ID 4: TectonixEmgraving @ (9,43) | Pages: 2
+  - Event ID 5: TectonixTrainer @ (8,44) | Pages: 2
+
+[Map 188]
+Name: SIX ISLAND SPRING
+Parent ID: 378
+Order: 446
+Expanded: false
+File: Data/Map188.rxdata
+Width: 24
+Height: 30
+Tileset ID: 31
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Island 6 & 7 / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 9
+Events:
+  - Event ID 1: Center sign, size(2,1) @ (9,11) | Pages: 1
+  - Event ID 2: Mart sign, SIZE(2,1) @ (18,11) | Pages: 1
+  - Event ID 3: Six Island Sign @ (9,17) | Pages: 1
+  - Event ID 4: PC Door @ (11,11) | Pages: 2
+  - Event ID 5: Mart Door @ (20,11) | Pages: 2
+  - Event ID 6: Door @ (16,17) | Pages: 2
+  - Event ID 7: Port Door @ (11,24) | Pages: 1
+  - Event ID 8: NPC @ (10,15) | Pages: 1
+  - Event ID 9: NPC @ (15,13) | Pages: 1
+
+[Map 189]
+Name: PokeCentre
+Parent ID: 188
+Order: 447
+Expanded: false
+File: Data/Map189.rxdata
+Width: 20
+Height: 15
+Tileset ID: 4
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: Poke Center / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 8
+Events:
+  - Event ID 1: PC @ (11,1) | Pages: 1
+  - Event ID 2: Nurse @ (7,2) | Pages: 2
+  - Event ID 3: Bookshelf, size(2,1) @ (2,1) | Pages: 1
+  - Event ID 4: Healing balls @ (5,2) | Pages: 7
+  - Event ID 5: NPC @ (11,5) | Pages: 1
+  - Event ID 6: Town Map, size(2,1) @ (12,1) | Pages: 1
+  - Event ID 7: NPC @ (13,3) | Pages: 1
+  - Event ID 8: Exit @ (7,9) | Pages: 1
+
 [Map 190]
 Name: Route 19
 Parent ID: 4
-Order: 178
+Order: 179
 Expanded: false
 File: Data/Map190.rxdata
 Width: 36
@@ -5359,8 +5640,8 @@ Events:
 [Map 191]
 Name: Route 20
 Parent ID: 4
-Order: 179
-Expanded: false
+Order: 180
+Expanded: true
 File: Data/Map191.rxdata
 Width: 120
 Height: 64
@@ -5390,8 +5671,8 @@ Events:
 [Map 192]
 Name: Seafoam Island Cave
 Parent ID: 191
-Order: 180
-Expanded: false
+Order: 181
+Expanded: true
 File: Data/Map192.rxdata
 Width: 20
 Height: 15
@@ -5405,7 +5686,7 @@ Event Count: 0
 [Map 193]
 Name: Seafoam Island Cave - 1F
 Parent ID: 192
-Order: 181
+Order: 182
 Expanded: false
 File: Data/Map193.rxdata
 Width: 48
@@ -5433,7 +5714,7 @@ Events:
 [Map 194]
 Name: Seafoam Island Cave - B1F
 Parent ID: 192
-Order: 182
+Order: 183
 Expanded: false
 File: Data/Map194.rxdata
 Width: 48
@@ -5460,7 +5741,7 @@ Events:
 [Map 195]
 Name: Seafoam Island Cave - B2F
 Parent ID: 192
-Order: 183
+Order: 184
 Expanded: false
 File: Data/Map195.rxdata
 Width: 48
@@ -5486,7 +5767,7 @@ Events:
 [Map 196]
 Name: Seafoam Island Cave - B3F
 Parent ID: 192
-Order: 184
+Order: 185
 Expanded: false
 File: Data/Map196.rxdata
 Width: 47
@@ -5511,7 +5792,7 @@ Events:
 [Map 197]
 Name: Seafoam Island Cave - B4F
 Parent ID: 192
-Order: 185
+Order: 186
 Expanded: false
 File: Data/Map197.rxdata
 Width: 48
@@ -5533,7 +5814,7 @@ Events:
 [Map 198]
 Name: Route 21
 Parent ID: 4
-Order: 186
+Order: 187
 Expanded: false
 File: Data/Map198.rxdata
 Width: 36
@@ -5559,7 +5840,7 @@ Events:
 [Map 199]
 Name: Cinnabar Island
 Parent ID: 4
-Order: 187
+Order: 188
 Expanded: false
 File: Data/Map199.rxdata
 Width: 36
@@ -5592,7 +5873,7 @@ Events:
   - Event ID 19: NPC Barricade @ (26,7) | Pages: 1
   - Event ID 20: NPC Barricade @ (25,7) | Pages: 1
   - Event ID 21: NPC Barricade @ (24,6) | Pages: 1
-  - Event ID 22: EV022 @ (16,10) | Pages: 1
+  - Event ID 22: EV022 @ (15,10) | Pages: 1
   - Event ID 23: Bill 3 @ (33,8) | Pages: 2
   - Event ID 25: Boat @ (35,8) | Pages: 1
   - Event ID 26: Boat 2 @ (35,12) | Pages: 1
@@ -5601,7 +5882,7 @@ Events:
 [Map 200]
 Name: Cinnabar Pokémon Center
 Parent ID: 199
-Order: 188
+Order: 189
 Expanded: false
 File: Data/Map200.rxdata
 Width: 20
@@ -5629,7 +5910,7 @@ Events:
 [Map 201]
 Name: Cinnabar Poké Mart
 Parent ID: 199
-Order: 189
+Order: 190
 Expanded: false
 File: Data/Map201.rxdata
 Width: 20
@@ -5655,7 +5936,7 @@ Events:
 [Map 202]
 Name: Cinnabar Gym
 Parent ID: 199
-Order: 190
+Order: 191
 Expanded: false
 File: Data/Map202.rxdata
 Width: 33
@@ -5714,7 +5995,7 @@ Events:
 [Map 203]
 Name: Cinnabar Lab
 Parent ID: 199
-Order: 191
+Order: 192
 Expanded: false
 File: Data/Map203.rxdata
 Width: 105
@@ -5760,8 +6041,8 @@ Events:
 [Map 204]
 Name: Pokémon Mansion
 Parent ID: 199
-Order: 192
-Expanded: true
+Order: 193
+Expanded: false
 File: Data/Map204.rxdata
 Width: 20
 Height: 15
@@ -5775,7 +6056,7 @@ Event Count: 0
 [Map 205]
 Name: Pokémon Mansion - 1F
 Parent ID: 204
-Order: 193
+Order: 194
 Expanded: false
 File: Data/Map205.rxdata
 Width: 40
@@ -5829,7 +6110,7 @@ Events:
 [Map 206]
 Name: Pokémon Mansion - 2F
 Parent ID: 204
-Order: 194
+Order: 195
 Expanded: false
 File: Data/Map206.rxdata
 Width: 40
@@ -5876,7 +6157,7 @@ Events:
 [Map 207]
 Name: Pokémon Mansion - 3F
 Parent ID: 204
-Order: 195
+Order: 196
 Expanded: false
 File: Data/Map207.rxdata
 Width: 40
@@ -5919,7 +6200,7 @@ Events:
 [Map 208]
 Name: Pokémon Mansion - B1F
 Parent ID: 204
-Order: 196
+Order: 197
 Expanded: false
 File: Data/Map208.rxdata
 Width: 40
@@ -5975,7 +6256,7 @@ Events:
 [Map 209]
 Name: Route 23
 Parent ID: 4
-Order: 197
+Order: 198
 Expanded: false
 File: Data/Map209.rxdata
 Width: 36
@@ -6018,7 +6299,7 @@ Events:
 [Map 210]
 Name: Victory Road
 Parent ID: 209
-Order: 198
+Order: 199
 Expanded: true
 File: Data/Map210.rxdata
 Width: 20
@@ -6033,7 +6314,7 @@ Event Count: 0
 [Map 211]
 Name: Victory Road - 1F
 Parent ID: 210
-Order: 199
+Order: 200
 Expanded: false
 File: Data/Map211.rxdata
 Width: 38
@@ -6066,7 +6347,7 @@ Events:
 [Map 212]
 Name: Victory Road - 2F
 Parent ID: 210
-Order: 200
+Order: 201
 Expanded: false
 File: Data/Map212.rxdata
 Width: 65
@@ -6107,7 +6388,7 @@ Events:
 [Map 213]
 Name: Victory Road - 3F
 Parent ID: 210
-Order: 201
+Order: 202
 Expanded: false
 File: Data/Map213.rxdata
 Width: 58
@@ -6143,7 +6424,7 @@ Events:
 [Map 214]
 Name: Indigo Plateau
 Parent ID: 4
-Order: 202
+Order: 203
 Expanded: false
 File: Data/Map214.rxdata
 Width: 36
@@ -6160,7 +6441,7 @@ Events:
 [Map 215]
 Name: Indigo Plateau Lobby
 Parent ID: 214
-Order: 203
+Order: 204
 Expanded: false
 File: Data/Map215.rxdata
 Width: 25
@@ -6189,7 +6470,7 @@ Events:
 [Map 216]
 Name: Lorelei's Chamber
 Parent ID: 214
-Order: 204
+Order: 205
 Expanded: false
 File: Data/Map216.rxdata
 Width: 20
@@ -6208,7 +6489,7 @@ Events:
 [Map 217]
 Name: Bruno's Chamber
 Parent ID: 214
-Order: 205
+Order: 206
 Expanded: false
 File: Data/Map217.rxdata
 Width: 20
@@ -6227,7 +6508,7 @@ Events:
 [Map 218]
 Name: Agatha's Chamber
 Parent ID: 214
-Order: 206
+Order: 207
 Expanded: false
 File: Data/Map218.rxdata
 Width: 20
@@ -6246,7 +6527,7 @@ Events:
 [Map 219]
 Name: Lance's Chamber
 Parent ID: 214
-Order: 207
+Order: 208
 Expanded: false
 File: Data/Map219.rxdata
 Width: 29
@@ -6266,7 +6547,7 @@ Events:
 [Map 220]
 Name: Champion's Hall
 Parent ID: 214
-Order: 208
+Order: 209
 Expanded: false
 File: Data/Map220.rxdata
 Width: 20
@@ -6286,7 +6567,7 @@ Events:
 [Map 221]
 Name: Hall of Fame
 Parent ID: 214
-Order: 209
+Order: 210
 Expanded: false
 File: Data/Map221.rxdata
 Width: 20
@@ -6305,7 +6586,7 @@ Events:
 [Map 222]
 Name: Hoenn
 Parent ID: 0
-Order: 210
+Order: 211
 Expanded: false
 File: Data/Map222.rxdata
 Width: 20
@@ -6320,7 +6601,7 @@ Event Count: 0
 [Map 223]
 Name: Johto
 Parent ID: 0
-Order: 306
+Order: 307
 Expanded: false
 File: Data/Map223.rxdata
 Width: 20
@@ -6335,8 +6616,8 @@ Event Count: 0
 [Map 224]
 Name: Towns
 Parent ID: 222
-Order: 211
-Expanded: true
+Order: 212
+Expanded: false
 File: Data/Map224.rxdata
 Width: 20
 Height: 15
@@ -6350,8 +6631,8 @@ Event Count: 0
 [Map 225]
 Name: Routes
 Parent ID: 222
-Order: 234
-Expanded: true
+Order: 235
+Expanded: false
 File: Data/Map225.rxdata
 Width: 20
 Height: 15
@@ -6365,7 +6646,7 @@ Event Count: 0
 [Map 226]
 Name: Littleroot
 Parent ID: 224
-Order: 212
+Order: 213
 Expanded: false
 File: Data/Map226.rxdata
 Width: 36
@@ -6392,7 +6673,7 @@ Events:
 [Map 227]
 Name: Rt101
 Parent ID: 225
-Order: 235
+Order: 236
 Expanded: false
 File: Data/Map227.rxdata
 Width: 39
@@ -6409,7 +6690,7 @@ Events:
 [Map 228]
 Name: Oldale
 Parent ID: 224
-Order: 218
+Order: 219
 Expanded: false
 File: Data/Map228.rxdata
 Width: 28
@@ -6439,7 +6720,7 @@ Events:
 [Map 229]
 Name: Petalburg
 Parent ID: 224
-Order: 219
+Order: 220
 Expanded: false
 File: Data/Map229.rxdata
 Width: 30
@@ -6473,7 +6754,7 @@ Events:
 [Map 230]
 Name: Dewford
 Parent ID: 224
-Order: 220
+Order: 221
 Expanded: false
 File: Data/Map230.rxdata
 Width: 20
@@ -6488,7 +6769,7 @@ Event Count: 0
 [Map 231]
 Name: Slateport
 Parent ID: 224
-Order: 221
+Order: 222
 Expanded: false
 File: Data/Map231.rxdata
 Width: 46
@@ -6540,7 +6821,7 @@ Events:
 [Map 232]
 Name: Mauville
 Parent ID: 224
-Order: 222
+Order: 223
 Expanded: true
 File: Data/Map232.rxdata
 Width: 40
@@ -6555,7 +6836,7 @@ Event Count: 0
 [Map 233]
 Name: Verdanturf
 Parent ID: 224
-Order: 225
+Order: 226
 Expanded: false
 File: Data/Map233.rxdata
 Width: 20
@@ -6570,7 +6851,7 @@ Event Count: 0
 [Map 234]
 Name: Fallarbor
 Parent ID: 224
-Order: 226
+Order: 227
 Expanded: false
 File: Data/Map234.rxdata
 Width: 20
@@ -6585,7 +6866,7 @@ Event Count: 0
 [Map 235]
 Name: Lavaridge
 Parent ID: 224
-Order: 227
+Order: 228
 Expanded: false
 File: Data/Map235.rxdata
 Width: 20
@@ -6600,7 +6881,7 @@ Event Count: 0
 [Map 236]
 Name: Fortree
 Parent ID: 224
-Order: 228
+Order: 229
 Expanded: false
 File: Data/Map236.rxdata
 Width: 40
@@ -6615,7 +6896,7 @@ Event Count: 0
 [Map 237]
 Name: Lilycove
 Parent ID: 224
-Order: 229
+Order: 230
 Expanded: false
 File: Data/Map237.rxdata
 Width: 80
@@ -6630,7 +6911,7 @@ Event Count: 0
 [Map 238]
 Name: Mossdeep
 Parent ID: 224
-Order: 230
+Order: 231
 Expanded: false
 File: Data/Map238.rxdata
 Width: 80
@@ -6645,7 +6926,7 @@ Event Count: 0
 [Map 239]
 Name: Sootopolis
 Parent ID: 224
-Order: 231
+Order: 232
 Expanded: false
 File: Data/Map239.rxdata
 Width: 20
@@ -6660,7 +6941,7 @@ Event Count: 0
 [Map 240]
 Name: Pacificlog
 Parent ID: 224
-Order: 232
+Order: 233
 Expanded: false
 File: Data/Map240.rxdata
 Width: 20
@@ -6675,7 +6956,7 @@ Event Count: 0
 [Map 241]
 Name: Ever Grande City
 Parent ID: 224
-Order: 233
+Order: 234
 Expanded: false
 File: Data/Map241.rxdata
 Width: 20
@@ -6690,7 +6971,7 @@ Event Count: 0
 [Map 242]
 Name: Rt102
 Parent ID: 225
-Order: 236
+Order: 237
 Expanded: false
 File: Data/Map242.rxdata
 Width: 50
@@ -6712,10 +6993,36 @@ Events:
   - Event ID 8: Route sign 2 @ (17,2) | Pages: 1
   - Event ID 9: EV009 @ (19,11) | Pages: 1
 
+[Map 243]
+Name: PokeMart
+Parent ID: 188
+Order: 448
+Expanded: false
+File: Data/Map243.rxdata
+Width: 20
+Height: 15
+Tileset ID: 5
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: Poke Mart / vol 80 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 10
+Events:
+  - Event ID 1: Exit @ (4,8) | Pages: 1
+  - Event ID 2: Mart @ (2,3) | Pages: 1
+  - Event ID 3: Questionnaire @ (1,4) | Pages: 1
+  - Event ID 4: Merchandise, size(3,1) @ (4,1) | Pages: 1
+  - Event ID 5: Merchandise, size(2,1) @ (1,6) | Pages: 1
+  - Event ID 6: Merchandise, size(3,1) @ (7,1) | Pages: 1
+  - Event ID 7: Merchandise, size(2,3) @ (7,6) | Pages: 1
+  - Event ID 8: Merchandise, size(2,3) @ (10,6) | Pages: 1
+  - Event ID 9: NPC @ (7,7) | Pages: 1
+  - Event ID 10: NPC @ (8,3) | Pages: 1
+
 [Map 244]
 Name: Rt104
 Parent ID: 225
-Order: 237
+Order: 238
 Expanded: false
 File: Data/Map244.rxdata
 Width: 40
@@ -6733,7 +7040,7 @@ Events:
 [Map 245]
 Name: Rt105
 Parent ID: 225
-Order: 238
+Order: 239
 Expanded: false
 File: Data/Map245.rxdata
 Width: 40
@@ -6748,7 +7055,7 @@ Event Count: 0
 [Map 246]
 Name: Rt106
 Parent ID: 225
-Order: 239
+Order: 240
 Expanded: false
 File: Data/Map246.rxdata
 Width: 80
@@ -6763,7 +7070,7 @@ Event Count: 0
 [Map 247]
 Name: Rt107
 Parent ID: 225
-Order: 240
+Order: 241
 Expanded: false
 File: Data/Map247.rxdata
 Width: 60
@@ -6778,7 +7085,7 @@ Event Count: 0
 [Map 248]
 Name: Rt108
 Parent ID: 225
-Order: 241
+Order: 242
 Expanded: false
 File: Data/Map248.rxdata
 Width: 60
@@ -6793,7 +7100,7 @@ Event Count: 0
 [Map 249]
 Name: Rt109
 Parent ID: 225
-Order: 242
+Order: 243
 Expanded: false
 File: Data/Map249.rxdata
 Width: 40
@@ -6808,7 +7115,7 @@ Event Count: 0
 [Map 250]
 Name: Rt110
 Parent ID: 225
-Order: 243
+Order: 244
 Expanded: false
 File: Data/Map250.rxdata
 Width: 40
@@ -6828,7 +7135,7 @@ Events:
 [Map 251]
 Name: Rt111
 Parent ID: 225
-Order: 244
+Order: 245
 Expanded: false
 File: Data/Map251.rxdata
 Width: 20
@@ -6843,7 +7150,7 @@ Event Count: 0
 [Map 252]
 Name: Rt112
 Parent ID: 225
-Order: 245
+Order: 246
 Expanded: false
 File: Data/Map252.rxdata
 Width: 20
@@ -6858,7 +7165,7 @@ Event Count: 0
 [Map 253]
 Name: Rt113
 Parent ID: 225
-Order: 246
+Order: 247
 Expanded: false
 File: Data/Map253.rxdata
 Width: 20
@@ -6873,7 +7180,7 @@ Event Count: 0
 [Map 254]
 Name: Rt114
 Parent ID: 225
-Order: 247
+Order: 248
 Expanded: false
 File: Data/Map254.rxdata
 Width: 20
@@ -6888,7 +7195,7 @@ Event Count: 0
 [Map 255]
 Name: Rt115
 Parent ID: 225
-Order: 248
+Order: 249
 Expanded: false
 File: Data/Map255.rxdata
 Width: 20
@@ -6903,7 +7210,7 @@ Event Count: 0
 [Map 256]
 Name: Rt116
 Parent ID: 225
-Order: 249
+Order: 250
 Expanded: false
 File: Data/Map256.rxdata
 Width: 20
@@ -6918,7 +7225,7 @@ Event Count: 0
 [Map 257]
 Name: Rt117
 Parent ID: 225
-Order: 250
+Order: 251
 Expanded: false
 File: Data/Map257.rxdata
 Width: 20
@@ -6933,7 +7240,7 @@ Event Count: 0
 [Map 258]
 Name: Rt118
 Parent ID: 225
-Order: 251
+Order: 252
 Expanded: false
 File: Data/Map258.rxdata
 Width: 20
@@ -6948,7 +7255,7 @@ Event Count: 0
 [Map 259]
 Name: Rt119
 Parent ID: 225
-Order: 252
+Order: 253
 Expanded: false
 File: Data/Map259.rxdata
 Width: 20
@@ -6963,7 +7270,7 @@ Event Count: 0
 [Map 260]
 Name: Rt120
 Parent ID: 225
-Order: 253
+Order: 254
 Expanded: false
 File: Data/Map260.rxdata
 Width: 20
@@ -6978,7 +7285,7 @@ Event Count: 0
 [Map 261]
 Name: Rt121
 Parent ID: 225
-Order: 254
+Order: 255
 Expanded: false
 File: Data/Map261.rxdata
 Width: 20
@@ -6993,7 +7300,7 @@ Event Count: 0
 [Map 262]
 Name: Rt122
 Parent ID: 225
-Order: 255
+Order: 256
 Expanded: false
 File: Data/Map262.rxdata
 Width: 20
@@ -7008,7 +7315,7 @@ Event Count: 0
 [Map 263]
 Name: Rt123
 Parent ID: 225
-Order: 256
+Order: 257
 Expanded: false
 File: Data/Map263.rxdata
 Width: 20
@@ -7023,7 +7330,7 @@ Event Count: 0
 [Map 264]
 Name: Rt124
 Parent ID: 225
-Order: 257
+Order: 258
 Expanded: false
 File: Data/Map264.rxdata
 Width: 20
@@ -7038,7 +7345,7 @@ Event Count: 0
 [Map 265]
 Name: Rt125
 Parent ID: 225
-Order: 258
+Order: 259
 Expanded: false
 File: Data/Map265.rxdata
 Width: 20
@@ -7053,7 +7360,7 @@ Event Count: 0
 [Map 266]
 Name: Rt126
 Parent ID: 225
-Order: 259
+Order: 260
 Expanded: false
 File: Data/Map266.rxdata
 Width: 20
@@ -7068,7 +7375,7 @@ Event Count: 0
 [Map 267]
 Name: Rt127
 Parent ID: 225
-Order: 260
+Order: 261
 Expanded: false
 File: Data/Map267.rxdata
 Width: 20
@@ -7083,7 +7390,7 @@ Event Count: 0
 [Map 268]
 Name: Rt128
 Parent ID: 225
-Order: 261
+Order: 262
 Expanded: false
 File: Data/Map268.rxdata
 Width: 20
@@ -7098,7 +7405,7 @@ Event Count: 0
 [Map 269]
 Name: Rt129
 Parent ID: 225
-Order: 262
+Order: 263
 Expanded: false
 File: Data/Map269.rxdata
 Width: 20
@@ -7113,7 +7420,7 @@ Event Count: 0
 [Map 270]
 Name: Rt130
 Parent ID: 225
-Order: 263
+Order: 264
 Expanded: false
 File: Data/Map270.rxdata
 Width: 20
@@ -7128,7 +7435,7 @@ Event Count: 0
 [Map 271]
 Name: Rt131
 Parent ID: 225
-Order: 264
+Order: 265
 Expanded: false
 File: Data/Map271.rxdata
 Width: 20
@@ -7143,7 +7450,7 @@ Event Count: 0
 [Map 272]
 Name: Rt132
 Parent ID: 225
-Order: 265
+Order: 266
 Expanded: false
 File: Data/Map272.rxdata
 Width: 20
@@ -7158,7 +7465,7 @@ Event Count: 0
 [Map 273]
 Name: Rt133
 Parent ID: 225
-Order: 266
+Order: 267
 Expanded: false
 File: Data/Map273.rxdata
 Width: 20
@@ -7173,7 +7480,7 @@ Event Count: 0
 [Map 274]
 Name: Rt134
 Parent ID: 225
-Order: 267
+Order: 268
 Expanded: false
 File: Data/Map274.rxdata
 Width: 20
@@ -7188,7 +7495,7 @@ Event Count: 0
 [Map 275]
 Name: Towns
 Parent ID: 223
-Order: 307
+Order: 308
 Expanded: false
 File: Data/Map275.rxdata
 Width: 20
@@ -7203,7 +7510,7 @@ Event Count: 0
 [Map 276]
 Name: Routes
 Parent ID: 223
-Order: 326
+Order: 327
 Expanded: false
 File: Data/Map276.rxdata
 Width: 20
@@ -7218,7 +7525,7 @@ Event Count: 0
 [Map 277]
 Name: Rt29
 Parent ID: 276
-Order: 327
+Order: 328
 Expanded: false
 File: Data/Map277.rxdata
 Width: 20
@@ -7233,7 +7540,7 @@ Event Count: 0
 [Map 278]
 Name: Rt30
 Parent ID: 276
-Order: 328
+Order: 329
 Expanded: false
 File: Data/Map278.rxdata
 Width: 20
@@ -7248,7 +7555,7 @@ Event Count: 0
 [Map 279]
 Name: Rt31
 Parent ID: 276
-Order: 329
+Order: 330
 Expanded: false
 File: Data/Map279.rxdata
 Width: 20
@@ -7263,7 +7570,7 @@ Event Count: 0
 [Map 280]
 Name: Rt32
 Parent ID: 276
-Order: 330
+Order: 331
 Expanded: false
 File: Data/Map280.rxdata
 Width: 20
@@ -7278,7 +7585,7 @@ Event Count: 0
 [Map 281]
 Name: Rt33
 Parent ID: 276
-Order: 331
+Order: 332
 Expanded: false
 File: Data/Map281.rxdata
 Width: 20
@@ -7293,7 +7600,7 @@ Event Count: 0
 [Map 282]
 Name: Rt34
 Parent ID: 276
-Order: 332
+Order: 333
 Expanded: false
 File: Data/Map282.rxdata
 Width: 20
@@ -7308,7 +7615,7 @@ Event Count: 0
 [Map 283]
 Name: Rt35
 Parent ID: 276
-Order: 333
+Order: 334
 Expanded: false
 File: Data/Map283.rxdata
 Width: 20
@@ -7323,7 +7630,7 @@ Event Count: 0
 [Map 284]
 Name: Rt36
 Parent ID: 276
-Order: 334
+Order: 335
 Expanded: false
 File: Data/Map284.rxdata
 Width: 20
@@ -7338,7 +7645,7 @@ Event Count: 0
 [Map 285]
 Name: Rt37
 Parent ID: 276
-Order: 335
+Order: 336
 Expanded: false
 File: Data/Map285.rxdata
 Width: 20
@@ -7353,7 +7660,7 @@ Event Count: 0
 [Map 286]
 Name: Rt38
 Parent ID: 276
-Order: 336
+Order: 337
 Expanded: false
 File: Data/Map286.rxdata
 Width: 20
@@ -7368,7 +7675,7 @@ Event Count: 0
 [Map 287]
 Name: Rt39
 Parent ID: 276
-Order: 337
+Order: 338
 Expanded: false
 File: Data/Map287.rxdata
 Width: 20
@@ -7383,7 +7690,7 @@ Event Count: 0
 [Map 288]
 Name: Rt40
 Parent ID: 276
-Order: 338
+Order: 339
 Expanded: false
 File: Data/Map288.rxdata
 Width: 20
@@ -7398,7 +7705,7 @@ Event Count: 0
 [Map 289]
 Name: Rt41
 Parent ID: 276
-Order: 339
+Order: 340
 Expanded: false
 File: Data/Map289.rxdata
 Width: 20
@@ -7413,7 +7720,7 @@ Event Count: 0
 [Map 290]
 Name: Rt42
 Parent ID: 276
-Order: 340
+Order: 341
 Expanded: false
 File: Data/Map290.rxdata
 Width: 20
@@ -7428,7 +7735,7 @@ Event Count: 0
 [Map 291]
 Name: Rt43
 Parent ID: 276
-Order: 341
+Order: 342
 Expanded: false
 File: Data/Map291.rxdata
 Width: 20
@@ -7443,7 +7750,7 @@ Event Count: 0
 [Map 292]
 Name: Rt44
 Parent ID: 276
-Order: 342
+Order: 343
 Expanded: false
 File: Data/Map292.rxdata
 Width: 20
@@ -7458,7 +7765,7 @@ Event Count: 0
 [Map 293]
 Name: Rt45
 Parent ID: 276
-Order: 343
+Order: 344
 Expanded: false
 File: Data/Map293.rxdata
 Width: 20
@@ -7473,7 +7780,7 @@ Event Count: 0
 [Map 294]
 Name: Rt46
 Parent ID: 276
-Order: 344
+Order: 345
 Expanded: false
 File: Data/Map294.rxdata
 Width: 20
@@ -7488,7 +7795,7 @@ Event Count: 0
 [Map 295]
 Name: Rt47
 Parent ID: 276
-Order: 345
+Order: 346
 Expanded: false
 File: Data/Map295.rxdata
 Width: 20
@@ -7503,7 +7810,7 @@ Event Count: 0
 [Map 296]
 Name: Rt48
 Parent ID: 276
-Order: 346
+Order: 347
 Expanded: false
 File: Data/Map296.rxdata
 Width: 20
@@ -7518,7 +7825,7 @@ Event Count: 0
 [Map 297]
 Name: New Bark Town
 Parent ID: 275
-Order: 308
+Order: 309
 Expanded: false
 File: Data/Map297.rxdata
 Width: 20
@@ -7533,7 +7840,7 @@ Event Count: 0
 [Map 298]
 Name: Cherrygrove City
 Parent ID: 275
-Order: 309
+Order: 310
 Expanded: false
 File: Data/Map298.rxdata
 Width: 20
@@ -7548,7 +7855,7 @@ Event Count: 0
 [Map 299]
 Name: Violet City
 Parent ID: 275
-Order: 310
+Order: 311
 Expanded: true
 File: Data/Map299.rxdata
 Width: 20
@@ -7563,7 +7870,7 @@ Event Count: 0
 [Map 300]
 Name: Azalea Town
 Parent ID: 275
-Order: 312
+Order: 313
 Expanded: true
 File: Data/Map300.rxdata
 Width: 20
@@ -7578,7 +7885,7 @@ Event Count: 0
 [Map 301]
 Name: Goldenrod City
 Parent ID: 275
-Order: 314
+Order: 315
 Expanded: true
 File: Data/Map301.rxdata
 Width: 20
@@ -7593,7 +7900,7 @@ Event Count: 0
 [Map 302]
 Name: Ecruteak City
 Parent ID: 275
-Order: 317
+Order: 318
 Expanded: true
 File: Data/Map302.rxdata
 Width: 20
@@ -7608,7 +7915,7 @@ Event Count: 0
 [Map 303]
 Name: Olivine City
 Parent ID: 275
-Order: 320
+Order: 321
 Expanded: true
 File: Data/Map303.rxdata
 Width: 20
@@ -7623,7 +7930,7 @@ Event Count: 0
 [Map 304]
 Name: Cianwood City
 Parent ID: 275
-Order: 323
+Order: 324
 Expanded: false
 File: Data/Map304.rxdata
 Width: 20
@@ -7638,7 +7945,7 @@ Event Count: 0
 [Map 305]
 Name: Mahogany Town
 Parent ID: 275
-Order: 324
+Order: 325
 Expanded: false
 File: Data/Map305.rxdata
 Width: 20
@@ -7653,7 +7960,7 @@ Event Count: 0
 [Map 306]
 Name: Blackthorn City
 Parent ID: 275
-Order: 325
+Order: 326
 Expanded: false
 File: Data/Map306.rxdata
 Width: 20
@@ -7668,7 +7975,7 @@ Event Count: 0
 [Map 307]
 Name: Dungeons
 Parent ID: 222
-Order: 269
+Order: 270
 Expanded: false
 File: Data/Map307.rxdata
 Width: 20
@@ -7683,7 +7990,7 @@ Event Count: 0
 [Map 308]
 Name: Dungeons
 Parent ID: 223
-Order: 347
+Order: 348
 Expanded: false
 File: Data/Map308.rxdata
 Width: 20
@@ -7698,7 +8005,7 @@ Event Count: 0
 [Map 309]
 Name: Dark Cave
 Parent ID: 308
-Order: 348
+Order: 349
 Expanded: false
 File: Data/Map309.rxdata
 Width: 20
@@ -7713,7 +8020,7 @@ Event Count: 0
 [Map 310]
 Name: Sprout Tower
 Parent ID: 299
-Order: 311
+Order: 312
 Expanded: false
 File: Data/Map310.rxdata
 Width: 20
@@ -7728,7 +8035,7 @@ Event Count: 0
 [Map 311]
 Name: Ruiuns of Alph
 Parent ID: 308
-Order: 349
+Order: 350
 Expanded: false
 File: Data/Map311.rxdata
 Width: 20
@@ -7743,7 +8050,7 @@ Event Count: 0
 [Map 312]
 Name: Union Cave
 Parent ID: 308
-Order: 350
+Order: 351
 Expanded: false
 File: Data/Map312.rxdata
 Width: 20
@@ -7758,7 +8065,7 @@ Event Count: 0
 [Map 313]
 Name: Slowpoke Well
 Parent ID: 300
-Order: 313
+Order: 314
 Expanded: false
 File: Data/Map313.rxdata
 Width: 20
@@ -7773,7 +8080,7 @@ Event Count: 0
 [Map 314]
 Name: Ilex Forest
 Parent ID: 308
-Order: 351
+Order: 352
 Expanded: false
 File: Data/Map314.rxdata
 Width: 20
@@ -7788,7 +8095,7 @@ Event Count: 0
 [Map 315]
 Name: Radio Tower
 Parent ID: 301
-Order: 316
+Order: 317
 Expanded: false
 File: Data/Map315.rxdata
 Width: 20
@@ -7803,7 +8110,7 @@ Event Count: 0
 [Map 316]
 Name: National Park
 Parent ID: 308
-Order: 352
+Order: 353
 Expanded: false
 File: Data/Map316.rxdata
 Width: 20
@@ -7818,7 +8125,7 @@ Event Count: 0
 [Map 317]
 Name: Goldenrod Tunnel
 Parent ID: 301
-Order: 315
+Order: 316
 Expanded: false
 File: Data/Map317.rxdata
 Width: 20
@@ -7833,7 +8140,7 @@ Event Count: 0
 [Map 318]
 Name: Bell Tower
 Parent ID: 302
-Order: 319
+Order: 320
 Expanded: false
 File: Data/Map318.rxdata
 Width: 20
@@ -7848,7 +8155,7 @@ Event Count: 0
 [Map 319]
 Name: Burned Tower
 Parent ID: 302
-Order: 318
+Order: 319
 Expanded: false
 File: Data/Map319.rxdata
 Width: 20
@@ -7863,7 +8170,7 @@ Event Count: 0
 [Map 320]
 Name: MooMoo Farm
 Parent ID: 303
-Order: 321
+Order: 322
 Expanded: false
 File: Data/Map320.rxdata
 Width: 20
@@ -7878,7 +8185,7 @@ Event Count: 0
 [Map 321]
 Name: Glitter Lighthouse
 Parent ID: 303
-Order: 322
+Order: 323
 Expanded: false
 File: Data/Map321.rxdata
 Width: 20
@@ -7893,7 +8200,7 @@ Event Count: 0
 [Map 322]
 Name: Cliff Edge Gate
 Parent ID: 308
-Order: 353
+Order: 354
 Expanded: false
 File: Data/Map322.rxdata
 Width: 20
@@ -7908,7 +8215,7 @@ Event Count: 0
 [Map 323]
 Name: Cliff Cave
 Parent ID: 308
-Order: 354
+Order: 355
 Expanded: false
 File: Data/Map323.rxdata
 Width: 20
@@ -7923,7 +8230,7 @@ Event Count: 0
 [Map 324]
 Name: Embedded Tower
 Parent ID: 308
-Order: 355
+Order: 356
 Expanded: false
 File: Data/Map324.rxdata
 Width: 20
@@ -7938,7 +8245,7 @@ Event Count: 0
 [Map 325]
 Name: Safari Zone
 Parent ID: 308
-Order: 356
+Order: 357
 Expanded: false
 File: Data/Map325.rxdata
 Width: 20
@@ -7953,7 +8260,7 @@ Event Count: 0
 [Map 326]
 Name: Whirl Islands
 Parent ID: 308
-Order: 357
+Order: 358
 Expanded: false
 File: Data/Map326.rxdata
 Width: 20
@@ -7968,7 +8275,7 @@ Event Count: 0
 [Map 327]
 Name: Mt. Mortar
 Parent ID: 308
-Order: 358
+Order: 359
 Expanded: false
 File: Data/Map327.rxdata
 Width: 20
@@ -7983,7 +8290,7 @@ Event Count: 0
 [Map 328]
 Name: Lake of Rage
 Parent ID: 308
-Order: 359
+Order: 360
 Expanded: false
 File: Data/Map328.rxdata
 Width: 20
@@ -7998,7 +8305,7 @@ Event Count: 0
 [Map 329]
 Name: Team Rocket HQ
 Parent ID: 308
-Order: 360
+Order: 361
 Expanded: false
 File: Data/Map329.rxdata
 Width: 20
@@ -8013,7 +8320,7 @@ Event Count: 0
 [Map 330]
 Name: Ice Path
 Parent ID: 308
-Order: 361
+Order: 362
 Expanded: false
 File: Data/Map330.rxdata
 Width: 20
@@ -8028,7 +8335,7 @@ Event Count: 0
 [Map 331]
 Name: Dragon's Den
 Parent ID: 308
-Order: 362
+Order: 363
 Expanded: false
 File: Data/Map331.rxdata
 Width: 20
@@ -8043,7 +8350,7 @@ Event Count: 0
 [Map 332]
 Name: S.S. Aqua
 Parent ID: 308
-Order: 363
+Order: 364
 Expanded: false
 File: Data/Map332.rxdata
 Width: 20
@@ -8058,7 +8365,7 @@ Event Count: 0
 [Map 333]
 Name: Mt. Silver
 Parent ID: 308
-Order: 364
+Order: 365
 Expanded: false
 File: Data/Map333.rxdata
 Width: 20
@@ -8073,7 +8380,7 @@ Event Count: 0
 [Map 334]
 Name: Petalburg Woods
 Parent ID: 307
-Order: 270
+Order: 271
 Expanded: false
 File: Data/Map334.rxdata
 Width: 20
@@ -8088,7 +8395,7 @@ Event Count: 0
 [Map 335]
 Name: Rusturf Tunnel
 Parent ID: 307
-Order: 271
+Order: 272
 Expanded: false
 File: Data/Map335.rxdata
 Width: 20
@@ -8103,7 +8410,7 @@ Event Count: 0
 [Map 336]
 Name: Island Cave
 Parent ID: 307
-Order: 272
+Order: 273
 Expanded: false
 File: Data/Map336.rxdata
 Width: 20
@@ -8118,7 +8425,7 @@ Event Count: 0
 [Map 337]
 Name: Granite Cave
 Parent ID: 307
-Order: 273
+Order: 274
 Expanded: false
 File: Data/Map337.rxdata
 Width: 20
@@ -8133,7 +8440,7 @@ Event Count: 0
 [Map 338]
 Name: Abandoned Ship
 Parent ID: 307
-Order: 274
+Order: 275
 Expanded: false
 File: Data/Map338.rxdata
 Width: 20
@@ -8148,7 +8455,7 @@ Event Count: 0
 [Map 339]
 Name: Oceanic Museum
 Parent ID: 307
-Order: 275
+Order: 276
 Expanded: false
 File: Data/Map339.rxdata
 Width: 20
@@ -8163,7 +8470,7 @@ Event Count: 0
 [Map 340]
 Name: Seaside Cycling Road
 Parent ID: 307
-Order: 276
+Order: 277
 Expanded: false
 File: Data/Map340.rxdata
 Width: 20
@@ -8178,7 +8485,7 @@ Event Count: 0
 [Map 341]
 Name: New Mauville
 Parent ID: 232
-Order: 223
+Order: 224
 Expanded: false
 File: Data/Map341.rxdata
 Width: 20
@@ -8193,7 +8500,7 @@ Event Count: 0
 [Map 342]
 Name: Desert Ruins
 Parent ID: 307
-Order: 277
+Order: 278
 Expanded: false
 File: Data/Map342.rxdata
 Width: 20
@@ -8208,7 +8515,7 @@ Event Count: 0
 [Map 343]
 Name: Mirage Tower
 Parent ID: 367
-Order: 302
+Order: 303
 Expanded: false
 File: Data/Map343.rxdata
 Width: 20
@@ -8223,7 +8530,7 @@ Event Count: 0
 [Map 344]
 Name: Trainer Hill
 Parent ID: 307
-Order: 278
+Order: 279
 Expanded: false
 File: Data/Map344.rxdata
 Width: 20
@@ -8238,7 +8545,7 @@ Event Count: 0
 [Map 345]
 Name: Fiery Path
 Parent ID: 307
-Order: 279
+Order: 280
 Expanded: false
 File: Data/Map345.rxdata
 Width: 20
@@ -8253,7 +8560,7 @@ Event Count: 0
 [Map 346]
 Name: Jagged Pass
 Parent ID: 307
-Order: 280
+Order: 281
 Expanded: false
 File: Data/Map346.rxdata
 Width: 20
@@ -8268,7 +8575,7 @@ Event Count: 0
 [Map 347]
 Name: Mt. Chimney
 Parent ID: 307
-Order: 281
+Order: 282
 Expanded: false
 File: Data/Map347.rxdata
 Width: 20
@@ -8283,7 +8590,7 @@ Event Count: 0
 [Map 348]
 Name: Desert Underpass
 Parent ID: 307
-Order: 282
+Order: 283
 Expanded: false
 File: Data/Map348.rxdata
 Width: 20
@@ -8298,7 +8605,7 @@ Event Count: 0
 [Map 349]
 Name: Meteor Falls
 Parent ID: 307
-Order: 283
+Order: 284
 Expanded: false
 File: Data/Map349.rxdata
 Width: 20
@@ -8313,7 +8620,7 @@ Event Count: 0
 [Map 350]
 Name: Weather Institute
 Parent ID: 307
-Order: 284
+Order: 285
 Expanded: false
 File: Data/Map350.rxdata
 Width: 20
@@ -8328,7 +8635,7 @@ Event Count: 0
 [Map 351]
 Name: Scorched Slab
 Parent ID: 307
-Order: 285
+Order: 286
 Expanded: false
 File: Data/Map351.rxdata
 Width: 20
@@ -8343,7 +8650,7 @@ Event Count: 0
 [Map 352]
 Name: Ancient Tomb
 Parent ID: 307
-Order: 286
+Order: 287
 Expanded: false
 File: Data/Map352.rxdata
 Width: 20
@@ -8358,7 +8665,7 @@ Event Count: 0
 [Map 353]
 Name: Safari Zone
 Parent ID: 307
-Order: 287
+Order: 288
 Expanded: false
 File: Data/Map353.rxdata
 Width: 20
@@ -8373,7 +8680,7 @@ Event Count: 0
 [Map 354]
 Name: Mt. Pyre
 Parent ID: 307
-Order: 288
+Order: 289
 Expanded: false
 File: Data/Map354.rxdata
 Width: 20
@@ -8388,7 +8695,7 @@ Event Count: 0
 [Map 355]
 Name: Lilycove Museum
 Parent ID: 307
-Order: 289
+Order: 290
 Expanded: false
 File: Data/Map355.rxdata
 Width: 20
@@ -8403,7 +8710,7 @@ Event Count: 0
 [Map 356]
 Name: Shoal Cave
 Parent ID: 307
-Order: 290
+Order: 291
 Expanded: false
 File: Data/Map356.rxdata
 Width: 20
@@ -8418,7 +8725,7 @@ Event Count: 0
 [Map 357]
 Name: Aqua Hideout
 Parent ID: 307
-Order: 291
+Order: 292
 Expanded: false
 File: Data/Map357.rxdata
 Width: 20
@@ -8433,7 +8740,7 @@ Event Count: 0
 [Map 358]
 Name: Magma Hideout
 Parent ID: 307
-Order: 292
+Order: 293
 Expanded: false
 File: Data/Map358.rxdata
 Width: 20
@@ -8448,7 +8755,7 @@ Event Count: 0
 [Map 359]
 Name: Mossdeep Space Center
 Parent ID: 307
-Order: 293
+Order: 294
 Expanded: false
 File: Data/Map359.rxdata
 Width: 20
@@ -8463,7 +8770,7 @@ Event Count: 0
 [Map 360]
 Name: Seafloor Cavern
 Parent ID: 307
-Order: 294
+Order: 295
 Expanded: false
 File: Data/Map360.rxdata
 Width: 20
@@ -8478,7 +8785,7 @@ Event Count: 0
 [Map 361]
 Name: Cave of Origin
 Parent ID: 307
-Order: 295
+Order: 296
 Expanded: false
 File: Data/Map361.rxdata
 Width: 20
@@ -8493,7 +8800,7 @@ Event Count: 0
 [Map 362]
 Name: Sky Pillar
 Parent ID: 307
-Order: 296
+Order: 297
 Expanded: false
 File: Data/Map362.rxdata
 Width: 20
@@ -8508,7 +8815,7 @@ Event Count: 0
 [Map 363]
 Name: Victory Road
 Parent ID: 307
-Order: 297
+Order: 298
 Expanded: false
 File: Data/Map363.rxdata
 Width: 20
@@ -8523,7 +8830,7 @@ Event Count: 0
 [Map 364]
 Name: Sealed Chamber
 Parent ID: 307
-Order: 298
+Order: 299
 Expanded: false
 File: Data/Map364.rxdata
 Width: 20
@@ -8538,7 +8845,7 @@ Event Count: 0
 [Map 365]
 Name: Artisan Cave
 Parent ID: 307
-Order: 299
+Order: 300
 Expanded: false
 File: Data/Map365.rxdata
 Width: 20
@@ -8553,7 +8860,7 @@ Event Count: 0
 [Map 366]
 Name: Altering Cave
 Parent ID: 307
-Order: 300
+Order: 301
 Expanded: false
 File: Data/Map366.rxdata
 Width: 20
@@ -8568,7 +8875,7 @@ Event Count: 0
 [Map 367]
 Name: Mirage Island
 Parent ID: 307
-Order: 301
+Order: 302
 Expanded: false
 File: Data/Map367.rxdata
 Width: 20
@@ -8583,7 +8890,7 @@ Event Count: 0
 [Map 368]
 Name: Southern Island
 Parent ID: 307
-Order: 303
+Order: 304
 Expanded: false
 File: Data/Map368.rxdata
 Width: 20
@@ -8598,7 +8905,7 @@ Event Count: 0
 [Map 369]
 Name: Marine Cave
 Parent ID: 307
-Order: 304
+Order: 305
 Expanded: false
 File: Data/Map369.rxdata
 Width: 20
@@ -8613,7 +8920,7 @@ Event Count: 0
 [Map 370]
 Name: Terra Cave
 Parent ID: 307
-Order: 305
+Order: 306
 Expanded: false
 File: Data/Map370.rxdata
 Width: 20
@@ -8628,7 +8935,7 @@ Event Count: 0
 [Map 371]
 Name: Sea Mauville
 Parent ID: 232
-Order: 224
+Order: 225
 Expanded: false
 File: Data/Map371.rxdata
 Width: 20
@@ -8643,7 +8950,7 @@ Event Count: 0
 [Map 372]
 Name: Brendan's House
 Parent ID: 226
-Order: 213
+Order: 214
 Expanded: false
 File: Data/Map372.rxdata
 Width: 20
@@ -8664,8 +8971,8 @@ Events:
 [Map 373]
 Name: May's House
 Parent ID: 226
-Order: 215
-Expanded: false
+Order: 216
+Expanded: true
 File: Data/Map373.rxdata
 Width: 20
 Height: 15
@@ -8684,7 +8991,7 @@ Events:
 [Map 374]
 Name: Birch's Lab
 Parent ID: 226
-Order: 217
+Order: 218
 Expanded: false
 File: Data/Map374.rxdata
 Width: 20
@@ -8720,7 +9027,7 @@ Events:
 [Map 375]
 Name: Brendan's Room
 Parent ID: 372
-Order: 214
+Order: 215
 Expanded: false
 File: Data/Map375.rxdata
 Width: 20
@@ -8741,7 +9048,7 @@ Events:
 [Map 376]
 Name: May's Room
 Parent ID: 373
-Order: 216
+Order: 217
 Expanded: false
 File: Data/Map376.rxdata
 Width: 20
@@ -8762,7 +9069,7 @@ Events:
 [Map 377]
 Name: One Island
 Parent ID: 378
-Order: 366
+Order: 367
 Expanded: true
 File: Data/Map377.rxdata
 Width: 27
@@ -8772,7 +9079,7 @@ Autoplay BGM: true
 Autoplay BGS: false
 BGM: FRLG - Sevii Islands / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
-Event Count: 16
+Event Count: 15
 Events:
   - Event ID 1: One Island Sign @ (17,133) | Pages: 1
   - Event ID 2: Door @ (11,131) | Pages: 2
@@ -8789,12 +9096,11 @@ Events:
   - Event ID 13: NPC Barricade @ (17,131) | Pages: 1
   - Event ID 14: NPC Barricade @ (18,130) | Pages: 1
   - Event ID 15: NPC Barricade @ (19,130) | Pages: 1
-  - Event ID 16: EV016 @ (12,133) | Pages: 1
 
 [Map 378]
 Name: Sevii
 Parent ID: 0
-Order: 365
+Order: 366
 Expanded: true
 File: Data/Map378.rxdata
 Width: 20
@@ -8809,7 +9115,7 @@ Event Count: 0
 [Map 379]
 Name: One Island PokeCenter
 Parent ID: 377
-Order: 367
+Order: 368
 Expanded: false
 File: Data/Map379.rxdata
 Width: 84
@@ -8888,7 +9194,7 @@ Events:
 [Map 380]
 Name: One Island Port
 Parent ID: 377
-Order: 368
+Order: 369
 Expanded: false
 File: Data/Map380.rxdata
 Width: 20
@@ -8907,7 +9213,7 @@ Events:
 [Map 381]
 Name: One Island Houses
 Parent ID: 377
-Order: 369
+Order: 370
 Expanded: false
 File: Data/Map381.rxdata
 Width: 30
@@ -8938,8 +9244,8 @@ Events:
 [Map 382]
 Name: Two Island
 Parent ID: 378
-Order: 374
-Expanded: true
+Order: 375
+Expanded: false
 File: Data/Map382.rxdata
 Width: 49
 Height: 23
@@ -8969,7 +9275,7 @@ Events:
 [Map 383]
 Name: Two Island PokeCenter
 Parent ID: 382
-Order: 375
+Order: 376
 Expanded: false
 File: Data/Map383.rxdata
 Width: 20
@@ -8993,7 +9299,7 @@ Events:
 [Map 384]
 Name: Two Island Port
 Parent ID: 382
-Order: 376
+Order: 377
 Expanded: false
 File: Data/Map384.rxdata
 Width: 20
@@ -9012,7 +9318,7 @@ Events:
 [Map 385]
 Name: Two Island Houses
 Parent ID: 382
-Order: 377
+Order: 378
 Expanded: false
 File: Data/Map385.rxdata
 Width: 30
@@ -9042,7 +9348,7 @@ Events:
 [Map 386]
 Name: Cape Brink
 Parent ID: 382
-Order: 378
+Order: 379
 Expanded: false
 File: Data/Map386.rxdata
 Width: 49
@@ -9059,8 +9365,8 @@ Events:
 [Map 387]
 Name: Three Island
 Parent ID: 378
-Order: 380
-Expanded: false
+Order: 381
+Expanded: true
 File: Data/Map387.rxdata
 Width: 49
 Height: 40
@@ -9069,7 +9375,7 @@ Autoplay BGM: true
 Autoplay BGS: false
 BGM: FRLG - Sevii Island Route / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
-Event Count: 45
+Event Count: 128
 Events:
   - Event ID 1: Center sign, size(2,1) @ (12,27) | Pages: 1
   - Event ID 2: Mart sign, SIZE(2,1) @ (16,12) | Pages: 1
@@ -9080,11 +9386,11 @@ Events:
   - Event ID 7: NPC @ (14,14) | Pages: 1
   - Event ID 8: EV008 @ (15,14) | Pages: 1
   - Event ID 9: NPC @ (15,7) | Pages: 1
+  - Event ID 10: BerryPlant @ (23,6) | Pages: 1
   - Event ID 11: Door @ (13,19) | Pages: 2
   - Event ID 12: Door @ (12,12) | Pages: 2
   - Event ID 13: Door @ (12,6) | Pages: 2
   - Event ID 14: Door @ (4,6) | Pages: 2
-  - Event ID 15: Mailbox @ (2,6) | Pages: 1
   - Event ID 16: Man @ (15,31) | Pages: 1
   - Event ID 17: Controller - Fight Bikers @ (7,26) | Pages: 2
   - Event ID 18: Controller - Bikers @ (8,27) | Pages: 2
@@ -9104,6 +9410,9 @@ Events:
   - Event ID 32: Controller - Fight Bikers @ (11,26) | Pages: 2
   - Event ID 33: Controller - Bikers @ (7,27) | Pages: 2
   - Event ID 34: Controller - Bikers @ (11,27) | Pages: 2
+  - Event ID 35: BerryPlant @ (24,6) | Pages: 1
+  - Event ID 36: BerryPlant @ (25,6) | Pages: 1
+  - Event ID 37: BerryPlant @ (26,6) | Pages: 1
   - Event ID 38: NPC Barricade @ (13,31) | Pages: 1
   - Event ID 39: NPC Barricade @ (14,30) | Pages: 1
   - Event ID 40: NPC Barricade @ (15,30) | Pages: 1
@@ -9116,11 +9425,91 @@ Events:
   - Event ID 47: NPC Barricade @ (15,8) | Pages: 1
   - Event ID 48: NPC Barricade @ (16,8) | Pages: 1
   - Event ID 49: NPC Barricade @ (17,7) | Pages: 1
+  - Event ID 50: BerryPlant @ (27,6) | Pages: 1
+  - Event ID 51: BerryPlant @ (28,6) | Pages: 1
+  - Event ID 52: BerryPlant @ (29,6) | Pages: 1
+  - Event ID 53: BerryPlant @ (30,6) | Pages: 1
+  - Event ID 54: BerryPlant @ (31,6) | Pages: 1
+  - Event ID 55: BerryPlant @ (33,6) | Pages: 1
+  - Event ID 56: BerryPlant @ (32,6) | Pages: 1
+  - Event ID 57: BerryPlant @ (34,6) | Pages: 1
+  - Event ID 58: BerryPlant @ (35,6) | Pages: 1
+  - Event ID 59: BerryPlant @ (36,6) | Pages: 1
+  - Event ID 60: BerryPlant @ (23,8) | Pages: 1
+  - Event ID 61: BerryPlant @ (24,8) | Pages: 1
+  - Event ID 62: BerryPlant @ (25,8) | Pages: 1
+  - Event ID 63: BerryPlant @ (26,8) | Pages: 1
+  - Event ID 64: BerryPlant @ (27,8) | Pages: 1
+  - Event ID 65: BerryPlant @ (28,8) | Pages: 1
+  - Event ID 66: BerryPlant @ (29,8) | Pages: 1
+  - Event ID 67: BerryPlant @ (30,8) | Pages: 1
+  - Event ID 68: BerryPlant @ (31,8) | Pages: 1
+  - Event ID 69: BerryPlant @ (32,8) | Pages: 1
+  - Event ID 70: BerryPlant @ (33,8) | Pages: 1
+  - Event ID 71: BerryPlant @ (34,8) | Pages: 1
+  - Event ID 72: BerryPlant @ (35,8) | Pages: 1
+  - Event ID 73: BerryPlant @ (36,8) | Pages: 1
+  - Event ID 74: BerryPlant @ (36,10) | Pages: 1
+  - Event ID 75: BerryPlant @ (35,10) | Pages: 1
+  - Event ID 76: BerryPlant @ (34,10) | Pages: 1
+  - Event ID 77: BerryPlant @ (33,10) | Pages: 1
+  - Event ID 78: BerryPlant @ (32,10) | Pages: 1
+  - Event ID 79: BerryPlant @ (31,10) | Pages: 1
+  - Event ID 80: BerryPlant @ (30,10) | Pages: 1
+  - Event ID 81: BerryPlant @ (29,10) | Pages: 1
+  - Event ID 82: BerryPlant @ (28,10) | Pages: 1
+  - Event ID 83: BerryPlant @ (27,10) | Pages: 1
+  - Event ID 84: BerryPlant @ (26,10) | Pages: 1
+  - Event ID 85: BerryPlant @ (25,10) | Pages: 1
+  - Event ID 86: BerryPlant @ (24,10) | Pages: 1
+  - Event ID 87: BerryPlant @ (23,10) | Pages: 1
+  - Event ID 88: BerryPlant @ (23,12) | Pages: 1
+  - Event ID 89: BerryPlant @ (24,12) | Pages: 1
+  - Event ID 90: BerryPlant @ (25,12) | Pages: 1
+  - Event ID 91: BerryPlant @ (26,12) | Pages: 1
+  - Event ID 92: BerryPlant @ (27,12) | Pages: 1
+  - Event ID 93: BerryPlant @ (28,12) | Pages: 1
+  - Event ID 94: BerryPlant @ (29,12) | Pages: 1
+  - Event ID 95: BerryPlant @ (30,12) | Pages: 1
+  - Event ID 96: BerryPlant @ (31,12) | Pages: 1
+  - Event ID 97: BerryPlant @ (32,12) | Pages: 1
+  - Event ID 98: BerryPlant @ (33,12) | Pages: 1
+  - Event ID 99: BerryPlant @ (34,12) | Pages: 1
+  - Event ID 100: BerryPlant @ (35,12) | Pages: 1
+  - Event ID 101: BerryPlant @ (36,12) | Pages: 1
+  - Event ID 102: BerryPlant @ (36,14) | Pages: 1
+  - Event ID 103: BerryPlant @ (35,14) | Pages: 1
+  - Event ID 104: BerryPlant @ (34,14) | Pages: 1
+  - Event ID 105: BerryPlant @ (33,14) | Pages: 1
+  - Event ID 106: BerryPlant @ (32,14) | Pages: 1
+  - Event ID 107: BerryPlant @ (31,14) | Pages: 1
+  - Event ID 108: BerryPlant @ (30,14) | Pages: 1
+  - Event ID 109: BerryPlant @ (29,14) | Pages: 1
+  - Event ID 110: BerryPlant @ (28,14) | Pages: 1
+  - Event ID 111: BerryPlant @ (27,14) | Pages: 1
+  - Event ID 112: BerryPlant @ (26,14) | Pages: 1
+  - Event ID 113: BerryPlant @ (25,14) | Pages: 1
+  - Event ID 114: BerryPlant @ (24,14) | Pages: 1
+  - Event ID 115: BerryPlant @ (23,14) | Pages: 1
+  - Event ID 116: BerryPlant @ (23,16) | Pages: 1
+  - Event ID 117: BerryPlant @ (24,16) | Pages: 1
+  - Event ID 118: BerryPlant @ (25,16) | Pages: 1
+  - Event ID 119: BerryPlant @ (26,16) | Pages: 1
+  - Event ID 120: BerryPlant @ (27,16) | Pages: 1
+  - Event ID 121: BerryPlant @ (28,16) | Pages: 1
+  - Event ID 122: BerryPlant @ (29,16) | Pages: 1
+  - Event ID 123: BerryPlant @ (30,16) | Pages: 1
+  - Event ID 124: BerryPlant @ (31,16) | Pages: 1
+  - Event ID 125: BerryPlant @ (32,16) | Pages: 1
+  - Event ID 126: BerryPlant @ (33,16) | Pages: 1
+  - Event ID 127: BerryPlant @ (34,16) | Pages: 1
+  - Event ID 128: BerryPlant @ (35,16) | Pages: 1
+  - Event ID 129: BerryPlant @ (36,16) | Pages: 1
 
 [Map 388]
 Name: Three Island PokeCenter
 Parent ID: 387
-Order: 381
+Order: 382
 Expanded: false
 File: Data/Map388.rxdata
 Width: 20
@@ -9144,7 +9533,7 @@ Events:
 [Map 389]
 Name: Three Island Mart
 Parent ID: 387
-Order: 382
+Order: 383
 Expanded: false
 File: Data/Map389.rxdata
 Width: 68
@@ -9190,12 +9579,12 @@ Events:
 [Map 390]
 Name: Three Islands Houses
 Parent ID: 387
-Order: 387
-Expanded: false
+Order: 388
+Expanded: true
 File: Data/Map390.rxdata
 Width: 20
 Height: 15
-Tileset ID: 31
+Tileset ID: 32
 Autoplay BGM: false
 Autoplay BGS: false
 BGM:  / vol 100 / pitch 100
@@ -9205,7 +9594,7 @@ Event Count: 0
 [Map 391]
 Name: Three Island Port
 Parent ID: 387
-Order: 383
+Order: 384
 Expanded: true
 File: Data/Map391.rxdata
 Width: 49
@@ -9227,7 +9616,7 @@ Events:
 [Map 392]
 Name: Bond Bridge
 Parent ID: 387
-Order: 393
+Order: 394
 Expanded: true
 File: Data/Map392.rxdata
 Width: 96
@@ -9272,7 +9661,7 @@ Events:
 [Map 393]
 Name: Berry Forest
 Parent ID: 392
-Order: 394
+Order: 395
 Expanded: false
 File: Data/Map393.rxdata
 Width: 66
@@ -9324,8 +9713,8 @@ Events:
 [Map 394]
 Name: Dungeons
 Parent ID: 378
-Order: 395
-Expanded: false
+Order: 396
+Expanded: true
 File: Data/Map394.rxdata
 Width: 20
 Height: 15
@@ -9339,7 +9728,7 @@ Event Count: 0
 [Map 395]
 Name: Lost Cave
 Parent ID: 394
-Order: 396
+Order: 397
 Expanded: false
 File: Data/Map395.rxdata
 Width: 49
@@ -9403,7 +9792,7 @@ Events:
 [Map 396]
 Name: Pattern Bush
 Parent ID: 394
-Order: 397
+Order: 398
 Expanded: false
 File: Data/Map396.rxdata
 Width: 60
@@ -9431,7 +9820,7 @@ Events:
 [Map 397]
 Name: Altering Cave
 Parent ID: 394
-Order: 398
+Order: 399
 Expanded: false
 File: Data/Map397.rxdata
 Width: 32
@@ -9448,7 +9837,7 @@ Events:
 [Map 398]
 Name: Dotted Hole
 Parent ID: 394
-Order: 399
+Order: 400
 Expanded: false
 File: Data/Map398.rxdata
 Width: 37
@@ -9494,7 +9883,7 @@ Events:
 [Map 399]
 Name: Tanoby Key
 Parent ID: 394
-Order: 400
+Order: 401
 Expanded: false
 File: Data/Map399.rxdata
 Width: 20
@@ -9525,7 +9914,7 @@ Events:
 [Map 400]
 Name: TANOBY CHAMBERS
 Parent ID: 394
-Order: 401
+Order: 402
 Expanded: false
 File: Data/Map400.rxdata
 Width: 23
@@ -9540,7 +9929,7 @@ Event Count: 0
 [Map 401]
 Name: Monean Chamber
 Parent ID: 400
-Order: 402
+Order: 403
 Expanded: true
 File: Data/Map401.rxdata
 Width: 23
@@ -9557,7 +9946,7 @@ Events:
 [Map 402]
 Name: MONEAN EMPTY
 Parent ID: 400
-Order: 409
+Order: 410
 Expanded: true
 File: Data/Map402.rxdata
 Width: 23
@@ -9574,7 +9963,7 @@ Events:
 [Map 403]
 Name: Liptoo Chamber
 Parent ID: 401
-Order: 403
+Order: 404
 Expanded: false
 File: Data/Map403.rxdata
 Width: 23
@@ -9591,7 +9980,7 @@ Events:
 [Map 404]
 Name: Weepth Chamber
 Parent ID: 401
-Order: 404
+Order: 405
 Expanded: false
 File: Data/Map404.rxdata
 Width: 23
@@ -9608,7 +9997,7 @@ Events:
 [Map 405]
 Name: Dilford Chamber
 Parent ID: 401
-Order: 405
+Order: 406
 Expanded: false
 File: Data/Map405.rxdata
 Width: 23
@@ -9625,7 +10014,7 @@ Events:
 [Map 406]
 Name: Scufib Chamber
 Parent ID: 401
-Order: 406
+Order: 407
 Expanded: false
 File: Data/Map406.rxdata
 Width: 23
@@ -9642,7 +10031,7 @@ Events:
 [Map 407]
 Name: Rixy Chamber
 Parent ID: 401
-Order: 407
+Order: 408
 Expanded: false
 File: Data/Map407.rxdata
 Width: 23
@@ -9659,7 +10048,7 @@ Events:
 [Map 408]
 Name: Viapos Chamber
 Parent ID: 401
-Order: 408
+Order: 409
 Expanded: false
 File: Data/Map408.rxdata
 Width: 23
@@ -9676,7 +10065,7 @@ Events:
 [Map 409]
 Name: LIPTOO EMPTY
 Parent ID: 402
-Order: 410
+Order: 411
 Expanded: false
 File: Data/Map409.rxdata
 Width: 23
@@ -9693,7 +10082,7 @@ Events:
 [Map 410]
 Name: WEEPTH EMPTY
 Parent ID: 402
-Order: 411
+Order: 412
 Expanded: false
 File: Data/Map410.rxdata
 Width: 23
@@ -9710,7 +10099,7 @@ Events:
 [Map 411]
 Name: DILFORD EMPTY
 Parent ID: 402
-Order: 412
+Order: 413
 Expanded: false
 File: Data/Map411.rxdata
 Width: 23
@@ -9727,7 +10116,7 @@ Events:
 [Map 412]
 Name: SCUFIB EMPTY
 Parent ID: 402
-Order: 413
+Order: 414
 Expanded: false
 File: Data/Map412.rxdata
 Width: 23
@@ -9744,7 +10133,7 @@ Events:
 [Map 413]
 Name: RIXY EMPTY
 Parent ID: 402
-Order: 414
+Order: 415
 Expanded: false
 File: Data/Map413.rxdata
 Width: 23
@@ -9761,7 +10150,7 @@ Events:
 [Map 414]
 Name: VIAPOIS EMPTY
 Parent ID: 402
-Order: 415
+Order: 416
 Expanded: false
 File: Data/Map414.rxdata
 Width: 23
@@ -9778,7 +10167,7 @@ Events:
 [Map 415]
 Name: Game Corner
 Parent ID: 382
-Order: 379
+Order: 380
 Expanded: false
 File: Data/Map415.rxdata
 Width: 20
@@ -9801,7 +10190,7 @@ Events:
 [Map 416]
 Name: Kindle Road
 Parent ID: 377
-Order: 370
+Order: 371
 Expanded: true
 File: Data/Map416.rxdata
 Width: 30
@@ -9850,7 +10239,7 @@ Events:
 [Map 417]
 Name: Kindle Road Rocks
 Parent ID: 416
-Order: 371
+Order: 372
 Expanded: false
 File: Data/Map417.rxdata
 Width: 20
@@ -9865,7 +10254,7 @@ Event Count: 0
 [Map 418]
 Name: Ember Spa
 Parent ID: 416
-Order: 372
+Order: 373
 Expanded: false
 File: Data/Map418.rxdata
 Width: 33
@@ -9897,7 +10286,7 @@ Events:
 [Map 419]
 Name: Treasure Beach
 Parent ID: 377
-Order: 373
+Order: 374
 Expanded: false
 File: Data/Map419.rxdata
 Width: 29
@@ -9947,7 +10336,7 @@ Events:
 [Map 420]
 Name: Three Isle Path
 Parent ID: 387
-Order: 385
+Order: 386
 Expanded: true
 File: Data/Map420.rxdata
 Width: 21
@@ -9965,7 +10354,7 @@ Events:
 [Map 421]
 Name: Three Isle Path
 Parent ID: 420
-Order: 386
+Order: 387
 Expanded: false
 File: Data/Map421.rxdata
 Width: 41
@@ -9985,7 +10374,7 @@ Events:
 [Map 422]
 Name: Three Island
 Parent ID: 391
-Order: 384
+Order: 385
 Expanded: false
 File: Data/Map422.rxdata
 Width: 20
@@ -9995,15 +10384,16 @@ Autoplay BGM: true
 Autoplay BGS: false
 BGM: frlg_saffron / vol 80 / pitch 100
 BGS:  / vol 80 / pitch 100
-Event Count: 2
+Event Count: 3
 Events:
   - Event ID 1: Door @ (8,2) | Pages: 2
   - Event ID 2: Sailor @ (8,6) | Pages: 1
+  - Event ID 3: Controller @ (8,7) | Pages: 2
 
 [Map 423]
 Name: Three Island
 Parent ID: 390
-Order: 388
+Order: 389
 Expanded: false
 File: Data/Map423.rxdata
 Width: 20
@@ -10029,7 +10419,7 @@ Events:
 [Map 424]
 Name: Three Island
 Parent ID: 390
-Order: 389
+Order: 390
 Expanded: false
 File: Data/Map424.rxdata
 Width: 20
@@ -10054,7 +10444,7 @@ Events:
 [Map 425]
 Name: Three Island
 Parent ID: 390
-Order: 390
+Order: 391
 Expanded: false
 File: Data/Map425.rxdata
 Width: 20
@@ -10084,7 +10474,7 @@ Events:
 [Map 426]
 Name: Three Island
 Parent ID: 390
-Order: 391
+Order: 392
 Expanded: false
 File: Data/Map426.rxdata
 Width: 20
@@ -10120,7 +10510,7 @@ Events:
 [Map 427]
 Name: Three Island
 Parent ID: 390
-Order: 392
+Order: 393
 Expanded: false
 File: Data/Map427.rxdata
 Width: 20
@@ -10143,7 +10533,7 @@ Events:
 [Map 428]
 Name: Testing Area
 Parent ID: 0
-Order: 437
+Order: 460
 Expanded: false
 File: Data/Map428.rxdata
 Width: 30
@@ -10160,8 +10550,8 @@ Events:
 [Map 429]
 Name: Four Island
 Parent ID: 378
-Order: 432
-Expanded: false
+Order: 433
+Expanded: true
 File: Data/Map429.rxdata
 Width: 48
 Height: 40
@@ -10196,7 +10586,7 @@ Events:
 [Map 430]
 Name: FourIsl. Poké Center
 Parent ID: 429
-Order: 433
+Order: 434
 Expanded: false
 File: Data/Map430.rxdata
 Width: 20
@@ -10220,7 +10610,7 @@ Events:
 [Map 431]
 Name: FourIsl. Mart
 Parent ID: 429
-Order: 434
+Order: 435
 Expanded: false
 File: Data/Map431.rxdata
 Width: 20
@@ -10246,7 +10636,7 @@ Events:
 [Map 432]
 Name: FourIsl. Port
 Parent ID: 429
-Order: 435
+Order: 436
 Expanded: false
 File: Data/Map432.rxdata
 Width: 20
@@ -10265,7 +10655,7 @@ Events:
 [Map 433]
 Name: FourIsl. Houses
 Parent ID: 429
-Order: 436
+Order: 437
 Expanded: false
 File: Data/Map433.rxdata
 Width: 31
@@ -10317,8 +10707,8 @@ Events:
 [Map 434]
 Name: Mt. Ember
 Parent ID: 394
-Order: 416
-Expanded: false
+Order: 417
+Expanded: true
 File: Data/Map434.rxdata
 Width: 57
 Height: 54
@@ -10327,7 +10717,7 @@ Autoplay BGM: true
 Autoplay BGS: false
 BGM: FRLG - Sevii Island Route / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
-Event Count: 23
+Event Count: 22
 Events:
   - Event ID 1: StrengthBoulder @ (22,45) | Pages: 1
   - Event ID 2: StrengthBoulder @ (17,46) | Pages: 1
@@ -10346,17 +10736,16 @@ Events:
   - Event ID 15: Trainer @ (22,35) | Pages: 3
   - Event ID 16: Cave entrance @ (14,24) | Pages: 2
   - Event ID 17: Cave entrance @ (39,19) | Pages: 2
-  - Event ID 18: Cave entrance @ (42,39) | Pages: 3
+  - Event ID 18: Cave entrance @ (42,39) | Pages: 2
   - Event ID 19: Warp, size(2,1) @ (28,49) | Pages: 1
   - Event ID 20: Warp @ (29,6) | Pages: 1
-  - Event ID 21: Rocket Grunt 1 @ (41,40) | Pages: 4
-  - Event ID 22: Rocket Grunt 2 @ (42,40) | Pages: 4
+  - Event ID 22: Rocket Grunt 2 @ (42,40) | Pages: 3
   - Event ID 23: Ruby Path, size(3,1) @ (37,43) | Pages: 3
 
 [Map 435]
 Name: Summit Path 1F
 Parent ID: 434
-Order: 417
+Order: 418
 Expanded: false
 File: Data/Map435.rxdata
 Width: 20
@@ -10374,7 +10763,7 @@ Events:
 [Map 436]
 Name: Summit Path 2F
 Parent ID: 434
-Order: 418
+Order: 419
 Expanded: false
 File: Data/Map436.rxdata
 Width: 48
@@ -10401,7 +10790,7 @@ Events:
 [Map 437]
 Name: Summit Path 3F
 Parent ID: 434
-Order: 419
+Order: 420
 Expanded: false
 File: Data/Map437.rxdata
 Width: 20
@@ -10419,7 +10808,7 @@ Events:
 [Map 438]
 Name: Summit
 Parent ID: 434
-Order: 420
+Order: 421
 Expanded: false
 File: Data/Map438.rxdata
 Width: 20
@@ -10429,18 +10818,19 @@ Autoplay BGM: true
 Autoplay BGS: false
 BGM: FRLG - Sevii Island Route / vol 100 / pitch 100
 BGS:  / vol 80 / pitch 100
-Event Count: 5
+Event Count: 6
 Events:
   - Event ID 1: StrengthBoulder @ (10,12) | Pages: 1
   - Event ID 2: StrengthBoulder @ (9,12) | Pages: 1
   - Event ID 3: StrengthBoulder @ (8,11) | Pages: 1
   - Event ID 4: StrengthBoulder @ (8,10) | Pages: 1
   - Event ID 5: Warp @ (9,16) | Pages: 1
+  - Event ID 6: Zapdos @ (9,6) | Pages: 2
 
 [Map 439]
 Name: Ruby Path 1F
 Parent ID: 434
-Order: 421
+Order: 422
 Expanded: false
 File: Data/Map439.rxdata
 Width: 27
@@ -10464,7 +10854,7 @@ Events:
 [Map 440]
 Name: Ruby Path B1F
 Parent ID: 434
-Order: 422
+Order: 423
 Expanded: false
 File: Data/Map440.rxdata
 Width: 20
@@ -10489,7 +10879,7 @@ Events:
 [Map 441]
 Name: Ruby Path B2F
 Parent ID: 434
-Order: 423
+Order: 424
 Expanded: false
 File: Data/Map441.rxdata
 Width: 31
@@ -10518,7 +10908,7 @@ Events:
 [Map 442]
 Name: Ruby Path B3F
 Parent ID: 434
-Order: 424
+Order: 425
 Expanded: false
 File: Data/Map442.rxdata
 Width: 31
@@ -10547,7 +10937,7 @@ Events:
 [Map 443]
 Name: Ruby Patch B4F
 Parent ID: 434
-Order: 425
+Order: 426
 Expanded: false
 File: Data/Map443.rxdata
 Width: 20
@@ -10575,7 +10965,7 @@ Events:
 [Map 444]
 Name: Ruby Path B5F
 Parent ID: 434
-Order: 426
+Order: 427
 Expanded: false
 File: Data/Map444.rxdata
 Width: 20
@@ -10594,7 +10984,7 @@ Events:
 [Map 445]
 Name: Icefall Cave
 Parent ID: 394
-Order: 427
+Order: 428
 Expanded: false
 File: Data/Map445.rxdata
 Width: 30
@@ -10613,7 +11003,7 @@ Events:
 [Map 446]
 Name: Icefall Cave 1F
 Parent ID: 445
-Order: 428
+Order: 429
 Expanded: false
 File: Data/Map446.rxdata
 Width: 20
@@ -10644,7 +11034,7 @@ Events:
 [Map 447]
 Name: Icefall Cave B1F
 Parent ID: 445
-Order: 429
+Order: 430
 Expanded: false
 File: Data/Map447.rxdata
 Width: 24
@@ -10663,7 +11053,7 @@ Events:
 [Map 448]
 Name: Icefall Cave Back
 Parent ID: 445
-Order: 430
+Order: 431
 Expanded: false
 File: Data/Map448.rxdata
 Width: 25
@@ -10685,7 +11075,7 @@ Events:
 [Map 449]
 Name: ROCKET WAEHOUSE
 Parent ID: 394
-Order: 431
+Order: 432
 Expanded: false
 File: Data/Map449.rxdata
 Width: 29
@@ -10827,3 +11217,261 @@ Events:
   - Event ID 128: Arrow @ (2,13) | Pages: 1
   - Event ID 129: Arrow @ (2,14) | Pages: 1
   - Event ID 130: Arrow @ (2,15) | Pages: 1
+
+[Map 450]
+Name: Port
+Parent ID: 188
+Order: 449
+Expanded: false
+File: Data/Map450.rxdata
+Width: 20
+Height: 17
+Tileset ID: 33
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Island Route / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 3
+Events:
+  - Event ID 1: Sailor @ (8,6) | Pages: 1
+  - Event ID 2: Controller @ (8,7) | Pages: 2
+  - Event ID 4: Exit @ (8,2) | Pages: 2
+
+[Map 451]
+Name: Houses
+Parent ID: 188
+Order: 450
+Expanded: false
+File: Data/Map451.rxdata
+Width: 20
+Height: 15
+Tileset ID: 32
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Island Route / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 7
+Events:
+  - Event ID 1: Fridge @ (10,1) | Pages: 1
+  - Event ID 2: Kitchen, size(2,1) @ (8,1) | Pages: 1
+  - Event ID 3: Picture @ (4,1) | Pages: 1
+  - Event ID 4: China Cabinet, size(2,1) @ (2,1) | Pages: 1
+  - Event ID 5: Bookshelf @ (1,1) | Pages: 1
+  - Event ID 6: NPC @ (7,5) | Pages: 1
+  - Event ID 7: Exit @ (4,8) | Pages: 1
+
+[Map 452]
+Name: WATER PATH SPRING
+Parent ID: 188
+Order: 451
+Expanded: false
+File: Data/Map452.rxdata
+Width: 24
+Height: 100
+Tileset ID: 31
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Island 6 & 7 / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 11
+Events:
+  - Event ID 1: Door @ (5,13) | Pages: 2
+  - Event ID 2: Door @ (11,19) | Pages: 2
+  - Event ID 3: Six Island Sign @ (8,14) | Pages: 1
+  - Event ID 4: Trainer @ (12,13) | Pages: 3
+  - Event ID 5: Trainer @ (6,21) | Pages: 3
+  - Event ID 6: Trainer @ (7,21) | Pages: 3
+  - Event ID 7: Trainer @ (11,52) | Pages: 3
+  - Event ID 8: Six Island Sign @ (12,54) | Pages: 1
+  - Event ID 9: Trainer @ (11,76) | Pages: 3
+  - Event ID 10: Trainer @ (15,45) | Pages: 3
+  - Event ID 11: Trainer @ (13,35) | Pages: 3
+
+[Map 453]
+Name: GREEN PATH SPRING
+Parent ID: 188
+Order: 452
+Expanded: false
+File: Data/Map453.rxdata
+Width: 72
+Height: 20
+Tileset ID: 31
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Island 6 & 7 / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 5
+Events:
+  - Event ID 1: Trainer @ (11,8) | Pages: 3
+  - Event ID 2: Six Island Sign @ (69,10) | Pages: 1
+  - Event ID 3: Six Island Sign @ (40,10) | Pages: 1
+  - Event ID 4: Berry Forest Entrance, size(2,1) @ (45,9) | Pages: 2
+  - Event ID 5: Berry Forest Entrance, size(2,1) @ (63,9) | Pages: 2
+
+[Map 454]
+Name: OUTCAST ISLAND SPRING
+Parent ID: 188
+Order: 453
+Expanded: false
+File: Data/Map454.rxdata
+Width: 24
+Height: 80
+Tileset ID: 31
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Island 6 & 7 / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 6
+Events:
+  - Event ID 1: Cave entrance @ (7,21) | Pages: 2
+  - Event ID 2: Trainer @ (12,15) | Pages: 3
+  - Event ID 3: Trainer @ (13,34) | Pages: 3
+  - Event ID 4: Trainer @ (10,44) | Pages: 3
+  - Event ID 5: Trainer @ (11,44) | Pages: 3
+  - Event ID 6: Trainer @ (14,61) | Pages: 3
+
+[Map 455]
+Name: RUIN VALLEY SPRING
+Parent ID: 188
+Order: 454
+Expanded: false
+File: Data/Map455.rxdata
+Width: 48
+Height: 40
+Tileset ID: 31
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Island 6 & 7 / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 15
+Events:
+  - Event ID 1: StrengthBoulder @ (40,32) | Pages: 1
+  - Event ID 2: StrengthBoulder @ (40,33) | Pages: 1
+  - Event ID 3: StrengthBoulder @ (41,33) | Pages: 1
+  - Event ID 4: StrengthBoulder @ (6,33) | Pages: 1
+  - Event ID 5: StrengthBoulder @ (6,34) | Pages: 1
+  - Event ID 6: StrengthBoulder @ (17,10) | Pages: 1
+  - Event ID 7: StrengthBoulder @ (18,11) | Pages: 1
+  - Event ID 8: StrengthBoulder @ (17,12) | Pages: 1
+  - Event ID 9: Trainer @ (14,10) | Pages: 3
+  - Event ID 10: Trainer @ (32,11) | Pages: 3
+  - Event ID 11: foster @ (33,16) | Pages: 3
+  - Event ID 12: Trainer @ (31,24) | Pages: 3
+  - Event ID 13: Trainer @ (21,29) | Pages: 3
+  - Event ID 14: Cave entrance @ (24,24) | Pages: 3
+  - Event ID 15: Scientist Block @ (24,25) | Pages: 2
+
+[Map 456]
+Name: SEVEN ISLAND SPRING
+Parent ID: 378
+Order: 455
+Expanded: false
+File: Data/Map456.rxdata
+Width: 24
+Height: 20
+Tileset ID: 31
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Island 6 & 7 / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 10
+Events:
+  - Event ID 1: PC Door @ (12,3) | Pages: 2
+  - Event ID 2: Mart Door @ (5,9) | Pages: 2
+  - Event ID 3: Door @ (11,9) | Pages: 2
+  - Event ID 4: Six Island Sign @ (17,9) | Pages: 1
+  - Event ID 5: Port Door @ (16,14) | Pages: 1
+  - Event ID 6: Center sign, size(2,1) @ (10,3) | Pages: 1
+  - Event ID 7: Mart sign, SIZE(2,1) @ (3,9) | Pages: 1
+  - Event ID 8: SwordsDance @ (7,18) | Pages: 2
+  - Event ID 9: NPC @ (9,7) | Pages: 1
+  - Event ID 10: NPC @ (15,5) | Pages: 1
+
+[Map 457]
+Name: PokeCentre
+Parent ID: 456
+Order: 456
+Expanded: false
+File: Data/Map457.rxdata
+Width: 20
+Height: 15
+Tileset ID: 4
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: Poke Center / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 9
+Events:
+  - Event ID 1: PC @ (11,1) | Pages: 1
+  - Event ID 2: Nurse @ (7,2) | Pages: 2
+  - Event ID 3: Bookshelf, size(2,1) @ (2,1) | Pages: 1
+  - Event ID 4: Healing balls @ (5,2) | Pages: 7
+  - Event ID 5: NPC @ (14,6) | Pages: 1
+  - Event ID 6: Town Map, size(2,1) @ (12,1) | Pages: 1
+  - Event ID 7: NPC @ (11,5) | Pages: 1
+  - Event ID 8: Exit @ (7,9) | Pages: 1
+  - Event ID 9: NPC @ (4,4) | Pages: 1
+
+[Map 458]
+Name: PokeMart
+Parent ID: 456
+Order: 457
+Expanded: false
+File: Data/Map458.rxdata
+Width: 20
+Height: 15
+Tileset ID: 5
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: Poke Mart / vol 80 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 11
+Events:
+  - Event ID 1: Exit @ (4,8) | Pages: 1
+  - Event ID 2: Mart @ (2,3) | Pages: 1
+  - Event ID 3: Questionnaire @ (1,4) | Pages: 1
+  - Event ID 4: Merchandise, size(3,1) @ (4,1) | Pages: 1
+  - Event ID 5: Merchandise, size(2,1) @ (1,6) | Pages: 1
+  - Event ID 6: Merchandise, size(3,1) @ (7,1) | Pages: 1
+  - Event ID 7: Merchandise, size(2,3) @ (7,6) | Pages: 1
+  - Event ID 8: Merchandise, size(2,3) @ (10,6) | Pages: 1
+  - Event ID 9: NPC @ (5,4) | Pages: 1
+  - Event ID 10: NPC @ (6,2) | Pages: 1
+  - Event ID 11: NPC @ (9,5) | Pages: 1
+
+[Map 459]
+Name: Port
+Parent ID: 456
+Order: 458
+Expanded: false
+File: Data/Map459.rxdata
+Width: 20
+Height: 15
+Tileset ID: 33
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Island Route / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 3
+Events:
+  - Event ID 1: Sailor @ (8,6) | Pages: 1
+  - Event ID 2: Controller @ (8,7) | Pages: 2
+  - Event ID 4: Exit @ (8,2) | Pages: 2
+
+[Map 460]
+Name: Houses
+Parent ID: 456
+Order: 459
+Expanded: false
+File: Data/Map460.rxdata
+Width: 20
+Height: 15
+Tileset ID: 32
+Autoplay BGM: true
+Autoplay BGS: false
+BGM: FRLG - Sevii Island Route / vol 100 / pitch 100
+BGS:  / vol 80 / pitch 100
+Event Count: 2
+Events:
+  - Event ID 1: NPC @ (4,4) | Pages: 1
+  - Event ID 7: Exit @ (4,8) | Pages: 1
