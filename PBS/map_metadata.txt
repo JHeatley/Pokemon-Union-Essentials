@@ -934,8 +934,13 @@ MapPosition = 0,15,8
 Name = Saffron House
 MapPosition = 0,15,8
 #-------------------------------
-[177]   # Silph Co.
-Name = Silph. Co.
+[177]   # FIVE ISLAND SUMMER
+Name = FIVE ISLAND SUMMER
+Outdoor = true
+ShowArea = true
+Bicycle = true
+HealingSpot = 177,24,7
+MapPosition = 13,20,14
 #-------------------------------
 [178]   # Silph Co. - 1F
 Name = Silph. Co. - 1F
@@ -948,63 +953,63 @@ ShowArea = true
 MapPosition = 0,15,8
 BattleBack = interior
 #-------------------------------
-[180]   # Silph Co. - 3F
-Name = Silph. Co. - 3F
+[180]   # Vermilion Port
+Name = Vermilion Port
 ShowArea = true
-MapPosition = 0,15,8
-BattleBack = interior
+MapPosition = 0,18,11
 #-------------------------------
-[181]   # Silph Co. - 4F
-Name = Silph. Co. - 4F
+[181]   # PokeCentre
+Name = FIVE ISLAND POKEMON CENTRE
+MapPosition = 12,20,14
+#-------------------------------
+[182]   # Port
+Name = FIVE ISLAND PORT
+MapPosition = 12,20,14
+#-------------------------------
+[183]   # Houses
+Name = FIVE ISLAND
+MapPosition = 12,20,14
+#-------------------------------
+[184]   # WATER LABYRINTH SPRING
+Name = WATER LABYRINTH SPRING
+Outdoor = true
 ShowArea = true
-MapPosition = 0,15,8
-BattleBack = interior
+Bicycle = true
+MapPosition = 12,18,13
 #-------------------------------
-[182]   # Silph Co. - 5F
-Name = Silph. Co. - 5F
+[185]   # RESORT GORGEOUS SPRING
+Name = RESORT GORGEOUS SPRING
+Outdoor = true
 ShowArea = true
-MapPosition = 0,15,8
-BattleBack = interior
+Bicycle = true
+MapPosition = 12,20,12
 #-------------------------------
-[183]   # Silph Co. - 6F
-Name = Silph. Co. - 6F
+[186]   # FIVE ISLE MEADOW SPRING
+Name = FIVE ISLE MEADOW SPRING
+Outdoor = true
 ShowArea = true
-MapPosition = 0,15,8
-BattleBack = interior
+Bicycle = true
+MapPosition = 12,21,14
 #-------------------------------
-[184]   # Silph Co. - 7F
-Name = Silph. Co. - 7F
+[187]   # MEMORIAL PILLAR SPRING
+Name = MEMORIAL PILLAR SPRING
+Outdoor = true
 ShowArea = true
-MapPosition = 0,15,8
-BattleBack = interior
+Bicycle = true
+MapPosition = 12,22,15
 #-------------------------------
-[185]   # Silph Co. - 8F
-Name = Silph. Co. - 8F
+[188]   # SIX ISLAND SPRING
+Name = SIX ISLAND SPRING
+Outdoor = true
 ShowArea = true
-MapPosition = 0,15,8
-BattleBack = interior
+Bicycle = true
+HealingSpot = 188,11,11
+MapPosition = 16,21,8
+MapSize = 0,
 #-------------------------------
-[186]   # Silph Co. - 9F
-Name = Silph. Co. - 9F
-ShowArea = true
-MapPosition = 0,15,8
-BattleBack = interior
-#-------------------------------
-[187]   # Silph Co. - 10F
-Name = Silph. Co. - 10F
-ShowArea = true
-MapPosition = 0,15,8
-BattleBack = interior
-#-------------------------------
-[188]   # Silph Co. - 11F
-Name = Silph. Co. - 11F
-ShowArea = true
-MapPosition = 0,15,8
-BattleBack = interior
-#-------------------------------
-[189]   # Silph Co. - Elevator
-Name = Silph. Co. - Elevator
-MapPosition = 0,15,8
+[189]   # PokeCentre
+Name = SIX ISLAND
+MapPosition = 16,21,8
 #-------------------------------
 [190]   # Route 19
 Name = Route 19
@@ -1198,3 +1203,504 @@ BattleBack = champion
 [221]   # Hall of Fame
 Name = Hall of Fame
 MapPosition = 0,3,5
+
+#-------------------------------
+[377]   # One Island
+Name = ONE ISLAND
+Outdoor = true
+ShowArea = true
+Bicycle = true
+HealingSpot = 377,17,6
+MapPosition = 8,5,11
+
+#-------------------------------
+[379]   # One Island PokeCenter
+Name = One Island PokeCenter
+MapPosition = 8,5,11
+
+#-------------------------------
+[380]   # One Island Port
+Name = One Island Port
+MapPosition = 8,5,11
+
+#-------------------------------
+[381]   # One Island Houses
+Name = One Island Houses
+MapPosition = 8,5,11
+
+#-------------------------------
+[382]   # Two Island
+Name = TWO ISLAND
+Outdoor = true
+ShowArea = true
+Bicycle = true
+HealingSpot = 382,21,7
+MapPosition = 8,13,12
+
+#-------------------------------
+[383]   # Two Island PokeCenter
+Name = Two Island PokeCenter
+MapPosition = 8,13,12
+
+#-------------------------------
+[384]   # Two Island Port
+Name = Two Island Port
+MapPosition = 8,13,12
+
+#-------------------------------
+[385]   # Two Island Houses
+Name = Two Island Houses
+MapPosition = 8,13,12
+
+#-------------------------------
+[386]   # Cape Brink
+Name = CAPE BRINK
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 8,13,11
+
+#-------------------------------
+[387]   # Three Island
+Name = THREE ISLAND
+Outdoor = true
+ShowArea = true
+Bicycle = true
+HealingSpot = 387,14,27
+MapPosition = 8,22,15
+
+#-------------------------------
+[388]   # Three Island PokeCenter
+Name = Three Island PokeCenter
+MapPosition = 8,22,15
+
+#-------------------------------
+[389]   # Three Island Mart
+Name = Three Island Mart
+MapPosition = 8,22,15
+
+#-------------------------------
+[390]   # Three Islands Houses
+Name = Three Islands Houses
+MapPosition = 8,22,15
+
+#-------------------------------
+[391]   # Three Island Port
+Name = THREE ISLE PORT
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 8,22,16
+
+#-------------------------------
+[392]   # Bond Bridge
+Name = BOND BRIDGE
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 8,20,15
+
+#-------------------------------
+[393]   # Berry Forest
+Name = BERRY FOREST
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 8,18,15
+
+#-------------------------------
+[395]   # Lost Cave
+Name = Lost Cave
+Bicycle = true
+Weather = Fog,100
+MapPosition = 12,22,12
+
+#-------------------------------
+[396]   # Pattern Bush
+Name = PATTERN BUSH
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 16,21,6
+
+#-------------------------------
+[397]   # Altering Cave
+Name = Altering Cave
+Bicycle = true
+MapPosition = 16,19,3
+
+#-------------------------------
+[398]   # Dotted Hole
+Name = Dotted Hole
+Bicycle = true
+MapPosition = 16,20,11
+
+#-------------------------------
+[399]   # Tanoby Key
+Name = Tanoby Key
+ShowArea = true
+Bicycle = true
+MapPosition = 16,10,13
+
+#-------------------------------
+[401]   # Monean Chamber
+Name = Monean Chamber
+ShowArea = true
+Bicycle = true
+MapPosition = 16,13,15
+
+#-------------------------------
+[402]   # MONEAN EMPTY
+Name = MONEAN EMPTY
+ShowArea = true
+Bicycle = true
+MapPosition = 16,13,15
+
+#-------------------------------
+[403]   # Liptoo Chamber
+Name = Liptoo Chamber
+ShowArea = true
+Bicycle = true
+MapPosition = 16,12,15
+
+#-------------------------------
+[404]   # Weepth Chamber
+Name = Weepth Chamber
+ShowArea = true
+Bicycle = true
+MapPosition = 16,11,15
+
+#-------------------------------
+[405]   # Dilford Chamber
+Name = Dilford Chamber
+ShowArea = true
+Bicycle = true
+MapPosition = 16,9,15
+
+#-------------------------------
+[406]   # Scufib Chamber
+Name = Scufib Chamber
+ShowArea = true
+Bicycle = true
+MapPosition = 16,8,15
+
+#-------------------------------
+[407]   # Rixy Chamber
+Name = Rixy Chamber
+ShowArea = true
+Bicycle = true
+MapPosition = 16,7,15
+
+#-------------------------------
+[408]   # Viapos Chamber
+Name = Viapos Chamber
+ShowArea = true
+Bicycle = true
+MapPosition = 16,7,15
+
+#-------------------------------
+[409]   # LIPTOO EMPTY
+Name = LIPTOO EMPTY
+ShowArea = true
+Bicycle = true
+MapPosition = 16,12,15
+
+#-------------------------------
+[410]   # WEEPTH EMPTY
+Name = WEEPTH EMPTY
+ShowArea = true
+Bicycle = true
+MapPosition = 16,11,15
+
+#-------------------------------
+[411]   # DILFORD EMPTY
+Name = DILFORD EMPTY
+ShowArea = true
+Bicycle = true
+MapPosition = 16,9,15
+
+#-------------------------------
+[412]   # SCUFIB EMPTY
+Name = SCUFIB EMPTY
+ShowArea = true
+Bicycle = true
+MapPosition = 16,8,15
+
+#-------------------------------
+[413]   # RIXY EMPTY
+Name = RIXY EMPTY
+ShowArea = true
+Bicycle = true
+MapPosition = 16,7,15
+
+#-------------------------------
+[414]   # VIAPOIS EMPTY
+Name = VIAPOIS EMPTY
+ShowArea = true
+Bicycle = true
+MapPosition = 16,7,15
+
+#-------------------------------
+[415]   # Game Corner
+Name = Game Corner
+MapPosition = 0,15,8
+
+#-------------------------------
+[417]   # Kindle Road Rocks
+Name = KINDLE ROAD
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 8,6,9
+
+#-------------------------------
+[419]   # Treasure Beach
+Name = TREASURE BEACH
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 8,5,13
+
+#-------------------------------
+[420]   # Three Isle Path
+Name = Three Isle Path
+ShowArea = true
+Bicycle = true
+MapPosition = 8,23,16
+
+#-------------------------------
+[421]   # Three Isle Path
+Name = Three Isle Path
+ShowArea = true
+Bicycle = true
+MapPosition = 8,23,16
+
+#-------------------------------
+[422]   # Three Island
+Name = Three Island
+MapPosition = 8,22,15
+
+#-------------------------------
+[423]   # Three Island
+Name = Three Island
+MapPosition = 8,22,15
+
+#-------------------------------
+[424]   # Three Island
+Name = Three Island
+MapPosition = 8,22,15
+
+#-------------------------------
+[425]   # Three Island
+Name = Three Island
+MapPosition = 8,22,15
+
+#-------------------------------
+[426]   # Three Island
+Name = Three Island
+MapPosition = 8,22,15
+
+#-------------------------------
+[427]   # Three Island
+Name = Three Island
+MapPosition = 8,22,15
+
+#-------------------------------
+[429]   # Four Island
+Name = FOUR ISLAND
+Outdoor = true
+ShowArea = true
+Bicycle = true
+HealingSpot = 429,18,21
+MapPosition = 12,7,7
+
+#-------------------------------
+[430]   # FourIsl. Poké Center
+Name = FourIsl. Poké Center
+MapPosition = 12,7,7
+
+#-------------------------------
+[431]   # FourIsl. Mart
+Name = FourIsl. Mart
+MapPosition = 12,7,7
+
+#-------------------------------
+[432]   # FourIsl. Port
+Name = FourIsl. Port
+MapPosition = 12,7,7
+
+#-------------------------------
+[433]   # FourIsl. Houses
+Name = FourIsl. Houses
+MapPosition = 12,7,7
+
+#-------------------------------
+[434]   # Mt. Ember
+Name = MT. EMBER
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 8,6,6
+
+#-------------------------------
+[435]   # Summit Path 1F
+Name = Summit Path 1F
+Bicycle = true
+MapPosition = 8,6,6
+
+#-------------------------------
+[436]   # Summit Path 2F
+Name = Summit Path 2F
+Bicycle = true
+MapPosition = 8,6,6
+
+#-------------------------------
+[437]   # Summit Path 3F
+Name = Summit Path 3F
+Bicycle = true
+MapPosition = 8,6,6
+
+#-------------------------------
+[438]   # Summit
+Name = MT. EMBER
+Outdoor = true
+Bicycle = true
+MapPosition = 8,6,6
+
+#-------------------------------
+[439]   # Ruby Path 1F
+Name = Ruby Path 1F
+Bicycle = true
+MapPosition = 8,6,6
+
+#-------------------------------
+[440]   # Ruby Path B1F
+Name = Ruby Path B1F
+Bicycle = true
+MapPosition = 8,6,6
+
+#-------------------------------
+[441]   # Ruby Path B2F
+Name = Ruby Path B2F
+Bicycle = true
+MapPosition = 8,6,6
+
+#-------------------------------
+[442]   # Ruby Path B3F
+Name = Ruby Path B3F
+Bicycle = true
+MapPosition = 8,6,6
+
+#-------------------------------
+[443]   # Ruby Patch B4F
+Name = Ruby Patch B4F
+Bicycle = true
+MapPosition = 8,6,6
+
+#-------------------------------
+[444]   # Ruby Path B5F
+Name = Ruby Path B5F
+Bicycle = true
+MapPosition = 8,6,6
+
+#-------------------------------
+[445]   # Icefall Cave
+Name = Icefall Cave
+ShowArea = true
+Bicycle = true
+MapPosition = 12,7,7
+
+#-------------------------------
+[446]   # Icefall Cave 1F
+Name = Icefall Cave 1F
+Bicycle = true
+MapPosition = 12,7,7
+
+#-------------------------------
+[447]   # Icefall Cave B1F
+Name = Icefall Cave B1F
+Bicycle = true
+MapPosition = 12,7,7
+
+#-------------------------------
+[448]   # Icefall Cave Back
+Name = Icefall Cave Back
+Bicycle = true
+MapPosition = 12,7,7
+
+#-------------------------------
+[449]   # ROCKET WAEHOUSE
+Name = ROCKET WAEHOUSE
+ShowArea = true
+MapPosition = 12,21,15
+
+#-------------------------------
+[450]   # Port
+Name = SIX ISLAND PORT
+MapPosition = 16,21,8
+
+#-------------------------------
+[451]   # Houses
+Name = SIX ISLAND
+MapPosition = 16,21,8
+
+#-------------------------------
+[452]   # WATER PATH SPRING
+Name = WATER PATH SPRING
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 16,22,6
+
+#-------------------------------
+[453]   # GREEN PATH SPRING
+Name = GREEN PATH SPRING
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 16,19,6
+
+#-------------------------------
+[454]   # OUTCAST ISLAND SPRING
+Name = OUTCAST ISLAND SPRING
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 16,19,3
+
+#-------------------------------
+[455]   # RUIN VALLEY SPRING
+Name = RUIN VALLEY SPRING
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 16,20,10
+
+#-------------------------------
+[456]   # SEVEN ISLAND SPRING
+Name = SEVEN ISLAND SPRING
+Outdoor = true
+ShowArea = true
+Bicycle = true
+HealingSpot = 456,12,4
+MapPosition = 16,9,11
+
+#-------------------------------
+[457]   # PokeCentre
+Name = SEVEN ISLAND
+MapPosition = 16,9,11
+
+#-------------------------------
+[458]   # PokeMart
+Name = SEVEN ISLAND
+MapPosition = 16,9,11
+
+#-------------------------------
+[459]   # Port
+Name = SEVEN ISLAND PORT
+MapPosition = 16,9,11
+
+#-------------------------------
+[460]   # Houses
+Name = SEVEN ISLAND
+MapPosition = 16,9,11
