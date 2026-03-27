@@ -4,6 +4,7 @@
 StartMoney = 3000
 StartItemStorage = POTION
 Home = 302,4,4,6
+SurfBGM = RBYSurf
 StorageCreator = BILL
 WildBattleBGM = Battle wild
 TrainerBattleBGM = Battle trainer

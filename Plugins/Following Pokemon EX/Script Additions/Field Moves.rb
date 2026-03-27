@@ -15,85 +15,24 @@ def pbSurf(*args)
 end
 
 #-------------------------------------------------------------------------------
-# Aliaseds surf starting method to refresh Following Pokemon when the player
-# jumps to surf
+# Aliased surf starting method - hide follower while surfing
 #-------------------------------------------------------------------------------
 alias __followingpkmn__pbStartSurfing pbStartSurfing unless defined?(__followingpkmn__pbStartSurfing)
 def pbStartSurfing(*args)
-  old_toggled = $PokemonGlobal.follower_toggled
-  surf_anim_1 = FollowingPkmn.active?
-  $PokemonGlobal.surfing = true
-  FollowingPkmn.refresh_internal
-  surf_anim_2 = FollowingPkmn.active?
-  $PokemonGlobal.surfing = false
-  FollowingPkmn.toggle_off(true) if surf_anim_1 != surf_anim_2
   ret = __followingpkmn__pbStartSurfing(*args)
-  FollowingPkmn.toggle(old_toggled, false)
-  
-  # Simply move the follower one step in the player's direction
-  if FollowingPkmn.active?
-    event = FollowingPkmn.get_event
-    if event
-      case $game_player.direction
-      when 2 then event.move_down    # Player facing down
-      when 4 then event.move_left    # Player facing left
-      when 6 then event.move_right   # Player facing right
-      when 8 then event.move_up      # Player facing up
-      end
-      # Wait for the movement to complete
-      while event.moving?
-        Graphics.update
-        Input.update
-        pbUpdateSceneMap
-      end
-    end
-  end
-  
-  # Fix surf animation immediately by recalculating bush depth
-  FollowingPkmn.get_event&.calculate_bush_depth
-  # Refresh sprite to use swimming sprites if available
-  FollowingPkmn.refresh(false) if FollowingPkmn.active?
+  FollowingPkmn.hide_follower if ret
   return ret
 end
 
 #-------------------------------------------------------------------------------
-# Aliased surf ending method to queue a refresh after the player jumps to stop
-# surfing
+# Aliased surf ending method - restore follower after surfing ends
 #-------------------------------------------------------------------------------
 alias __followingpkmn__pbEndSurf pbEndSurf unless defined?(__followingpkmn__pbEndSurf)
 def pbEndSurf(*args)
-  surf_anim_1 = FollowingPkmn.active?
   ret = __followingpkmn__pbEndSurf(*args)
   return false if !ret
-  
-  # Let Following Pokemon use its normal follow logic when player exits water
   $PokemonGlobal.current_surfing = nil
-  FollowingPkmn.refresh_internal
-  surf_anim_2 = FollowingPkmn.active?
-  $PokemonGlobal.call_refresh = [true, (surf_anim_1 != surf_anim_2), 1]
-  
-  # Simply move the follower one step in the player's direction
-  if FollowingPkmn.active?
-    event = FollowingPkmn.get_event
-    if event
-      case $game_player.direction
-      when 2 then event.move_down    # Player facing down
-      when 4 then event.move_left    # Player facing left
-      when 6 then event.move_right   # Player facing right
-      when 8 then event.move_up      # Player facing up
-      end
-      # Wait for the movement to complete
-      while event.moving?
-        Graphics.update
-        Input.update
-        pbUpdateSceneMap
-      end
-    end
-  end
-  
-  # Fix surf animation immediately by recalculating bush depth
-  FollowingPkmn.get_event&.calculate_bush_depth
-  # Refresh sprite to use normal sprites after surfing
+  FollowingPkmn.unhide_follower(false)
   FollowingPkmn.refresh(false) if FollowingPkmn.active?
   return ret
 end
@@ -110,8 +49,7 @@ def pbDive(*args)
   ret = __followingpkmn__pbDive(*args)
   $PokemonGlobal.current_diving = old_diving if !ret || !pkmn
   $game_temp.no_follower_field_move = false
-  # Fix dive animation immediately by recalculating bush depth
-  FollowingPkmn.get_event&.calculate_bush_depth if ret
+  FollowingPkmn.hide_follower if ret
   return ret
 end
 
@@ -126,8 +64,8 @@ def pbSurfacing(*args)
   ret = __followingpkmn__pbSurfacing(*args)
   $PokemonGlobal.current_diving = old_diving if !ret
   $game_temp.no_follower_field_move = false
-  # Fix surfacing animation immediately by recalculating bush depth
-  FollowingPkmn.get_event&.calculate_bush_depth if ret
+  FollowingPkmn.unhide_follower(false) if ret
+  FollowingPkmn.refresh(false) if ret && FollowingPkmn.active?
   return ret
 end
 
@@ -165,7 +103,7 @@ def pbHeadbutt(*args)
 end
 
 #-------------------------------------------------------------------------------
-# Aliased Waterfall methd to not show new HM Animation when interacting with
+# Aliased Waterfall method to not show new HM Animation when interacting with
 # waterfall
 #-------------------------------------------------------------------------------
 alias __followingpkmn__pbWaterfall pbWaterfall unless defined?(__followingpkmn__pbWaterfall)
@@ -182,7 +120,7 @@ end
 # ascends the Waterfall with the player
 #-------------------------------------------------------------------------------
 def pbAscendWaterfall
-  return if $game_player.direction != 8   # Can't ascend if not facing up
+  return if $game_player.direction != 8
   terrain = $game_player.pbFacingTerrainTag
   return if !terrain.waterfall && !terrain.waterfall_crest
   $stats.waterfall_count += 1
@@ -209,7 +147,7 @@ end
 # descends the Waterfall with the player
 #-------------------------------------------------------------------------------
 def pbDescendWaterfall
-  return if $game_player.direction != 2   # Can't descend if not facing down
+  return if $game_player.direction != 2
   terrain = $game_player.pbFacingTerrainTag
   return if !terrain.waterfall && !terrain.waterfall_crest
   $stats.waterfalls_descended += 1
