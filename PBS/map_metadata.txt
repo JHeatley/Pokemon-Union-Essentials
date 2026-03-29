@@ -21,7 +21,7 @@ Outdoor = true
 ShowArea = true
 Bicycle = true
 HealingSpot = 7,7,5
-MapPosition = 3,8,13
+MapPosition = 0,8,13
 #-------------------------------
 [006]   # Oak's Lab
 Name = Oak's Lab
