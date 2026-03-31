@@ -28,6 +28,8 @@
 25,East,14,32,West,0
 # Route 4 (33) - Pewter City (25)
 33,West,21,25,East,0
+# Pewter House (31) - Pewter House (30)
+31,South,0,30,North,0
 # Route 3 (32) - Route 5 (56)
 32,East,10,56,West,0
 # Cerulean City (39) - Route 3 (32)
@@ -186,6 +188,14 @@
 167,South,0,191,North,252
 # Route 13 (167) - Route 19 (190)
 167,South,0,190,North,132
+# WATER LABYRINTH SPRING (184) - FIVE ISLE MEADOW SPRING (186)
+184,South,77,186,North,0
+# RESORT GORGEOUS SPRING (185) - WATER LABYRINTH SPRING (184)
+185,South,0,184,North,52
+# MEMORIAL PILLAR SPRING (187) - FIVE ISLE MEADOW SPRING (186)
+187,West,0,186,East,20
+# SIX ISLAND SPRING (188) - WATER PATH SPRING (452)
+188,East,0,452,West,40
 # Route 19 (190) - Route 20 (191)
 190,West,0,191,East,0
 # Route 20 (191) - Cinnabar Island (199)
@@ -196,40 +206,30 @@
 198,South,0,199,North,0
 # Indigo Plateau (214) - Route 23 (209)
 214,South,0,209,North,0
-# Pewter House (31) - Pewter House (30)
-31,South,0,30,North,0
 # One Island (377) - Kindle Road (416)
 377,East,0,416,West,0
 # Treasure Beach (419) - One Island (377)
 419,North,2,377,South,0
-# Treasure Beach (419) - Kindle Road (416)
-419,North,29,416,South,0
+# One Island (377) - Kindle Road Rocks (417)
+377,East,0,417,West,0
 # Two Island (382) - Cape Brink (386)
 382,North,0,386,South,0
 # Three Island (387) - Three Island Port (391)
 387,South,0,391,North,0
 # Bond Bridge (392) - Three Island (387)
 392,East,2,387,West,0
-# Bond Bridge (392) - Three Island Port (391)
-392,East,42,391,West,0
-# One Island (377) - Kindle Road Rocks (417)
-377,East,0,417,West,0
-# Treasure Beach (419) - Kindle Road Rocks (417)
-419,North,29,417,South,0
 # Three Island (387) - Bond Bridge (392)
 387,West,0,392,East,2
 # Three Island Port (391) - Three Island (387)
 391,North,0,387,South,0
+# Bond Bridge (392) - Three Island Port (391)
+392,East,42,391,West,0
 # Three Island Port (391) - Bond Bridge (392)
 391,West,0,392,East,42
-# WATER LABYRINTH SPRING (184) - FIVE ISLE MEADOW SPRING (186)
-184,South,77,186,North,0
-# RESORT GORGEOUS SPRING (185) - WATER LABYRINTH SPRING (184)
-185,South,0,184,North,52
-# MEMORIAL PILLAR SPRING (187) - FIVE ISLE MEADOW SPRING (186)
-187,West,0,186,East,20
-# SIX ISLAND SPRING (188) - WATER PATH SPRING (452)
-188,East,0,452,West,40
+# Treasure Beach (419) - Kindle Road (416)
+419,North,29,416,South,0
+# Treasure Beach (419) - Kindle Road Rocks (417)
+419,North,29,417,South,0
 # WATER PATH SPRING (452) - OUTCAST ISLAND SPRING (454)
 452,North,0,454,South,72
 # GREEN PATH SPRING (453) - WATER PATH SPRING (452)
@@ -240,3 +240,17 @@
 453,North,0,454,South,0
 # RUIN VALLEY SPRING (455) - OUTCAST ISLAND SPRING (454)
 455,West,0,454,East,160
+# Littleroot (226) - Rt101 (227)
+226,North,2,227,South,0
+# Oldale (228) - Rt101 (227)
+228,South,0,227,North,6
+# Rt102 (242) - Rt101 (227)
+242,South,44,227,North,0
+# Rt103 (179) - Oldale (228)
+179,South,6,228,North,0
+# Rt102 (242) - Oldale (228)
+242,East,0,228,West,0
+# Rt102 (242) - Rt103 (179)
+242,North,44,179,South,0
+# Petalburg (229) - Rt102 (242)
+229,East,14,242,West,0
